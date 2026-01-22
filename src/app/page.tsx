@@ -12,13 +12,46 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import ScrollProgress from "@/components/ui/ScrollProgress";
+import { SectionReveal } from "@/components/ui/SectionReveal";
 
 export default function Home() {
-  return (
-      <main className="relative">
-        <Navbar />
-        <Hero />
-        <Footer />
-      </main>
-  );
+    return (
+        <main className="relative">
+            <ScrollProgress />
+            <ParticlesBackground />
+            <Navbar />
+
+            <Hero />
+
+            <SectionReveal>
+                <About />
+            </SectionReveal>
+
+            <SectionReveal>
+                <Skills />
+            </SectionReveal>
+
+            <SectionReveal>
+                <Experience />
+            </SectionReveal>
+
+            <SectionReveal>
+                <Projects />
+            </SectionReveal>
+
+            <SectionReveal>
+                <Vision />
+            </SectionReveal>
+
+            <SectionReveal>
+                <Passion />
+            </SectionReveal>
+
+            <SectionReveal>
+                <Contact />
+            </SectionReveal>
+
+            <Footer />
+        </main>
+    );
 }
