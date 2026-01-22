@@ -3,6 +3,7 @@
 import { ArrowDown, Sparkles } from "lucide-react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import Magnetic from "@/components/ui/Magnetic";
 
 const containerVariants = {
@@ -99,8 +100,9 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
                 rotateX,
                 rotateY,
                 transformStyle: "preserve-3d",
+                perspective: 1000,
             }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center relative z-50"
         >
             {children}
         </motion.div>
@@ -109,11 +111,11 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise" style={{ perspective: "1500px", position: "relative", zIndex: 1 }}>
-            <div className="absolute inset-0 gradient-bg -z-10" />
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise">
+            <div className="absolute inset-0 gradient-bg" />
 
             <motion.div
-                className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl -z-10"
+                className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl"
                 animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.3, 0.5, 0.3],
@@ -125,7 +127,7 @@ export default function Hero() {
                 }}
             />
             <motion.div
-                className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-foreground/5 rounded-full blur-3xl -z-10"
+                className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-foreground/5 rounded-full blur-3xl"
                 animate={{
                     scale: [1.2, 1, 1.2],
                     opacity: [0.2, 0.4, 0.2],
@@ -153,13 +155,32 @@ export default function Hero() {
             />
 
             <motion.div
-                className="container-custom relative z-10 pt-20"
-                style={{ position: "relative", zIndex: 10 }}
+                className="container-custom relative z-50 pt-20"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
                 <Tilt3DCard>
+                    {/* Photo de profil */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="mb-8 flex justify-center"
+                        style={{ transform: "translateZ(100px)" }}
+                    >
+                        <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-highlight to-accent animate-pulse opacity-75 blur-xl"></div>
+                            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-highlight shadow-2xl">
+                                <Image
+                                    src="/sullivan.jpeg"
+                                    alt="Joro Sullivan Rakotoniaina"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
+
                     <motion.div
                         variants={itemVariants}
                         className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass-card rounded-full text-sm font-medium text-muted-foreground"
@@ -171,7 +192,7 @@ export default function Hero() {
 
                     <motion.h1
                         variants={itemVariants}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground mix-blend-mode:difference"
                         style={{ transform: "translateZ(80px)" }}
                     >
                         <span className="block">Joro Sullivan</span>
