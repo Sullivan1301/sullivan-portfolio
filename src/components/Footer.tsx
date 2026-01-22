@@ -1,4 +1,4 @@
-import { Linkedin, Github, Mail, Heart } from "lucide-react";
+import { Linkedin, Instagram, Mail, Heart } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -25,7 +25,7 @@ export default function Footer() {
                             <Mail size={18} />
                         </a>
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/joro-sullivan-rakotoniaina"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
@@ -34,13 +34,13 @@ export default function Footer() {
                             <Linkedin size={18} />
                         </a>
                         <a
-                            href="https://github.com"
+                            href="https://www.instagram.com/jorosullivan"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="GitHub"
+                            aria-label="Instagram"
                         >
-                            <Github size={18} />
+                            <Instagram size={18} />
                         </a>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send, Linkedin, Github, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
@@ -101,7 +101,7 @@ export default function Contact() {
                             <div className="flex gap-4">
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://linkedin.com"
+                                        href="https://www.linkedin.com/in/joro-sullivan-rakotoniaina"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
@@ -113,14 +113,14 @@ export default function Contact() {
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://github.com"
+                                        href="https://www.instagram.com/jorosullivan"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
                                         whileHover={{ scale: 1.15, rotate: -5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <Github className="text-highlight" size={20} />
+                                        <Instagram className="text-highlight" size={20} />
                                     </motion.a>
                                 </Magnetic>
                             </div>
