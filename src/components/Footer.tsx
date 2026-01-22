@@ -1,4 +1,6 @@
 import { Linkedin, Instagram, Mail, Heart } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -8,9 +10,18 @@ export default function Footer() {
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="text-center md:text-left">
-                        <a href="#" className="text-xl font-semibold gradient-text">
-                            JSR
-                        </a>
+                        <Link href="/" className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-highlight">
+                                <Image
+                                    src="/sullivan.jpeg"
+                                    alt="Sullivan Joro"
+                                    width={40}
+                                    height={40}
+                                    className="object-cover w-full h-full"
+                                />
+                            </div>
+                            <span className="font-bold text-foreground">Sullivan</span>
+                        </Link>
                         <p className="text-sm text-muted-foreground mt-2">
                             Digital Strategist & Web Developer
                         </p>
