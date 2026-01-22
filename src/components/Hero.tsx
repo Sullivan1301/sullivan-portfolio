@@ -26,7 +26,7 @@ const itemVariants = {
 function FloatingCube({ className, delay = 0 }: { className?: string; delay?: number }) {
     return (
         <motion.div
-            className={`absolute ${className}`}
+            className={`absolute pointer-events-none ${className}`}
             initial={{ rotateX: 0, rotateY: 0 }}
             animate={{
                 rotateX: [0, 360],
@@ -84,7 +84,7 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1200 }}
-            className="max-w-4xl mx-auto text-center relative z-50"
+            className="w-full max-w-4xl mx-auto text-center relative z-50 pointer-events-auto"
         >
             {children}
         </motion.div>
@@ -93,104 +93,124 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
 
 export default function Hero() {
     return (
-        <section
-            className="relative min-h-screen flex items-center justify-center overflow-hidden noise"
-            style={{ perspective: 1500 }}
-        >
-            {/* Background */}
-            <div className="absolute inset-0 gradient-bg -z-10" />
+        <section className="relative isolate min-h-screen flex items-center justify-center overflow-hidden noise" style={{ zIndex: 10 }}>
+            {/* Background Layer - Purement décoratif, aucune interaction */}
+            <div className="absolute inset-0 pointer-events-none select-none z-0">
+                <div className="absolute inset-0 gradient-bg" />
 
-            {/* Background blobs */}
-            <motion.div
-                className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl z-0"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-                className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-foreground/5 rounded-full blur-3xl z-0"
-                animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            />
+                {/* Background blobs */}
+                <motion.div
+                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-foreground/5 rounded-full blur-3xl"
+                    animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                />
 
-            {/* Floating cubes */}
-            <FloatingCube className="top-24 right-24 hidden lg:block z-0" delay={0} />
-            <FloatingCube className="bottom-32 left-20 hidden lg:block z-0" delay={2} />
-            <FloatingCube className="top-1/3 left-32 hidden xl:block z-0" delay={4} />
+                {/* Floating cubes */}
+                <FloatingCube className="top-24 right-24 hidden lg:block" delay={0} />
+                <FloatingCube className="bottom-32 left-20 hidden lg:block" delay={2} />
+                <FloatingCube className="top-1/3 left-32 hidden xl:block" delay={4} />
 
-            {/* Sparkles dots */}
-            <motion.div
-                className="absolute top-20 right-40 w-2 h-2 bg-highlight rounded-full glow-red z-10"
-                animate={{ y: [-10, 10, -10], rotateZ: [0, 180, 360] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-                className="absolute bottom-40 left-16 w-3 h-3 bg-highlight/80 rounded-full glow-red z-10"
-                animate={{ y: [-15, 15, -15], rotateZ: [0, -180, -360] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            />
+                {/* Sparkles dots */}
+                <motion.div
+                    className="absolute top-20 right-40 w-2 h-2 bg-highlight rounded-full glow-red"
+                    animate={{ y: [-10, 10, -10], rotateZ: [0, 180, 360] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute bottom-40 left-16 w-3 h-3 bg-highlight/80 rounded-full glow-red"
+                    animate={{ y: [-15, 15, -15], rotateZ: [0, -180, -360] }}
+                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                />
+            </div>
 
-            {/* Hero content */}
-            <motion.div className="container-custom relative z-20 pt-20" variants={containerVariants} initial="hidden" animate="visible">
+            {/* Hero content - Zone d'interaction limitée au centre sous la Navbar */}
+            <motion.div 
+                className="container-custom relative z-50 pt-28 pb-12 md:pt-40"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
                 <Tilt3DCard>
-                    {/* Photo de profil */}
-                    <motion.div variants={itemVariants} className="mb-8 flex justify-center" style={{ transform: "translateZ(200px)" }}>
-                        <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-highlight to-accent animate-pulse opacity-75 blur-xl"></div>
-                            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-highlight shadow-2xl">
-                                <Image src="/sullivan.jpeg" alt="Joro Sullivan Rakotoniaina" fill className="object-cover" priority />
+                    <div className="bg-background/95 backdrop-blur-3xl rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden group">
+                        {/* Glass Overlay (effet brillant sur les bords) */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-0" />
+                        
+                        {/* Background glow internal (effet de profondeur interne) */}
+                        <div className="absolute top-5 -right-16 w-40 h-40 bg-highlight/15 rounded-full blur-2xl group-hover:bg-highlight/25 transition-colors duration-700 pointer-events-none" />
+                        <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-accent/15 rounded-full blur-2xl group-hover:bg-accent/25 transition-colors duration-700 pointer-events-none" />
+
+                        <div className="relative z-10">
+                            {/* Photo de profil */}
+                            <div className="mb-8 flex justify-center">
+                                <div className="relative w-32 h-32 sm:w-32 sm:h-32">
+                                    <div className="absolute inset-0 rounded-full bg-highlight/20 animate-pulse blur-xl"></div>
+                                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-highlight/40 shadow-xl bg-muted">
+                                        <Image 
+                                            src="/sullivan.jpeg" 
+                                            alt="Joro Sullivan Rakotoniaina" 
+                                            fill 
+                                            className="object-cover w-full h-full" 
+                                            priority 
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 bg-highlight/10 border border-highlight/20 rounded-full text-sm font-semibold text-highlight">
+                                <Sparkles size={16} />
+                                <span>Disponible pour de nouvelles opportunités</span>
+                            </div>
+
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-8 text-foreground">
+                                <span className="block opacity-90">Joro Sullivan</span>
+                                <motion.span
+                                    className="block gradient-text"
+                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                                    style={{ backgroundSize: "200% 200%" }}
+                                >
+                                    Rakotoniaina
+                                </motion.span>
+                            </h1>
+
+                            <p className="text-lg sm:text-xl text-muted-foreground mb-4 font-medium max-w-lg mx-auto leading-tight">
+                                Jeune diplômé en informatique • Fondateur de <span className="text-highlight">Tech Bloom Agency</span>
+                            </p>
+
+                            <p className="text-sm sm:text-base text-muted-foreground/70 max-w-xl mx-auto mb-8 leading-relaxed">
+                                J&apos;accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats, une communication claire et des solutions digitales modernes.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                                <Magnetic>
+                                    <motion.a 
+                                        href="#contact" 
+                                        className="px-10 py-5 bg-highlight text-highlight-foreground rounded-full font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(230,57,70,0.5)] hover:shadow-highlight/40 block"
+                                        whileHover={{ scale: 1.05, y: -2 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        Contact Me
+                                    </motion.a>
+                                </Magnetic>
+                                <Magnetic>
+                                    <motion.a 
+                                        href="#projects" 
+                                        className="px-10 py-5 bg-foreground/5 backdrop-blur-md rounded-full font-bold text-lg transition-all border border-foreground/10 block hover:bg-foreground/10"
+                                        whileHover={{ scale: 1.05, y: -2 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        View Projects
+                                    </motion.a>
+                                </Magnetic>
                             </div>
                         </div>
-                    </motion.div>
-
-                    {/* Badge Sparkles */}
-                    <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass-card rounded-full text-sm font-medium text-muted-foreground" style={{ transform: "translateZ(100px)" }}>
-                        <Sparkles size={16} className="text-highlight" />
-                        <span>Disponible pour de nouvelles opportunités</span>
-                    </motion.div>
-
-                    {/* Titre */}
-                    <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground" style={{ transform: "translateZ(150px)" }}>
-                        <span className="block">Joro Sullivan</span>
-                        <motion.span
-                            className="block gradient-text"
-                            animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                            style={{ backgroundSize: "200% 200%" }}
-                        >
-                            Rakotoniaina
-                        </motion.span>
-                    </motion.h1>
-
-                    {/* Sous-titre */}
-                    <motion.p variants={itemVariants} className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 font-medium" style={{ transform: "translateZ(120px)" }}>
-                        Jeune diplômé en informatique • Fondateur de <span className="text-highlight">Tech Bloom Agency</span>
-                    </motion.p>
-
-                    <motion.p variants={itemVariants} className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-12 leading-relaxed" style={{ transform: "translateZ(80px)" }}>
-                        J&apos;accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats, une communication claire et des solutions digitales modernes.
-                    </motion.p>
-
-                    {/* Boutons */}
-                    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4" style={{ transform: "translateZ(130px)" }}>
-                        <Magnetic>
-                            <motion.a href="#contact" className="px-8 py-4 bg-highlight text-highlight-foreground rounded-full font-medium text-base transition-all glow-red block" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                                Contact Me
-                            </motion.a>
-                        </Magnetic>
-                        <Magnetic>
-                            <motion.a href="#projects" className="px-8 py-4 glass-card rounded-full font-medium text-base transition-all border border-foreground/10 block" whileHover={{ scale: 1.05, borderColor: "rgba(230, 57, 70, 0.5)" }} whileTap={{ scale: 0.98 }}>
-                                View Projects
-                            </motion.a>
-                        </Magnetic>
-                    </motion.div>
+                    </div>
                 </Tilt3DCard>
-
-                {/* Arrow down */}
-                <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20" initial={{ opacity: 0 }} animate={{ opacity: 1, y: [0, 10, 0] }} transition={{ opacity: { delay: 1.5, duration: 0.5 }, y: { duration: 2, repeat: Infinity, ease: "easeInOut" } }}>
-                    <a href="#about" className="text-muted-foreground hover:text-highlight transition-colors">
-                        <ArrowDown size={24} />
-                    </a>
-                </motion.div>
             </motion.div>
         </section>
     );
