@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
     title: "Joro Sullivan Rakotoniaina | Digital Strategist & Web Developer",
@@ -49,6 +50,7 @@ export default function RootLayout({
         <ThemeProvider>
             <SmoothScroll>
                 {children}
+                <Analytics />
             </SmoothScroll>
         </ThemeProvider>
         </body>
