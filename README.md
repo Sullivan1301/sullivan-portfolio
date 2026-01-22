@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Portfolio de Sullivan Joro
 
-## Getting Started
+Bienvenue dans le dépôt officiel de mon portfolio personnel.
+Ce site présente mon parcours en tant qu'**entrepreneur digital**, **community manager**, **développeur web** et **photographe mobile** basé à Toamasina, Madagascar.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 👤 À propos de moi
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Je m'appelle **Sullivan Joro**, né le 13 janvier 2003, actuellement en **Licence 3 Informatique** à la Haute École d'Informatique (HEI) de Madagascar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Entrepreneur digital passionné, je suis le fondateur de **Tech Bloom Agency** et co-fondateur de **RunRobe**. Je gère également la page **L'homme Imparfait** et développe ma marque personnelle en photographie mobile.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ma vision : construire quelque chose de durable, trouver mon ikigai et créer une vie qui a du sens en alliant technologie et compréhension humaine.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Objectif du site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ce site me sert à :
+- Présenter mes projets et réalisations
+- Mettre en valeur mes compétences techniques et créatives
+- Exposer ma galerie de photographies mobiles
+- Proposer un CV téléchargeable en un clic
+- Offrir un accès rapide à mes réseaux et contacts professionnels
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Fonctionnalités
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Design moderne et responsive
+- Navigation fluide entre les pages
+- Galerie de photographies interactive
+- Formulaire de contact intégré avec WhatsApp
+- Animations fluides avec Framer Motion
+- Thème sombre élégant
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Technologies utilisées
+
+- React 18
+- TypeScript
+- Vite
+- React Router
+- Framer Motion
+- Tailwind CSS
+- GitHub Pages
+
+---
+
+## 🧠 Compétences
+
+### Développement Web
+- JavaScript, React, Java, Python (bases)
+- HTML/CSS, TypeScript
+- Hébergement, déploiement, gestion de domaines
+- Mails professionnels (Zoho)
+
+### Marketing Digital & Community Management
+- Stratégie de contenu Meta (Facebook/Instagram)
+- Storytelling et copywriting
+- Création graphique (Canva, Meta Business Suite)
+- Branding et identité visuelle
+
+### Photographie Mobile
+- iPhone 15 Pro
+- Portraits naturels et spontanés
+- Lifestyle et contenu pour réseaux sociaux
+- Approche humaine et accessible
+
+### Gestion de Projet
+- Jira, Notion, Trello
+- Méthode agile
+- Gestion d'équipe
+
+## 💼 Mes Projets
+
+### Tech Bloom Agency (TBA)
+Agence digitale proposant :
+- Développement web (desktop & mobile)
+- Branding & identité visuelle
+- Marketing digital
+- Community management
+- Photographie & création de contenu
+
+**Vision** : Faire fleurir les projets digitaux en utilisant l'IA intelligemment.
+
+### RunRobe
+Boutique physique et en ligne (Toamasina)
+- Robes de mariée
+- Robes de soirée
+- Robes classiques
+- Sneakers chics
+
+**Slogan** : "Where elegance meets performance"
+**Localisation** : Face BNI Bazary Be, route Leader Price
+
+### L'homme Imparfait
+Page Facebook dédiée au :
+- Bien-être
+- Sport et discipline
+- Développement personnel
+- Coaching
+
+**Rôle** : Community Manager, Créateur de contenu et Ambassadeur de la marque
+
+### Photographie Mobile
+Services de photographie avec iPhone 15 Pro :
+- Portraits naturels
+- Lifestyle
+- Événements privés
+- Contenu pour réseaux sociaux
+
+**Tarification** : Basée sur la satisfaction client
+
+---
+
+## 📫 Me contacter
+
+📱 WhatsApp : [+261 34 10 608 02](https://wa.me/261341060802)
+🔗 LinkedIn : [RAKOTONIAINA Joro Sullivan](https://www.linkedin.com/in/sullivan-rakotoniaina)
+📧 Email : sullivanjoro3@gmail.com
+📄 CV : [Télécharger mon CV](/Sullivan_CV.pdf)
+
+
+
+
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 📞 Contact
+
+- WhatsApp : [+261 34 10 608 02](https://wa.me/261341060802)
+- Email : sullivanjoro3@gmail.com
