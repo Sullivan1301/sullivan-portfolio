@@ -8,20 +8,25 @@ export const metadata: Metadata = {
     description: "Jeune diplômé en informatique, fondateur de Tech Bloom Agency, spécialisé en stratégie digitale, community management, marketing digital et développement web.",
     keywords: ["Digital Strategist", "Web Developer", "React", "Next.js", "Marketing Digital", "Community Management", "Madagascar"],
     authors: [{ name: "Joro Sullivan Rakotoniaina" }],
+    viewport: "width=device-width, initial-scale=1",
     openGraph: {
         title: "Joro Sullivan Rakotoniaina | Digital Strategist & Web Developer",
         description: "J'accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats.",
         type: "website",
         locale: "fr_FR",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Joro Sullivan Rakotoniaina | Digital Strategist & Web Developer",
-        description: "J'accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats.",
+        url: "https://jorosullivan.com",
+        siteName: "Joro Sullivan Rakotoniaina Portfolio",
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
 };
 
