@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description: "Jeune diplômé en informatique, fondateur de Tech Bloom Agency, spécialisé en stratégie digitale, community management, marketing digital et développement web.",
     keywords: ["Digital Strategist", "Web Developer", "React", "Next.js", "Marketing Digital", "Community Management", "Madagascar"],
     authors: [{ name: "Joro Sullivan Rakotoniaina" }],
+    icons: {
+        icon: "/sullivan.jpeg",
+    },
     viewport: "width=device-width, initial-scale=1",
     openGraph: {
         title: "Joro Sullivan Rakotoniaina | Digital Strategist & Web Developer",
