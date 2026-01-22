@@ -39,13 +39,35 @@ Ce site me sert à :
 
 ## 🛠️ Technologies utilisées
 
-- React 18
-- TypeScript
-- Vite
-- React Router
-- Framer Motion
-- Tailwind CSS
-- GitHub Pages
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Langage**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Composants UI**: [Radix UI](https://www.radix-ui.com/) & [Lucide React](https://lucide.dev/)
+- **Gestion d'état & Hooks**: React 18
+- **Déploiement**: Vercel (recommandé)
+
+---
+
+## 🚀 Installation et Développement
+
+Pour lancer le projet localement :
+
+1.  **Cloner le dépôt** :
+    ```bash
+    git clone https://github.com/votre-utilisateur/portfolio_sullivan.git
+    cd portfolio_sullivan
+    ```
+
+2.  **Installer les dépendances** :
+    ```bash
+    npm install
+    ```
+
+3.  **Lancer le serveur de développement** :
+    ```bash
+    npm run dev
+    ```
+    Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
 ---
 
@@ -118,24 +140,17 @@ Services de photographie avec iPhone 15 Pro :
 
 ## 📫 Me contacter
 
-📱 WhatsApp : [+261 34 10 608 02](https://wa.me/261341060802)
-🔗 LinkedIn : [RAKOTONIAINA Joro Sullivan](https://www.linkedin.com/in/sullivan-rakotoniaina)
-📧 Email : sullivanjoro3@gmail.com
-📄 CV : [Télécharger mon CV](/Sullivan_CV.pdf)
+- **WhatsApp** : [+261 34 10 608 02](https://wa.me/261341060802)
+- **LinkedIn** : [RAKOTONIAINA Joro Sullivan](https://www.linkedin.com/in/sullivan-rakotoniaina)
+- **Email** : [sullivanjoro3@gmail.com](mailto:sullivanjoro3@gmail.com)
+- **CV** : [Télécharger mon CV](/Sullivan_CV.pdf)
 
-
-
-
+---
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request pour améliorer le projet.
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## 📞 Contact
-
-- WhatsApp : [+261 34 10 608 02](https://wa.me/261341060802)
-- Email : sullivanjoro3@gmail.com
+Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
