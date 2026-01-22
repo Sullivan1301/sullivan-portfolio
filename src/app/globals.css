@@ -1,29 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #FCFAEE;
-  --foreground: #0D2A40;
-  --highlight: #B8001F;
+  --radius: 0.75rem;
+  --background: #f8f9fa;
+  --foreground: #1a1a2e;
+  --card: rgba(255, 255, 255, 0.7);
+  --card-foreground: #1a1a2e;
+  --popover: rgba(255, 255, 255, 0.9);
+  --popover-foreground: #1a1a2e;
+  --primary: #1a1a2e;
+  --primary-foreground: #f8f9fa;
+  --secondary: #e9ecef;
+  --secondary-foreground: #1a1a2e;
+  --muted: #e9ecef;
+  --muted-foreground: #6c757d;
+  --accent: #2d3561;
+  --accent-foreground: #f8f9fa;
+  --destructive: #dc3545;
+  --destructive-foreground: #ffffff;
+  --border: rgba(26, 26, 46, 0.1);
+  --input: rgba(26, 26, 46, 0.08);
+  --ring: #e63946;
+  --highlight: #e63946;
   --highlight-foreground: #ffffff;
-  --muted: #384B70;
-  --muted-foreground: #384B70;
-  --border: rgba(13, 42, 64, 0.1);
-  --radius: 0.5rem;
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --danger: #e63946;
+  --chart-1: #e63946;
+  --chart-2: #1a1a1a;
+  --chart-3: #2d2d2d;
+  --chart-4: #0a0a0a;
+  --chart-5: #adb5bd;
+  --sidebar: rgba(255, 255, 255, 0.8);
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #1a1a2e;
+  --sidebar-primary-foreground: #f8f9fa;
+  --sidebar-accent: #e9ecef;
+  --sidebar-accent-foreground: #1a1a2e;
+  --sidebar-border: rgba(26, 26, 46, 0.1);
+  --sidebar-ring: #4a6cf7;
+  --font-sans: 'Bitter', serif;
+  --font-mono: 'Fira Code', monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --background: #0a0a0f;
+  --foreground: #f8f9fa;
+  --card: rgba(26, 26, 46, 0.6);
+  --card-foreground: #f8f9fa;
+  --popover: rgba(26, 26, 46, 0.9);
+  --popover-foreground: #f8f9fa;
+  --primary: #f8f9fa;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1a1a2e;
+  --secondary-foreground: #f8f9fa;
+  --muted: #1a1a2e;
+  --muted-foreground: #adb5bd;
+  --accent: #4a6cf7;
+  --accent-foreground: #ffffff;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #ffffff;
+  --border: rgba(248, 249, 250, 0.1);
+  --input: rgba(248, 249, 250, 0.08);
+  --ring: #e63946;
+  --highlight: #e63946;
+  --highlight-foreground: #ffffff;
+  --danger: #e63946;
+  --chart-1: #e63946;
+  --chart-2: #1a1a1a;
+  --chart-3: #2d2d2d;
+  --chart-4: #0a0a0a;
+  --chart-5: #adb5bd;
+  --sidebar: rgba(26, 26, 46, 0.8);
+  --sidebar-foreground: #f8f9fa;
+  --sidebar-primary: #4a6cf7;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a2e;
+  --sidebar-accent-foreground: #f8f9fa;
+  --sidebar-border: rgba(248, 249, 250, 0.1);
+  --sidebar-ring: #4a6cf7;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-body {
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .glass-dark {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(248, 249, 250, 0.08);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .dark .glass-card {
+    background: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(248, 249, 250, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .light .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(26, 26, 46, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #e63946 0%, #ff6b6b 50%, #e63946 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(74, 108, 247, 0.3), 0 0 40px rgba(74, 108, 247, 0.1);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px rgba(74, 108, 247, 0.5);
+  }
+  
+  .glow-red {
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.5), 0 0 60px rgba(230, 57, 70, 0.2);
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  }
+  
+  .dark .gradient-bg {
+    background: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #1a1a2e 100%);
+  }
+  
+  .noise {
+    position: relative;
+  }
+  
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--highlight);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B0018;
 }
