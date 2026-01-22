@@ -42,9 +42,11 @@ Ce site me sert à :
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Langage**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Composants UI**: [Radix UI](https://www.radix-ui.com/) & [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion 12](https://www.framer.com/motion/), [AOS](https://michalsnik.github.io/aos/) & [Lenis](https://lenis.darkroom.engineering/) (Smooth Scroll)
+- **Composants UI**: [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/) & [Shadcn UI](https://ui.shadcn.com/)
 - **Gestion d'état & Hooks**: React 18
-- **Déploiement**: Vercel (recommandé)
+- **Polices**: Bitter (Serif) & Fira Code (Mono)
+- **Déploiement**: [Vercel](https://vercel.com/)
 
 ---
 
@@ -140,10 +142,10 @@ Services de photographie avec iPhone 15 Pro :
 
 ## 📫 Me contacter
 
+- **LinkedIn** : [Joro Sullivan Rakotoniaina](https://www.linkedin.com/in/joro-sullivan-rakotoniaina)
+- **Instagram** : [@jorosullivan](https://www.instagram.com/jorosullivan)
+- **Email** : [jorosullivan13@gmail.com](mailto:jorosullivan13@gmail.com)
 - **WhatsApp** : [+261 34 10 608 02](https://wa.me/261341060802)
-- **LinkedIn** : [RAKOTONIAINA Joro Sullivan](https://www.linkedin.com/in/sullivan-rakotoniaina)
-- **Email** : [sullivanjoro3@gmail.com](mailto:sullivanjoro3@gmail.com)
-- **CV** : [Télécharger mon CV](/Sullivan_CV.pdf)
 
 ---
 
