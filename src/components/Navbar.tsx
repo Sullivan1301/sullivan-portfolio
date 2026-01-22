@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,16 +61,34 @@ export default function Navbar() {
           <Link href="/#skills" onClick={(e) => scrollToSection(e, "/#skills")} className="hover:text-highlight transition">Compétences</Link>
           <Link href="/#projects" onClick={(e) => scrollToSection(e, "/#projects")} className="hover:text-highlight transition">Projets</Link>
           <Link href="/#contact" onClick={(e) => scrollToSection(e, "/#contact")} className="hover:text-highlight transition">Contact</Link>
+          
+          {/* Theme toggle button */}
+          <button
+            onClick={toggleTheme}
+            className="hover:text-highlight transition"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </div>
 
-        {/* Mobile button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Mobile buttons */}
+        <div className="md:hidden flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            className="text-foreground hover:text-highlight transition"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+          </button>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-foreground"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
