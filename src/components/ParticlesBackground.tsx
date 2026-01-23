@@ -68,7 +68,7 @@ export default function ParticlesBackground() {
         };
 
         resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener("click", resizeCanvas);
         // window.addEventListener("click", handleClick);
 
         const particleCount = 100;
@@ -279,17 +279,17 @@ export default function ParticlesBackground() {
             mouseRef.current.clicking = false;
         };
 
-        window.addEventListener("mousemove", handleMouseMove);
-        // window.addEventListener("mousedown", handleMouseDown);
-        // window.addEventListener("mouseup", handleMouseUp);
+        // window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mousedown", handleMouseDown);
+        window.addEventListener("mouseup", handleMouseUp);
         animate();
 
         return () => {
-            window.removeEventListener("resize", resizeCanvas);
-            window.removeEventListener("mousemove", handleMouseMove);
-            // window.removeEventListener("mousedown", handleMouseDown);
-            // window.removeEventListener("mouseup", handleMouseUp);
-            // window.removeEventListener("click", handleClick);
+           // window.removeEventListener("resize", resizeCanvas);
+            // window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mousedown", handleMouseDown);
+            window.removeEventListener("mouseup", handleMouseUp);
+            window.removeEventListener("click", handleClick);
             cancelAnimationFrame(animationId);
             unsubscribe();
         };
