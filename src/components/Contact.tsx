@@ -16,7 +16,7 @@ export default function Contact() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const mailtoLink = `mailto:sullivanjoro3×@gmail.com.com?subject=Contact de ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AEmail: ${formData.email}`;
+        const mailtoLink = `mailto:sullivanjoro3@gmail.com?subject=Contact de ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AEmail: ${formData.email}`;
         window.parent.postMessage({ type: "OPEN_EXTERNAL_URL", data: { url: mailtoLink } }, "*");
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 3000);
@@ -97,11 +97,32 @@ export default function Contact() {
                             className="glass-card rounded-2xl p-8"
                             whileHover={{ scale: 1.01 }}
                         >
+                            <h3 className="text-xl font-semibold mb-6">Langues</h3>
+                            <div className="space-y-4">
+                                <div className="flex justify-between">
+                                    <span>Français</span>
+                                    <span className="font-medium">Courant (parlé & écrit)</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span>Anglais</span>
+                                    <span className="font-medium">Niveau intermédiaire</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span>Malgache</span>
+                                    <span className="font-medium">Langue maternelle</span>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="glass-card rounded-2xl p-8"
+                            whileHover={{ scale: 1.01 }}
+                        >
                             <h3 className="text-xl font-semibold mb-6">Réseaux sociaux</h3>
                             <div className="flex gap-4">
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://www.linkedin.com/in/joro-sullivan-rakotoniaina"
+                                        href="https://www.linkedin.com/in/Sullivan%20Rakotoniaina"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
@@ -129,7 +150,7 @@ export default function Contact() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
-                                        whileHover={{ scale: 1.15, rotate: -5 }}
+                                        whileHover={{ scale: 1.15, rotate: 5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <MessageCircle className="text-highlight" size={20} />
