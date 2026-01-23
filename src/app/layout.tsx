@@ -5,7 +5,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-    title: "Joro Sullivan Rakotoniaina | Digital Strategist & Web Developer",
+    title: "Joro Sullivan Rakotoniaina",
     description: "Jeune diplômé en informatique, fondateur de Tech Bloom Agency, spécialisé en stratégie digitale, community management, marketing digital et développement web.",
     keywords: ["Digital Strategist", "Web Developer", "React", "Next.js", "Marketing Digital", "Community Management", "Madagascar"],
     authors: [{ name: "Joro Sullivan Rakotoniaina" }],
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     },
     viewport: "width=device-width, initial-scale=1",
     openGraph: {
-        title: "Joro Sullivan Rakotoniaina | Digital Strategist & Web Developer",
+        title: "Joro Sullivan Rakotoniaina",
         description: "J'accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats.",
         type: "website",
         locale: "fr_FR",
-        url: "https://jorosullivan.com",
+        url: "https://sullivan-portfolio.vercel.app/",
         siteName: "Joro Sullivan Rakotoniaina Portfolio",
     },
     robots: {
