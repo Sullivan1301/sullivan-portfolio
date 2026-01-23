@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
@@ -16,7 +16,7 @@ export default function Contact() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const mailtoLink = `mailto:jorosullivan13@gmail.com?subject=Contact de ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AEmail: ${formData.email}`;
+        const mailtoLink = `mailto:sullivanjoro3×@gmail.com.com?subject=Contact de ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AEmail: ${formData.email}`;
         window.parent.postMessage({ type: "OPEN_EXTERNAL_URL", data: { url: mailtoLink } }, "*");
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 3000);
@@ -68,8 +68,8 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Email</p>
-                                            <a href="mailto:jorosullivan13@gmail.com" className="font-medium hover:text-highlight transition-colors">
-                                                jorosullivan13@gmail.com
+                                            <a href="mailto:sullivanjoro3@gmail.com" className="font-medium hover:text-highlight transition-colors">
+                                                sullivanjoro3@gmail.com
                                             </a>
                                         </div>
                                     </motion.div>
@@ -86,7 +86,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Disponibilité</p>
-                                            <p className="font-medium">Télétravail ou présentiel</p>
+                                            <p className="font-medium">Télétravail ou Hybride</p>
                                         </div>
                                     </motion.div>
                                 </Magnetic>
@@ -113,7 +113,7 @@ export default function Contact() {
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://www.instagram.com/jorosullivan"
+                                        href="https://www.instagram.com/la_vie_de_sullivan"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
@@ -121,6 +121,18 @@ export default function Contact() {
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <Instagram className="text-highlight" size={20} />
+                                    </motion.a>
+                                </Magnetic>
+                                <Magnetic strength={0.2}>
+                                    <motion.a
+                                        href="https://wa.me/+261341060802"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        whileHover={{ scale: 1.15, rotate: -5 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <MessageCircle className="text-highlight" size={20} />
                                     </motion.a>
                                 </Magnetic>
                             </div>
