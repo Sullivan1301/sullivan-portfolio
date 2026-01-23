@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Mail, Heart } from "lucide-react";
+import { Linkedin, Instagram, Mail, MessageCircle, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,7 +23,7 @@ export default function Footer() {
                             <span className="font-bold text-foreground">Sullivan</span>
                         </Link>
                         <p className="text-sm text-muted-foreground mt-2">
-                            Digital Strategist & Web Developer
+                            Stratégie Digital & Développement Web
                         </p>
                     </div>
 
@@ -45,13 +45,22 @@ export default function Footer() {
                             <Linkedin size={18} />
                         </a>
                         <a
-                            href="https://www.instagram.com/jorosullivan"
+                            href="https://www.instagram.com/la_vie_de_sullivan"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
                             aria-label="Instagram"
                         >
                             <Instagram size={18} />
+                        </a>
+                        <a
+                            href="https://wa.me/+261341060802"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
+                            aria-label="Instagram"
+                        >
+                            <MessageCircle size={18} />
                         </a>
                     </div>
                 </div>
