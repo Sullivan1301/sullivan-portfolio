@@ -56,16 +56,16 @@ export default function Navbar() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8 font-medium text-foreground">
-          <Link href="/" className="hover:text-highlight transition">Accueil</Link>
-          <Link href="/#about" onClick={(e) => scrollToSection(e, "/#about")} className="hover:text-highlight transition">À propos</Link>
-          <Link href="/#skills" onClick={(e) => scrollToSection(e, "/#skills")} className="hover:text-highlight transition">Compétences</Link>
-          <Link href="/#projects" onClick={(e) => scrollToSection(e, "/#projects")} className="hover:text-highlight transition">Projets</Link>
-          <Link href="/#contact" onClick={(e) => scrollToSection(e, "/#contact")} className="hover:text-highlight transition">Contact</Link>
-          
+          <Link href="/" className="hover:text-highlight focus:text-highlight focus:outline-none transition">Accueil</Link>
+          <Link href="/#about" onClick={(e) => scrollToSection(e, "/#about")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">À propos</Link>
+          <Link href="/#skills" onClick={(e) => scrollToSection(e, "/#skills")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Compétences</Link>
+          <Link href="/#projects" onClick={(e) => scrollToSection(e, "/#projects")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Projets</Link>
+          <Link href="/#contact" onClick={(e) => scrollToSection(e, "/#contact")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Contact</Link>
+
           {/* Theme toggle button */}
           <button
             onClick={toggleTheme}
-            className="hover:text-highlight transition"
+            className="hover:text-highlight focus:text-highlight focus:outline-none transition"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -76,14 +76,14 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="text-foreground hover:text-highlight transition"
+            className="text-foreground hover:text-highlight focus:text-highlight focus:outline-none transition"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
           </button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-foreground"
+            className="text-foreground hover:text-highlight focus:text-highlight focus:outline-none transition"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -95,11 +95,11 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md shadow-lg">
           <div className="flex flex-col px-6 py-6 gap-4 font-medium text-foreground">
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>Accueil</Link>
-            <Link href="/#about" onClick={(e) => scrollToSection(e, "/#about")}>À propos</Link>
-            <Link href="/#skills" onClick={(e) => scrollToSection(e, "/#skills")}>Compétences</Link>
-            <Link href="/#projects" onClick={(e) => scrollToSection(e, "/#projects")}>Projets</Link>
-            <Link href="/#contact" onClick={(e) => scrollToSection(e, "/#contact")}>Contact</Link>
+            <Link href="/" onClick={() => setIsMenuOpen(false)} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Accueil</Link>
+            <Link href="/#about" onClick={(e) => scrollToSection(e, "/#about")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">À propos</Link>
+            <Link href="/#skills" onClick={(e) => scrollToSection(e, "/#skills")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Compétences</Link>
+            <Link href="/#projects" onClick={(e) => scrollToSection(e, "/#projects")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Projets</Link>
+            <Link href="/#contact" onClick={(e) => scrollToSection(e, "/#contact")} className="hover:text-highlight focus:text-highlight focus:outline-none transition">Contact</Link>
           </div>
         </div>
       )}

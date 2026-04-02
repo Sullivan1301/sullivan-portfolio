@@ -1,27 +1,10 @@
 "use client";
 
-import { ArrowDown, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Magnetic from "@/components/ui/Magnetic";
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-    },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
-    },
-};
 
 function FloatingCube({ className, delay = 0 }: { className?: string; delay?: number }) {
     return (
@@ -29,24 +12,24 @@ function FloatingCube({ className, delay = 0 }: { className?: string; delay?: nu
             className={`absolute pointer-events-none ${className}`}
             initial={{ rotateX: 0, rotateY: 0 }}
             animate={{
-                rotateX: [0, 360],
-                rotateY: [0, 360],
-                y: [-20, 20, -20],
+                rotateX: [0, 180],
+                rotateY: [0, 180],
+                y: [-10, 10, -10],
             }}
             transition={{
-                rotateX: { duration: 20, repeat: Infinity, ease: "linear", delay },
-                rotateY: { duration: 15, repeat: Infinity, ease: "linear", delay },
-                y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay },
+                rotateX: { duration: 12, repeat: Infinity, ease: "linear", delay },
+                rotateY: { duration: 8, repeat: Infinity, ease: "linear", delay },
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay },
             }}
             style={{ transformStyle: "preserve-3d", perspective: 1000 }}
         >
-            <div className="w-16 h-16 relative" style={{ transformStyle: "preserve-3d" }}>
-                <div className="absolute inset-0 bg-highlight/20 border border-highlight/30 backdrop-blur-sm" style={{ transform: "translateZ(32px)" }} />
-                <div className="absolute inset-0 bg-highlight/10 border border-highlight/20 backdrop-blur-sm" style={{ transform: "translateZ(-32px)" }} />
-                <div className="absolute inset-0 bg-highlight/15 border border-highlight/25 backdrop-blur-sm" style={{ transform: "rotateY(90deg) translateZ(32px)" }} />
-                <div className="absolute inset-0 bg-highlight/15 border border-highlight/25 backdrop-blur-sm" style={{ transform: "rotateY(-90deg) translateZ(32px)" }} />
-                <div className="absolute inset-0 bg-highlight/10 border border-highlight/20 backdrop-blur-sm" style={{ transform: "rotateX(90deg) translateZ(32px)" }} />
-                <div className="absolute inset-0 bg-highlight/10 border border-highlight/20 backdrop-blur-sm" style={{ transform: "rotateX(-90deg) translateZ(32px)" }} />
+            <div className="w-12 h-12 relative" style={{ transformStyle: "preserve-3d" }}>
+                <div className="absolute inset-0 bg-highlight/15 border border-highlight/20 backdrop-blur-sm" style={{ transform: "translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-highlight/10 border border-highlight/15 backdrop-blur-sm" style={{ transform: "translateZ(-24px)" }} />
+                <div className="absolute inset-0 bg-highlight/12 border border-highlight/18 backdrop-blur-sm" style={{ transform: "rotateY(90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-highlight/12 border border-highlight/18 backdrop-blur-sm" style={{ transform: "rotateY(-90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-highlight/08 border border-highlight/12 backdrop-blur-sm" style={{ transform: "rotateX(90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-highlight/08 border border-highlight/12 backdrop-blur-sm" style={{ transform: "rotateX(-90deg) translateZ(24px)" }} />
             </div>
         </motion.div>
     );
@@ -55,6 +38,7 @@ function FloatingCube({ className, delay = 0 }: { className?: string; delay?: nu
 function Tilt3DCard({ children }: { children: React.ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
+    const throttleRef = useRef<number>();
 
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -65,10 +49,15 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
     useEffect(() => setMounted(true), []);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        x.set((e.clientX - (rect.left + rect.width / 2)) / rect.width);
-        y.set((e.clientY - (rect.top + rect.height / 2)) / rect.height);
+        if (throttleRef.current) return;
+
+        throttleRef.current = requestAnimationFrame(() => {
+            if (!ref.current) return;
+            const rect = ref.current.getBoundingClientRect();
+            x.set((e.clientX - (rect.left + rect.width / 2)) / rect.width);
+            y.set((e.clientY - (rect.top + rect.height / 2)) / rect.height);
+            throttleRef.current = undefined;
+        });
     };
 
     const handleMouseLeave = () => {
@@ -84,7 +73,7 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1200 }}
-            className="w-full max-w-4xl mx-auto text-center relative z-50 pointer-events-auto"
+            className="w-full max-w-4xl mx-auto text-center relative z-50 pointer-events-auto will-change-transform"
         >
             {children}
         </motion.div>
@@ -179,11 +168,11 @@ export default function Hero() {
                             </h1>
 
                             <p className="text-lg sm:text-xl text-muted-foreground mb-4 font-medium max-w-lg mx-auto leading-tight">
-                                Jeune diplômé en informatique • Fondateur de <span className="text-highlight">Tech Bloom Agency</span>
+                                Parcours axé sur la mise en œuvre digitale et la gestion de petites équipes techniques
                             </p>
-
+                            
                             <p className="text-sm sm:text-base text-muted-foreground/70 max-w-xl mx-auto mb-8 leading-relaxed">
-                                J&apos;accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats, une communication claire et des solutions digitales modernes.
+                                Avec une expérience pratique en JavaScript/TypeScript et Next.js, je propose d&apos;accélérer vos livraisons en assurant un développement front-end soigné, des déploiements fiables et une intégration continue adaptée à votre roadmap.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

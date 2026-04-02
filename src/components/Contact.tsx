@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle, MessageCircle, Github, Facebook } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
@@ -119,14 +119,26 @@ export default function Contact() {
                             whileHover={{ scale: 1.01 }}
                         >
                             <h3 className="text-xl font-semibold mb-6">Réseaux sociaux</h3>
-                            <div className="flex gap-4">
+                            <div className="flex flex-wrap gap-4">
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://www.linkedin.com/in/Sullivan%20Rakotoniaina"
+                                        href="https://github.com/Sullivan1301/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
                                         whileHover={{ scale: 1.15, rotate: 5 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <Github className="text-highlight" size={20} />
+                                    </motion.a>
+                                </Magnetic>
+                                <Magnetic strength={0.2}>
+                                    <motion.a
+                                        href="https://www.linkedin.com/in/sullivan-rakotoniaina/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        whileHover={{ scale: 1.15, rotate: -5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
                                         <Linkedin className="text-highlight" size={20} />
@@ -134,14 +146,26 @@ export default function Contact() {
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://www.instagram.com/la_vie_de_sullivan"
+                                        href="https://www.instagram.com/la_vie_de_sullivan/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        whileHover={{ scale: 1.15, rotate: 5 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <Instagram className="text-highlight" size={20} />
+                                    </motion.a>
+                                </Magnetic>
+                                <Magnetic strength={0.2}>
+                                    <motion.a
+                                        href="https://web.facebook.com/sullivan.jororakotoniaina"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
                                         whileHover={{ scale: 1.15, rotate: -5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <Instagram className="text-highlight" size={20} />
+                                        <Facebook className="text-highlight" size={20} />
                                     </motion.a>
                                 </Magnetic>
                                 <Magnetic strength={0.2}>

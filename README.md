@@ -56,7 +56,7 @@ Pour lancer le projet localement :
 
 1.  **Cloner le dépôt** :
     ```bash
-    git clone https://github.com/votre-utilisateur/portfolio_sullivan.git
+    git clone https://github.com/Sullivan1301/sullivan-portfolio.git
     cd portfolio_sullivan
     ```
 
@@ -142,8 +142,10 @@ Services de photographie avec iPhone 15 Pro :
 
 ## 📫 Me contacter
 
-- **LinkedIn** : [Joro Sullivan Rakotoniaina](https://www.linkedin.com/in/joro-sullivan-rakotoniaina)
-- **Instagram** : [@jorosullivan](https://www.instagram.com/jorosullivan)
+- **LinkedIn** : [Joro Sullivan Rakotoniaina](https://www.linkedin.com/in/sullivan-rakotoniaina/)
+- **GitHub** : [Sullivan1301](https://github.com/Sullivan1301/)
+- **Facebook** : [Sullivan Joro Rakotoniaina](https://web.facebook.com/sullivan.jororakotoniaina)
+- **Instagram** : [@la_vie_de_sullivan](https://www.instagram.com/la_vie_de_sullivan/)
 - **Email** : [jorosullivan13@gmail.com](mailto:jorosullivan13@gmail.com)
 - **WhatsApp** : [+261 34 10 608 02](https://wa.me/261341060802)
 

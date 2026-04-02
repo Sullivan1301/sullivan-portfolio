@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Mail, MessageCircle, Heart } from "lucide-react";
+import { Linkedin, Instagram, Mail, MessageCircle, Heart, Github, Facebook } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,7 +27,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-wrap justify-center">
                         <a
                             href="mailto:jorosullivan13@gmail.com"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
@@ -36,7 +36,16 @@ export default function Footer() {
                             <Mail size={18} />
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/joro-sullivan-rakotoniaina"
+                            href="https://github.com/Sullivan1301/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
+                            aria-label="GitHub"
+                        >
+                            <Github size={18} />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/sullivan-rakotoniaina/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
@@ -45,7 +54,7 @@ export default function Footer() {
                             <Linkedin size={18} />
                         </a>
                         <a
-                            href="https://www.instagram.com/la_vie_de_sullivan"
+                            href="https://www.instagram.com/la_vie_de_sullivan/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
@@ -54,11 +63,20 @@ export default function Footer() {
                             <Instagram size={18} />
                         </a>
                         <a
+                            href="https://web.facebook.com/sullivan.jororakotoniaina"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
+                            aria-label="Facebook"
+                        >
+                            <Facebook size={18} />
+                        </a>
+                        <a
                             href="https://wa.me/+261341060802"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="Instagram"
+                            aria-label="WhatsApp"
                         >
                             <MessageCircle size={18} />
                         </a>

@@ -11,7 +11,7 @@ const educations = [
         degree: "Licence en Informatique",
         school: "Haute École d'Informatique",
         location: "Antananarivo",
-        period: "octobre 2022 - novembre 2025",
+        period: "octobre 2022 - juillet 2026",
         description: "Formation complète en informatique couvrant les fondamentaux de la programmation, les bases de données, les systèmes d'information, l'architecture logicielle et les technologies web modernes."
     },
     {

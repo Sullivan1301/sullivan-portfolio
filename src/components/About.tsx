@@ -9,17 +9,17 @@ const cards = [
     {
         icon: User,
         title: "Profil",
-        description: "Jeune diplômé en informatique avec une solide expérience dans la gestion de projets digitaux. Polyvalent, autonome et orienté résultats.",
+        description: "Entrepreneur digital et développeur web basé à Antananarivo, Madagascar. Fondateur de Tech Bloom Agency et étudiant en informatique, je me spécialise dans la création de solutions digitales, le marketing digital et la gestion de projets web.",
     },
     {
         icon: Target,
         title: "Approche",
-        description: "Je combine expertise technique et vision stratégique pour délivrer des solutions digitales performantes et adaptées aux objectifs de chaque client.",
+        description: "J'accompagne les entreprises, PME et entrepreneurs dans leur transformation numérique avec une approche orientée résultats concrets et mesurables.",
     },
     {
         icon: Globe,
         title: "Disponibilité",
-        description: "Ouvert aux opportunités en télétravail ou présentiel. Prêt à collaborer avec des équipes nationales et internationales sur des projets ambitieux.",
+        description: "Disponible en télétravail ou en hybride. Basé à Antananarivo, Madagascar.",
     },
 ];
 

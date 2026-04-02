@@ -8,24 +8,24 @@ import Magnetic from "@/components/ui/Magnetic";
 const activities = [
     {
         icon: Trophy,
-        title: "Volley-ball",
-        organization: "MAMI VB Toamasina",
-        period: "2021–2022",
-        description: "Participation active au club de volley-ball de Toamasina, développement de compétences en travail d'équipe et persévérance."
+        title: "Ambassadeur & Département Communication et Partenariat",
+        organization: "ONG Kariera Madagascar",
+        period: "février 2026",
+        description: "Représentation de l'organisation et gestion de la communication, développement de partenariats stratégiques."
     },
     {
         icon: Users,
-        title: "Scoutisme",
-        organization: "Mouvement scout",
-        period: "2008–2014",
-        description: "Engagement de plusieurs années dans le mouvement scout, développement de valeurs humaines, de leadership et d'autonomie."
+        title: "Responsable Logistique",
+        organization: "Bureau des Étudiants - HEI",
+        period: "2024–2026",
+        description: "Organisation et coordination des événements étudiants, gestion des ressources logistiques et planification des activités."
     },
     {
         icon: Heart,
-        title: "Engagements divers",
-        organization: "Diverses organisations",
-        period: "Depuis 2008",
-        description: "Implication régulière dans des activités communautaires et environnementales, démontrant un engagement citoyen."
+        title: "Vice-Président",
+        organization: "Bureau des Étudiants - HEI",
+        period: "2023–2024",
+        description: "Support à la présidence, coordination des équipes, participation à la prise de décisions stratégiques pour les étudiants."
     }
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, TrendingUp, Brain } from "lucide-react";
+import { Code, TrendingUp, Brain, Globe } from "lucide-react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import TextReveal from "@/components/ui/TextReveal";
@@ -10,17 +10,22 @@ const skillCategories = [
     {
         icon: Code,
         title: "Tech",
-        skills: ["JavaScript", "TypeScript", "React", "Next.js", "React Admin", "Java", "Git / GitHub"],
+        skills: ["JavaScript/TypeScript", "Next.js", "Vercel", "Git/GitHub", "Intelligence Artificielle"],
     },
     {
         icon: TrendingUp,
-        title: "Digital & Marketing",
-        skills: ["Community Management", "Stratégie de contenu", "Marketing digital", "Branding", "Gestion de projet digital"],
+        title: "Outils de Travail",
+        skills: ["Meta Business Suite", "TikTok Studio", "Figma", "Canva", "CapCut"],
     },
     {
         icon: Brain,
-        title: "Autres",
-        skills: ["IA & Prompting", "Product Management", "Gestion d'équipe", "Communication", "Problem Solving"],
+        title: "Atouts",
+        skills: ["Motivé", "À l'écoute", "Responsable", "Adaptabilité", "Polyvalent"],
+    },
+    {
+        icon: Globe,
+        title: "Langues",
+        skills: ["Français (courant)", "Anglais (intermédiaire)", "Malgache (maternelle)"],
     },
 ];
 
@@ -93,7 +98,7 @@ export default function Skills() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {skillCategories.map((category, index) => (
                         <Magnetic key={index} strength={0.05}>
                             <Tilt3DSkillCard index={index}>

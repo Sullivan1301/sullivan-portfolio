@@ -5,33 +5,39 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-    title: "Joro Sullivan Rakotoniaina",
-    description: "Jeune diplômé en informatique, fondateur de Tech Bloom Agency, spécialisé en stratégie digitale, community management, marketing digital et développement web.",
-    keywords: ["Digital Strategist", "Web Developer", "React", "Next.js", "Marketing Digital", "Community Management", "Madagascar"],
-    authors: [{ name: "Joro Sullivan Rakotoniaina" }],
-    icons: {
-        icon: "/sullivan.jpeg",
+    metadataBase: new URL("https://sullivan-portfolio.vercel.app"),
+    title: {
+        default: "Joro Sullivan Rakotoniaina | Développeur & Entrepreneur Digital",
+        template: "%s | Sullivan Joro"
     },
-    viewport: "width=device-width, initial-scale=1",
+    description: "Portfolio de Sullivan Joro - Développeur web Next.js, entrepreneur digital et community manager à Madagascar. Création de sites web, stratégie digitale et photographie mobile.",
+    keywords: "développeur web, entrepreneur digital, community manager, Next.js, Madagascar, Toamasina, portfolio, Tech Bloom Agency",
+    authors: [{ name: "Joro Sullivan Rakotoniaina" }],
+    creator: "Sullivan Joro",
     openGraph: {
-        title: "Joro Sullivan Rakotoniaina",
-        description: "J'accompagne les marques et projets dans leur croissance en ligne à travers des stratégies orientées résultats.",
         type: "website",
         locale: "fr_FR",
-        url: "https://sullivan-portfolio.vercel.app/",
-        siteName: "Joro Sullivan Rakotoniaina Portfolio",
+        url: "https://sullivan-portfolio.vercel.app",
+        title: "Joro Sullivan Rakotoniaina | Portfolio",
+        description: "Développeur web & entrepreneur digital à Madagascar. Découvrez mes projets et compétences.",
+        siteName: "Sullivan Portfolio",
+        images: [{
+            url: "/og-image.png", // À créer plus tard
+            width: 1200,
+            height: 630,
+            alt: "Sullivan Joro - Portfolio"
+        }]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Joro Sullivan Rakotoniaina | Portfolio",
+        description: "Développeur web & entrepreneur digital à Madagascar",
+        images: ["/og-image.png"],
     },
     robots: {
         index: true,
         follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
-    },
+    }
 };
 
 import SmoothScroll from "@/components/ui/SmoothScroll";

@@ -213,3 +213,21 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #8B0018;
 }
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+}
