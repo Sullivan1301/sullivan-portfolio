@@ -90,7 +90,7 @@ export function OrganizationJsonLd() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+261-34-106-080",
+      "telephone": "+261341060802",
       "contactType": "customer service",
       "availableLanguage": ["Français", "Anglais", "Malgache"]
     },

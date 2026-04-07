@@ -5,6 +5,11 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: [
+        '/api/',
+        '/_next/',
+        '/admin/',
+      ],
     },
     sitemap: 'https://sullivan-portfolio.vercel.app/sitemap.xml',
   }

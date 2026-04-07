@@ -144,33 +144,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning className={`${bitter.variable} ${firaCode.variable}`}>
+      <head>
+        {/* DNS Prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+        {/* Preconnect for critical resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+
+        {/* JSON-LD Structured Data */}
+        <PersonJsonLd />
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <BreadcrumbListJsonLd />
+        <LocalBusinessJsonLd />
+      </head>
       <body className={`${bitter.className} antialiased`}>
         {/* Skip link for keyboard navigation */}
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
         </a>
 
-        <main id="main-content">
-          {/* JSON-LD Structured Data */}
-          <PersonJsonLd />
-          <OrganizationJsonLd />
-          <WebSiteJsonLd />
-          <BreadcrumbListJsonLd />
-          <LocalBusinessJsonLd />
-          
-          <Script
-            id="orchids-browser-logs"
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
-            strategy="afterInteractive"
-            data-orchids-project-id="044d08b0-bb2e-4cce-8df0-9942a10a7310"
-          />
-          <ThemeProvider>
-            <SmoothScroll>
-              {children}
-              <Analytics />
-            </SmoothScroll>
-          </ThemeProvider>
-        </main>
+        <Script
+          id="orchids-browser-logs"
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
+          strategy="afterInteractive"
+          data-orchids-project-id="044d08b0-bb2e-4cce-8df0-9942a10a7310"
+        />
+        <ThemeProvider>
+          <SmoothScroll>
+            {children}
+            <Analytics />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );
