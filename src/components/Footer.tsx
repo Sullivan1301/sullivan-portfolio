@@ -14,24 +14,26 @@ export default function Footer() {
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-highlight">
                                 <Image
                                     src="/sullivan.jpeg"
-                                    alt="Sullivan Joro"
+                                    alt="Photo de profil Sullivan Joro"
                                     width={40}
                                     height={40}
                                     className="object-cover w-full h-full"
                                 />
                             </div>
                             <span className="font-bold text-foreground">Sullivan</span>
+                            <span className="sr-only">Joro Rakotoniaina - Développeur Web</span>
                         </Link>
                         <p className="text-sm text-muted-foreground mt-2">
                             Stratégie Digital & Développement Web
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-4 flex-wrap justify-center">
+                    <nav className="flex items-center gap-4 flex-wrap justify-center" aria-label="Liens vers les réseaux sociaux">
                         <a
-                            href="mailto:jorosullivan13@gmail.com"
+                            href="mailto:sullivanjoro3@gmail.com"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="Email"
+                            aria-label="Contacter par email (sullivanjoro3@gmail.com)"
+                            title="Email: sullivanjoro3@gmail.com"
                         >
                             <Mail size={18} />
                         </a>
@@ -40,7 +42,8 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="GitHub"
+                            aria-label="Voir le profil GitHub de Sullivan Joro"
+                            title="GitHub"
                         >
                             <Github size={18} />
                         </a>
@@ -49,7 +52,8 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="LinkedIn"
+                            aria-label="Voir le profil LinkedIn de Sullivan Joro"
+                            title="LinkedIn"
                         >
                             <Linkedin size={18} />
                         </a>
@@ -58,7 +62,8 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="Instagram"
+                            aria-label="Suivre sur Instagram"
+                            title="Instagram"
                         >
                             <Instagram size={18} />
                         </a>
@@ -67,7 +72,8 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="Facebook"
+                            aria-label="Voir le profil Facebook de Sullivan Joro"
+                            title="Facebook"
                         >
                             <Facebook size={18} />
                         </a>
@@ -76,11 +82,12 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center hover:bg-highlight/10 hover:text-highlight transition-colors"
-                            aria-label="WhatsApp"
+                            aria-label="Contacter via WhatsApp"
+                            title="WhatsApp"
                         >
                             <MessageCircle size={18} />
                         </a>
-                    </div>
+                    </nav>
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-border/50 text-center">

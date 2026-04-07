@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -19,54 +17,56 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
     return (
-        <main className="relative">
+        <>
             <ScrollProgress />
             <ParticlesBackground />
             <Navbar />
 
-            <Hero />
+            <main className="relative" id="main-content" tabIndex={-1}>
+                <Hero />
 
-            <SectionReveal>
-                <About />
-            </SectionReveal>
+                <SectionReveal>
+                    <About />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Skills />
-            </SectionReveal>
+                <SectionReveal>
+                    <Skills />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Experience />
-            </SectionReveal>
+                <SectionReveal>
+                    <Experience />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Education />
-            </SectionReveal>
+                <SectionReveal>
+                    <Education />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Projects />
-            </SectionReveal>
+                <SectionReveal>
+                    <Projects />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Activities />
-            </SectionReveal>
+                <SectionReveal>
+                    <Activities />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Vision />
-            </SectionReveal>
+                <SectionReveal>
+                    <Vision />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Passion />
-            </SectionReveal>
+                <SectionReveal>
+                    <Passion />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Testimonials />
-            </SectionReveal>
+                <SectionReveal>
+                    <Testimonials />
+                </SectionReveal>
 
-            <SectionReveal>
-                <Contact />
-            </SectionReveal>
+                <SectionReveal>
+                    <Contact />
+                </SectionReveal>
+            </main>
 
             <Footer />
-        </main>
+        </>
     );
 }

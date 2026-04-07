@@ -139,12 +139,12 @@ export default function Hero() {
                                 <div className="relative w-32 h-32 sm:w-32 sm:h-32">
                                     <div className="absolute inset-0 rounded-full bg-highlight/20 animate-pulse blur-xl"></div>
                                     <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-highlight/40 shadow-xl bg-muted">
-                                        <Image 
-                                            src="/sullivan.jpeg" 
-                                            alt="Joro Sullivan Rakotoniaina" 
-                                            fill 
-                                            className="object-cover w-full h-full" 
-                                            priority 
+                                        <Image
+                                            src="/sullivan.jpeg"
+                                            alt="Portrait professionnel de Sullivan Joro Rakotoniaina, développeur web Next.js et entrepreneur digital basé à Madagascar"
+                                            fill
+                                            className="object-cover w-full h-full"
+                                            priority
                                         />
                                     </div>
                                 </div>

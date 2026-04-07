@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Note: Fonts are now loaded via next/font in layout.tsx for zero-CLS optimization */
+/* The --font-sans and --font-mono CSS variables are defined there */
 
 :root {
   --radius: 0.75rem;
@@ -41,8 +42,6 @@
   --sidebar-accent-foreground: #1a1a2e;
   --sidebar-border: rgba(26, 26, 46, 0.1);
   --sidebar-ring: #4a6cf7;
-  --font-sans: 'Bitter', serif;
-  --font-mono: 'Fira Code', monospace;
 }
 
 .dark {
@@ -89,11 +88,26 @@
     border-color: var(--border);
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     overflow-x: hidden;
   }
   html {
     scroll-behavior: smooth;
+  }
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--highlight);
+    color: white;
+    padding: 8px 16px;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+  .skip-link:focus {
+    top: 0;
   }
 }
 
@@ -104,14 +118,14 @@
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
-  
+
   .glass-dark {
     background: rgba(10, 10, 15, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(248, 249, 250, 0.08);
   }
-  
+
   .glass-card {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(16px);
@@ -120,7 +134,7 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
   }
-  
+
   .dark .glass-card {
     background: rgba(26, 26, 46, 0.5);
     border: 1px solid rgba(248, 249, 250, 0.08);
@@ -134,7 +148,7 @@
     border: 1px solid rgba(26, 26, 46, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   }
-  
+
   .gradient-text {
     background: linear-gradient(135deg, #e63946 0%, #ff6b6b 50%, #e63946 100%);
     -webkit-background-clip: text;
@@ -142,31 +156,31 @@
     background-clip: text;
     background-size: 200% auto;
   }
-  
+
   .glow {
     box-shadow: 0 0 20px rgba(74, 108, 247, 0.3), 0 0 40px rgba(74, 108, 247, 0.1);
   }
-  
+
   .glow-text {
     text-shadow: 0 0 20px rgba(74, 108, 247, 0.5);
   }
-  
+
   .glow-red {
     box-shadow: 0 0 30px rgba(230, 57, 70, 0.5), 0 0 60px rgba(230, 57, 70, 0.2);
   }
-  
+
   .gradient-bg {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
   }
-  
+
   .dark .gradient-bg {
     background: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #1a1a2e 100%);
   }
-  
+
   .noise {
     position: relative;
   }
-  
+
   .noise::before {
     content: '';
     position: absolute;
@@ -176,11 +190,11 @@
     pointer-events: none;
     z-index: -2;
   }
-  
+
   .section-padding {
     @apply py-20 md:py-28 lg:py-32;
   }
-  
+
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
