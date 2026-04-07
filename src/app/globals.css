@@ -6,6 +6,8 @@
 /* The --font-sans and --font-mono CSS variables are defined there */
 
 :root {
+  --font-sans: 'Bitter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, monospace;
   --radius: 0.75rem;
   --background: #f8f9fa;
   --foreground: #1a1a2e;
