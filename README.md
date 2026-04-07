@@ -1,52 +1,94 @@
 # 💼 Portfolio de Sullivan Joro
 
 Bienvenue dans le dépôt officiel de mon portfolio personnel.
-Ce site présente mon parcours en tant qu'**entrepreneur digital**, **community manager**, **développeur web** et **photographe mobile** basé à Toamasina, Madagascar.
+Ce site présente mon parcours en tant que **développeur web Next.js** et **entrepreneur digital** basé à Antananarivo, Madagascar.
+
+🌐 **Voir le portfolio** : [https://sullivan-portfolio.vercel.app](https://sullivan-portfolio.vercel.app)
 
 ---
 
 ## 👤 À propos de moi
 
-Je m'appelle **Sullivan Joro**, né le 13 janvier 2003, actuellement en **Licence 3 Informatique** à la Haute École d'Informatique (HEI) de Madagascar.
+Je m'appelle **Joro Sullivan Rakotoniaina**, développeur web et entrepreneur digital, actuellement basé à Antananarivo, Madagascar.
 
-Entrepreneur digital passionné, je suis le fondateur de **Tech Bloom Agency** et co-fondateur de **RunRobe**. Je gère également la page **L'homme Imparfait** et développe ma marque personnelle en photographie mobile.
+Fondateur de **Tech Bloom Agency**, je suis spécialisé dans la création de sites web modernes avec Next.js/TypeScript, la stratégie digitale et l'accompagnement numérique des PME et entrepreneurs.
 
-Ma vision : construire quelque chose de durable, trouver mon ikigai et créer une vie qui a du sens en alliant technologie et compréhension humaine.
+Ma vision : construire des solutions digitales performantes et durables qui créent de la valeur réelle pour les entreprises et leurs utilisateurs.
 
 ---
 
 ## 🎯 Objectif du site
 
-Ce site me sert à :
-- Présenter mes projets et réalisations
-- Mettre en valeur mes compétences techniques et créatives
-- Exposer ma galerie de photographies mobiles
-- Proposer un CV téléchargeable en un clic
-- Offrir un accès rapide à mes réseaux et contacts professionnels
+Ce portfolio me sert à :
+- Présenter mes projets et réalisations en développement web
+- Mettre en valeur mes compétences techniques (Next.js, TypeScript, React)
+- Démontrer mon expertise en stratégie digitale et marketing
+- Offrir un moyen de contact rapide pour collaborations et missions freelance
+- Proposer un accès direct à mes réseaux professionnels
 
 ---
 
 ## 🚀 Fonctionnalités
 
-- Design moderne et responsive
-- Navigation fluide entre les pages
-- Galerie de photographies interactive
-- Formulaire de contact intégré avec WhatsApp
-- Animations fluides avec Framer Motion
-- Thème sombre élégant
+### 🎨 Design & UX
+- Design moderne avec effet glassmorphism
+- Mode clair/sombre avec transition fluide
+- Animations avancées avec Framer Motion (tilt 3D, effets magnétiques, révélé au scroll)
+- Smooth scroll avec Lenis
+- 100% responsive (mobile, tablette, desktop)
+- Navigation intuitive avec ancres
+
+### ⚡ Performance
+- Optimisation des polices avec `next/font` (zero CLS)
+- Images optimisées avec `next/image`
+- Rendu statique (SSG) pour des temps de chargement minimaux
+- DNS prefetch et preconnect pour les ressources externes
+- Animations GPU-accelerated
+
+### 🔍 SEO & Accessibilité
+- Meta tags optimisés (Open Graph, Twitter Cards)
+- Données structurées JSON-LD (Person, Organization, WebSite, LocalBusiness)
+- Sitemap dynamique (`/sitemap.xml`)
+- Robots.txt dynamique avec règles personnalisées
+- URLs canoniques configurées
+- Skip link pour navigation au clavier
+- Attributs ARIA sur les éléments interactifs
+- Structure sémantique HTML5
+
+### 🛡️ Technique
+- Formulaire de contact avec intégration mailto
+- Liens sociaux avec WhatsApp, LinkedIn, GitHub, Instagram, Facebook
+- Analytics Vercel intégré
+- Skip link pour l'accessibilité clavier
 
 ---
 
 ## 🛠️ Technologies utilisées
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
-- **Langage**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion 12](https://www.framer.com/motion/), [AOS](https://michalsnik.github.io/aos/) & [Lenis](https://lenis.darkroom.engineering/) (Smooth Scroll)
-- **Composants UI**: [Radix UI](https://www.radix-ui.com/), [Lucide React](https://lucide.dev/) & [Shadcn UI](https://ui.shadcn.com/)
-- **Gestion d'état & Hooks**: React 18
-- **Polices**: Bitter (Serif) & Fira Code (Mono)
-- **Déploiement**: [Vercel](https://vercel.com/)
+### Core
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router, SSG)
+- **Langage**: [TypeScript](https://www.typescriptlang.org/) strict
+- **Styling**: [Tailwind CSS 3](https://tailwindcss.com/) avec variables CSS personnalisées
+- **Runtime**: React 18
+
+### UI & Animations
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) (effets 3D, magnétiques, scroll reveal)
+- **Smooth Scroll**: [Lenis](https://lenis.darkroom.engineering/)
+- **Composants UI**: [Radix UI](https://www.radix-ui.com/) & [Shadcn UI](https://ui.shadcn.com/)
+- **Icônes**: [Lucide React](https://lucide.dev/)
+
+### Polices
+- **Principal**: [Bitter](https://fonts.google.com/specimen/Bitter) (Google Fonts optimisé via next/font)
+- **Code**: [Fira Code](https://fonts.google.com/specimen/Fira+Code) (Google Fonts optimisé via next/font)
+
+### SEO & Analytics
+- **SEO**: Meta tags dynamiques, JSON-LD, sitemap/robots.txt automatisés
+- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+- **Monitoring**: Orchids Browser Logs
+
+### Déploiement
+- **Plateforme**: [Vercel](https://vercel.com/) (déploiement continu)
+- **Build**: Next.js build optimisé avec cache
 
 ---
 
@@ -75,86 +117,106 @@ Pour lancer le projet localement :
 
 ## 🧠 Compétences
 
-### Développement Web
-- JavaScript, React, Java, Python (bases)
-- HTML/CSS, TypeScript
-- Hébergement, déploiement, gestion de domaines
-- Mails professionnels (Zoho)
+### 💻 Développement Web
+- **Frontend**: Next.js 15, React 18, TypeScript, JavaScript
+- **Styling**: Tailwind CSS, CSS Variables, Glassmorphism
+- **Outils**: Git, Vercel, npm
+- **Bonnes pratiques**: SEO, accessibilité, performance, responsive design
 
-### Marketing Digital & Community Management
+### 📈 Stratégie Digitale & Marketing
 - Stratégie de contenu Meta (Facebook/Instagram)
 - Storytelling et copywriting
 - Création graphique (Canva, Meta Business Suite)
 - Branding et identité visuelle
-
-### Photographie Mobile
-- iPhone 15 Pro
-- Portraits naturels et spontanés
-- Lifestyle et contenu pour réseaux sociaux
-- Approche humaine et accessible
-
-### Gestion de Projet
-- Jira, Notion, Trello
-- Méthode agile
-- Gestion d'équipe
-
-## 💼 Mes Projets
-
-### Tech Bloom Agency (TBA)
-Agence digitale proposant :
-- Développement web (desktop & mobile)
-- Branding & identité visuelle
-- Marketing digital
 - Community management
-- Photographie & création de contenu
 
-**Vision** : Faire fleurir les projets digitaux en utilisant l'IA intelligemment.
+### 🛠️ Gestion de Projet
+- **Outils**: Jira, Notion, Trello
+- **Méthodologie**: Agile
+- **Leadership**: Gestion d'équipe technique
 
-### RunRobe
-Boutique physique et en ligne (Toamasina)
-- Robes de mariée
-- Robes de soirée
-- Robes classiques
-- Sneakers chics
+## 💼 Projets Principaux
 
-**Slogan** : "Where elegance meets performance"
-**Localisation** : Face BNI Bazary Be, route Leader Price
+### Tech Bloom Agency
+**Agence digitale spécialisée dans l'accompagnement numérique**
 
-### L'homme Imparfait
-Page Facebook dédiée au :
-- Bien-être
-- Sport et discipline
-- Développement personnel
-- Coaching
+Services proposés :
+- 🌐 Développement web (sites vitrines, applications web)
+- 🎨 Branding & identité visuelle
+- 📱 Marketing digital & stratégie de contenu
+- 💬 Community management
+- 📸 Création de contenu visuel
 
-**Rôle** : Community Manager, Créateur de contenu et Ambassadeur de la marque
+**Vision** : Faire fleurir les projets digitaux en utilisant l'IA intelligemment pour maximiser l'impact business.
 
-### Photographie Mobile
-Services de photographie avec iPhone 15 Pro :
-- Portraits naturels
-- Lifestyle
-- Événements privés
-- Contenu pour réseaux sociaux
+**Site web** : [https://techbloom.agency](https://techbloom.agency)
 
-**Tarification** : Basée sur la satisfaction client
+### Portfolio Personnel
+**Site vitrine démontrant l'expertise technique**
+
+- Développement Next.js 15 avec App Router
+- Optimisations SEO avancées (JSON-LD, meta tags, sitemap dynamique)
+- Animations avancées avec Framer Motion
+- Mode clair/sombre avec persistance
+- 100% responsive et accessible
+
+**URL** : [https://sullivan-portfolio.vercel.app](https://sullivan-portfolio.vercel.app)
 
 ---
 
 ## 📫 Me contacter
 
-- **LinkedIn** : [Joro Sullivan Rakotoniaina](https://www.linkedin.com/in/sullivan-rakotoniaina/)
-- **GitHub** : [Sullivan1301](https://github.com/Sullivan1301/)
-- **Facebook** : [Sullivan Joro Rakotoniaina](https://web.facebook.com/sullivan.jororakotoniaina)
-- **Instagram** : [@la_vie_de_sullivan](https://www.instagram.com/la_vie_de_sullivan/)
-- **Email** : [jorosullivan13@gmail.com](mailto:jorosullivan13@gmail.com)
-- **WhatsApp** : [+261 34 10 608 02](https://wa.me/261341060802)
+Je suis disponible pour des missions freelance, des collaborations ou des opportunités en télétravail/hybride.
+
+- **📧 Email** : [sullivanjoro3@gmail.com](mailto:sullivanjoro3@gmail.com)
+- **💼 LinkedIn** : [Joro Sullivan Rakotoniaina](https://www.linkedin.com/in/sullivan-rakotoniaina/)
+- **💻 GitHub** : [Sullivan1301](https://github.com/Sullivan1301/)
+- **📘 Facebook** : [Sullivan Joro Rakotoniaina](https://web.facebook.com/sullivan.jororakotoniaina)
+- **📸 Instagram** : [@la_vie_de_sullivan](https://www.instagram.com/la_vie_de_sullivan/)
+- **💬 WhatsApp** : [+261 34 10 608 02](https://wa.me/261341060802)
 
 ---
 
-## 🤝 Contribution
+## 📂 Structure du Projet
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request pour améliorer le projet.
+```
+portfolio_sullivan/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── layout.tsx         # Layout principal avec metadata SEO
+│   │   ├── page.tsx           # Page d'accueil
+│   │   ├── not-found.tsx      # Page 404 personnalisée
+│   │   ├── robots.ts          # Robots.txt dynamique
+│   │   ├── sitemap.ts         # Sitemap dynamique
+│   │   └── globals.css        # Styles globaux et variables CSS
+│   ├── components/            # Composants React
+│   │   ├── ui/               # Composants UI réutilisables
+│   │   ├── Hero.tsx          # Section hero avec effet 3D
+│   │   ├── About.tsx         # Section à propos
+│   │   ├── Skills.tsx        # Section compétences
+│   │   ├── Projects.tsx      # Section projets
+│   │   ├── Contact.tsx       # Section contact
+│   │   ├── Footer.tsx        # Footer avec liens sociaux
+│   │   ├── Navbar.tsx        # Navigation responsive
+│   │   └── JsonLd.tsx        # Données structurées SEO
+│   ├── hooks/                # Hooks personnalisés
+│   └── lib/                  # Utilitaires et helpers
+├── public/                   # Assets statiques
+└── package.json             # Dépendances et scripts
+```
 
-## 📄 Licence
+---
 
-Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+## 📊 Optimisations SEO
+
+Ce portfolio implémente les meilleures pratiques SEO :
+
+- ✅ **Meta tags complets** : Title, description, keywords, Open Graph, Twitter Cards
+- ✅ **Données structurées** : JSON-LD (Person, Organization, WebSite, LocalBusiness, BreadcrumbList)
+- ✅ **Sitemap dynamique** : Génération automatique avec priorités et fréquences
+- ✅ **Robots.txt** : Configuration personnalisée avec règles d'accès
+- ✅ **URLs canoniques** : Évite le contenu dupliqué
+- ✅ **Accessibilité** : Skip links, ARIA labels, navigation clavier
+- ✅ **Performance** : Zero CLS, images optimisées, polices préchargées
+
+---
