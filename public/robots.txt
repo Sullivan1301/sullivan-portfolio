@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sullivan-portfolio.vercel.app/sitemap.xml
+
+# Disallow admin/private paths (none for portfolio)
