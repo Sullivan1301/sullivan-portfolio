@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 type ReporterProps = {
     /*  ⎯⎯ props are only provided on the global-error page ⎯⎯ */
     error?: Error & { digest?: string };
-    reset?: () => void;
+    resetAction?: () => void;
 };
 
 export default function ErrorReporter({ error }: ReporterProps) {
@@ -190,7 +190,7 @@ export default function ErrorReporter({ error }: ReporterProps) {
                             </details>
                         )}
                     </div>
-                    <div className="pt-4">
+                    <div className="pt-4 flex gap-3">
                         <button 
                             onClick={() => window.location.reload()}
                             className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
@@ -198,6 +198,15 @@ export default function ErrorReporter({ error }: ReporterProps) {
                         >
                             {messages.reload}
                         </button>
+                        {resetAction && (
+                            <button 
+                                onClick={resetAction}
+                                className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-colors"
+                                aria-label="Réessayer"
+                            >
+                                Réessayer
+                            </button>
+                        )}
                     </div>
                 </div>
             </body>

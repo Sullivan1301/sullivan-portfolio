@@ -156,10 +156,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
 
         {/* Hreflang for international SEO */}
-        <link rel="alternate" hreflang="fr" href="https://sullivan-portfolio.vercel.app" />
-        <link rel="alternate" hreflang="en" href="https://sullivan-portfolio.vercel.app/en" />
-        <link rel="alternate" hreflang="mg" href="https://sullivan-portfolio.vercel.app/mg" />
-        <link rel="alternate" hreflang="x-default" href="https://sullivan-portfolio.vercel.app" />
+        <link rel="alternate" hrefLang="fr" href="https://sullivan-portfolio.vercel.app" />
+        <link rel="alternate" hrefLang="en" href="https://sullivan-portfolio.vercel.app/en" />
+        <link rel="alternate" hrefLang="mg" href="https://sullivan-portfolio.vercel.app/mg" />
+        <link rel="alternate" hrefLang="x-default" href="https://sullivan-portfolio.vercel.app" />
 
         {/* GEO tags for search engines */}
         <meta name="geo.position" content="-18.8792;47.5079" />
