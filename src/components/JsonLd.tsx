@@ -23,7 +23,8 @@ export function PersonJsonLd() {
     "knowsLanguage": [
       { "@type": "Language", "name": "Français" },
       { "@type": "Language", "name": "Anglais" },
-      { "@type": "Language", "name": "Malgache" }
+      { "@type": "Language", "name": "Malgache" },
+      { "@type": "Language", "name": "Espagnol" }
     ],
     "knowsAbout": [
       "Next.js",
@@ -58,15 +59,8 @@ export function PersonJsonLd() {
       "https://www.linkedin.com/in/sullivan-rakotoniaina/",
       "https://www.instagram.com/la_vie_de_sullivan/",
       "https://web.facebook.com/sullivan.jororakotoniaina",
-      "https://twitter.com/sullivan_joro",
       "https://youtube.com/@sullivanjoro",
       "https://tiktok.com/@sullivanjoro"
-    ],
-    "knowsLanguage": [
-      { "@type": "Language", "name": "Français" },
-      { "@type": "Language", "name": "Anglais" },
-      { "@type": "Language", "name": "Malgache" },
-      { "@type": "Language", "name": "Espagnol" }
     ],
     "jobTitle": [
       "Développeur Web Next.js",
