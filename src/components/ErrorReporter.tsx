@@ -17,7 +17,40 @@ export default function ErrorReporter({ error }: ReporterProps) {
         const inIframe = window.parent !== window;
         if (!inIframe) return;
 
-        const send = (payload: unknown) => window.parent.postMessage(payload, "*");
+        const send = (payload: unknown) => {
+            try {
+                window.parent.postMessage(payload, "*");
+            } catch (err) {
+                // Fallback to localStorage if postMessage fails
+                const errors = JSON.parse(localStorage.getItem("error-reporter-queue") || "[]");
+                errors.push({
+                    ...payload,
+                    timestamp: Date.now(),
+                    fallback: true
+                });
+                localStorage.setItem("error-reporter-queue", JSON.stringify(errors));
+                
+                // Try to send queued errors later
+                setTimeout(() => {
+                    const queuedErrors = JSON.parse(localStorage.getItem("error-reporter-queue") || "[]");
+                    if (queuedErrors.length > 0) {
+                        // Send first queued error
+                        try {
+                            window.parent.postMessage(queuedErrors[0], "*");
+                            // Remove sent error from queue
+                            queuedErrors.shift();
+                            localStorage.setItem("error-reporter-queue", JSON.stringify(queuedErrors));
+                        } catch (e) {
+                            // If still failing, offer email fallback
+                            const errorData = JSON.stringify(queuedErrors[0].error, null, 2);
+                            const subject = encodeURIComponent(`Erreur Portfolio Sullivan Joro - ${new Date().toISOString()}`);
+                            const body = encodeURIComponent(`Erreur détaillée :\n\n${errorData}\n\nURL: ${window.location.href}\nUser Agent: ${navigator.userAgent}`);
+                            window.location.href = `mailto:sullivanjoro3@gmail.com?subject=${subject}&body=${body}`;
+                        }
+                    }
+                }, 5000);
+            }
+        };
 
         const onError = (e: ErrorEvent) =>
             send({
@@ -95,42 +128,79 @@ export default function ErrorReporter({ error }: ReporterProps) {
     if (!error) return null;
 
     /* ─ global-error UI ─ */
+    const getLocalizedMessage = () => {
+        const lang = navigator.language || 'fr-FR';
+        if (lang.startsWith('fr') || lang.startsWith('mg')) {
+            return {
+                title: "Une erreur s'est produite sur le portfolio de Sullivan Joro !",
+                description: "Une erreur inattendue est survenue. Merci de réessayer ou de contacter Sullivan à Antananarivo, Madagascar.",
+                details: "Détails de l'erreur",
+                reload: "Recharger la page"
+            };
+        } else if (lang.startsWith('en')) {
+            return {
+                title: "An error occurred on Sullivan Joro's portfolio!",
+                description: "An unexpected error has occurred. Please try again or contact Sullivan in Antananarivo, Madagascar.",
+                details: "Error details",
+                reload: "Reload page"
+            };
+        } else {
+            return {
+                title: "Une erreur s'est produite sur le portfolio de Sullivan Joro !",
+                description: "Une erreur inattendue est survenue. Merci de réessayer ou de contacter Sullivan à Antananarivo, Madagascar.",
+                details: "Détails de l'erreur",
+                reload: "Recharger la page"
+            };
+        }
+    };
+
+    const messages = getLocalizedMessage();
+
     return (
         <html>
             <body className="min-h-screen bg-background text-foreground flex items-center justify-center p-4">
-        <div className="max-w-md w-full text-center space-y-6">
-        <div className="space-y-2">
-        <h1 className="text-2xl font-bold text-destructive">
-            Something went wrong!
-    </h1>
-    <p className="text-muted-foreground">
-        An unexpected error occurred. Please try again fixing with Orchids
-    </p>
-    </div>
-    <div className="space-y-2">
-        {process.env.NODE_ENV === "development" && (
-                <details className="mt-4 text-left">
-                <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground">
-                    Error details
-                </summary>
-        <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
-        {error.message}
-    {error.stack && (
-        <div className="mt-2 text-muted-foreground">
-            {error.stack}
-            </div>
-    )}
-    {error.digest && (
-        <div className="mt-2 text-muted-foreground">
-            Digest: {error.digest}
-        </div>
-    )}
-    </pre>
-    </details>
-)}
-    </div>
-    </div>
-    </body>
-    </html>
+                <div className="max-w-md w-full text-center space-y-6" role="alert" aria-live="polite">
+                    <div className="space-y-2">
+                        <h1 className="text-2xl font-bold text-destructive" id="error-title">
+                            {messages.title}
+                        </h1>
+                        <p className="text-muted-foreground">
+                            {messages.description}
+                        </p>
+                    </div>
+                    <div className="space-y-2">
+                        {process.env.NODE_ENV === "development" && (
+                            <details className="mt-4 text-left" aria-labelledby="error-title">
+                                <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground">
+                                    {messages.details}
+                                </summary>
+                                <pre className="mt-2 text-xs bg-muted p-2 rounded overflow-auto">
+                                    {error.message}
+                                    {error.stack && (
+                                        <div className="mt-2 text-muted-foreground">
+                                            {error.stack}
+                                        </div>
+                                    )}
+                                    {error.digest && (
+                                        <div className="mt-2 text-muted-foreground">
+                                            Digest: {error.digest}
+                                        </div>
+                                    )}
+                                </pre>
+                            </details>
+                        )}
+                    </div>
+                    <div className="pt-4">
+                        <button 
+                            onClick={() => window.location.reload()}
+                            className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                            aria-label={messages.reload}
+                        >
+                            {messages.reload}
+                        </button>
+                    </div>
+                </div>
+            </body>
+        </html>
 );
 }

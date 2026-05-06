@@ -57,7 +57,22 @@ export function PersonJsonLd() {
       "https://github.com/Sullivan1301",
       "https://www.linkedin.com/in/sullivan-rakotoniaina/",
       "https://www.instagram.com/la_vie_de_sullivan/",
-      "https://web.facebook.com/sullivan.jororakotoniaina"
+      "https://web.facebook.com/sullivan.jororakotoniaina",
+      "https://twitter.com/sullivan_joro",
+      "https://youtube.com/@sullivanjoro",
+      "https://tiktok.com/@sullivanjoro"
+    ],
+    "knowsLanguage": [
+      { "@type": "Language", "name": "Français" },
+      { "@type": "Language", "name": "Anglais" },
+      { "@type": "Language", "name": "Malgache" },
+      { "@type": "Language", "name": "Espagnol" }
+    ],
+    "jobTitle": [
+      "Développeur Web Next.js",
+      "Entrepreneur Digital",
+      "Community Manager",
+      "Strategiste Digital"
     ]
   };
 
@@ -115,12 +130,28 @@ export function WebSiteJsonLd() {
     "description": "Portfolio de Sullivan Joro - Développeur web Next.js, entrepreneur digital et community manager à Madagascar.",
     "publisher": {
       "@type": "Person",
-      "name": "Joro Sullivan Rakotoniaina"
+      "name": "Joro Sullivan Rakotoniaina",
+      "sameAs": [
+        "https://github.com/Sullivan1301",
+        "https://www.linkedin.com/in/sullivan-rakotoniaina/",
+        "https://www.instagram.com/la_vie_de_sullivan/",
+        "https://web.facebook.com/sullivan.jororakotoniaina"
+      ]
     },
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://sullivan-portfolio.vercel.app/?search={search_term_string}",
       "query-input": "required name=search_term_string"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://sullivan-portfolio.vercel.app"
+    },
+    "inLanguage": "fr-FR",
+    "isPartOf": {
+      "@type": "Organization",
+      "name": "Tech Bloom Agency",
+      "url": "https://techbloom.agency"
     }
   };
 
@@ -166,6 +197,46 @@ export function BreadcrumbListJsonLd() {
         "position": 5,
         "name": "Contact",
         "item": "https://sullivan-portfolio.vercel.app/#contact"
+      }
+    ]
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function FAQPageJsonLd() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qui est Sullivan Joro ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sullivan Joro Rakotoniaina est un développeur web Next.js et entrepreneur digital basé à Antananarivo, Madagascar. Il est fondateur de Tech Bloom Agency et spécialisé dans la création de sites web modernes, la stratégie digitale et le community management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Où est basé le développeur web à Madagascar ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sullivan Joro est basé à Antananarivo, la capitale de Madagascar, mais travaille également avec des clients à Toamasina, Tamatave et dans toute l'île."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelles technologies maîtrise Sullivan Joro ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sullivan Joro maîtrise Next.js, TypeScript, React, Tailwind CSS, Vercel, ainsi que les stratégies digitales, le marketing digital et le community management."
+        }
       }
     ]
   };

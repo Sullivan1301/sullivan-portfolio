@@ -110,7 +110,7 @@ export default function Projects() {
                                     >
                                         <motion.img
                                             src={project.image}
-                                            alt={project.title}
+                                            alt={`${project.title} - Portfolio professionnel de Sullivan Joro, développeur web à Madagascar`}
                                             className="w-12 h-12 rounded-xl object-cover bg-highlight/10 border border-highlight/20"
                                             whileHover={{ scale: 1.1, rotate: 5 }}
                                             transition={{ type: "spring", stiffness: 400 }}

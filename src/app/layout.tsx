@@ -10,6 +10,7 @@ import {
   WebSiteJsonLd,
   BreadcrumbListJsonLd,
   LocalBusinessJsonLd,
+  ProjectJsonLd,
 } from "@/components/JsonLd";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 
@@ -145,6 +146,8 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={`${bitter.variable} ${firaCode.variable}`}>
       <head>
+        <title>Joro Sullivan Rakotoniaina | Développeur Web Next.js & Entrepreneur Digital à Madagascar</title>
+        
         {/* DNS Prefetch for external resources */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -152,12 +155,35 @@ export default function RootLayout({
         {/* Preconnect for critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
 
+        {/* Hreflang for international SEO */}
+        <link rel="alternate" hreflang="fr" href="https://sullivan-portfolio.vercel.app" />
+        <link rel="alternate" hreflang="en" href="https://sullivan-portfolio.vercel.app/en" />
+        <link rel="alternate" hreflang="mg" href="https://sullivan-portfolio.vercel.app/mg" />
+        <link rel="alternate" hreflang="x-default" href="https://sullivan-portfolio.vercel.app" />
+
+        {/* GEO tags for search engines */}
+        <meta name="geo.position" content="-18.8792;47.5079" />
+        <meta name="geo.placename" content="Antananarivo, Madagascar" />
+        <meta name="geo.region" content="MG" />
+
+        {/* Bing Webmaster Tools verification */}
+        <meta name="msvalidate.01" content="bing-verification-code" />
+
+        {/* DuckDuckGo optimization */}
+        <meta name="duckduckgo-site-verification" content="duckduckgo-verification-code" />
+
+        {/* Schema.org for AI assistants */}
+        <meta name="generator" content="Next.js 15" />
+        <meta name="application-name" content="Portfolio Sullivan Joro" />
+        <meta name="apple-mobile-web-app-title" content="Sullivan Joro" />
+
         {/* JSON-LD Structured Data */}
         <PersonJsonLd />
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <BreadcrumbListJsonLd />
         <LocalBusinessJsonLd />
+        <ProjectJsonLd />
       </head>
       <body className={`${bitter.className} antialiased`}>
         {/* Skip link for keyboard navigation */}
@@ -165,12 +191,14 @@ export default function RootLayout({
           Aller au contenu principal
         </a>
 
-        <Script
-          id="orchids-browser-logs"
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
-          strategy="afterInteractive"
-          data-orchids-project-id="044d08b0-bb2e-4cce-8df0-9942a10a7310"
-        />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            id="orchids-browser-logs"
+            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
+            strategy="afterInteractive"
+            data-orchids-project-id="044d08b0-bb2e-4cce-8df0-9942a10a7310"
+          />
+        )}
         <ThemeProvider>
           <SmoothScroll>
             {children}
