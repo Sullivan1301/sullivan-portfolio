@@ -8,7 +8,7 @@ type ReporterProps = {
     resetAction?: () => void;
 };
 
-export default function ErrorReporter({ error }: ReporterProps) {
+export default function ErrorReporter({ error, resetAction }: ReporterProps) {
     /* ─ instrumentation shared by every route ─ */
     const lastOverlayMsg = useRef("");
     const pollRef = useRef<NodeJS.Timeout>();
@@ -24,7 +24,7 @@ export default function ErrorReporter({ error }: ReporterProps) {
                 // Fallback to localStorage if postMessage fails
                 const errors = JSON.parse(localStorage.getItem("error-reporter-queue") || "[]");
                 errors.push({
-                    ...payload,
+                    ...(payload as Record<string, unknown>),
                     timestamp: Date.now(),
                     fallback: true
                 });

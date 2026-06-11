@@ -61,12 +61,6 @@ export function PersonJsonLd() {
       "https://web.facebook.com/sullivan.jororakotoniaina",
       "https://youtube.com/@sullivanjoro",
       "https://tiktok.com/@sullivanjoro"
-    ],
-    "jobTitle": [
-      "Développeur Web Next.js",
-      "Entrepreneur Digital",
-      "Community Manager",
-      "Strategiste Digital"
     ]
   };
 

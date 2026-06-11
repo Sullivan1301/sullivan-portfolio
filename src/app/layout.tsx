@@ -10,7 +10,6 @@ import {
   WebSiteJsonLd,
   BreadcrumbListJsonLd,
   LocalBusinessJsonLd,
-  ProjectJsonLd,
 } from "@/components/JsonLd";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 
@@ -19,6 +18,7 @@ const bitter = Bitter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const firaCode = Fira_Code({
@@ -183,7 +183,6 @@ export default function RootLayout({
         <WebSiteJsonLd />
         <BreadcrumbListJsonLd />
         <LocalBusinessJsonLd />
-        <ProjectJsonLd />
       </head>
       <body className={`${bitter.className} antialiased`}>
         {/* Skip link for keyboard navigation */}
