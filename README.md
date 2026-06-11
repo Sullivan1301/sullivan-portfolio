@@ -9,11 +9,11 @@ Ce site présente mon parcours en tant que **développeur web Next.js** et **ent
 
 ## 👤 À propos de moi
 
-Je m'appelle **Joro Sullivan Rakotoniaina**, développeur web et entrepreneur digital, actuellement basé à Antananarivo, Madagascar.
+Je m'appelle **Joro Sullivan Rakotoniaina**, Ingénieur Fullstack et expert en stratégie digitale.
 
-Fondateur de **Tech Bloom Agency**, je suis spécialisé dans la création de sites web modernes avec Next.js/TypeScript, la stratégie digitale et l'accompagnement numérique des PME et entrepreneurs.
+Fondateur de **Tech Bloom Agency**, j'aide les entreprises à transformer leur présence en ligne en un levier de croissance mesurable grâce aux technologies Next.js de pointe et à la psychologie de conversion.
 
-Ma vision : construire des solutions digitales performantes et durables qui créent de la valeur réelle pour les entreprises et leurs utilisateurs.
+Ma mission : Concevoir des expériences numériques "Premium" qui chargent en moins d'une seconde, dominent les résultats de recherche et convertissent vos visiteurs en clients fidèles.
 
 ---
 
