@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build 2>&1 | tail -40)",
+      "Bash(node:*)",
+      "Bash(npm install 2>&1 | tail -10)",
+      "Bash(which convert rsvg-convert inkscape 2>&1; npm list sharp 2>&1 | head -3)",
+      "Bash(cd /home/sullivan/Projects/portfolio_sullivan/public && rsvg-convert -w 16 -h 16 favicon.svg -o favicon-16x16.png && rsvg-convert -w 32 -h 32 favicon.svg -o favicon-32x32.png && rsvg-convert -w 180 -h 180 favicon.svg -o apple-touch-icon.png && rsvg-convert -w 1200 -h 630 og-image.svg -o og-image.png && echo \"PNGs generated OK\")",
+      "Bash(convert favicon-16x16.png favicon-32x32.png -define icon:auto-resize=16,32,48 favicon.ico && echo \"ICO generated OK\" && ls -lh favicon-16x16.png favicon-32x32.png apple-touch-icon.png og-image.png favicon.ico)",
+      "Bash(mkdir:*)",
+      "Bash(cd /home/sullivan/Projects/portfolio_sullivan && npm run build 2>&1 | tail -50)",
+      "Bash(npm ls 2 2>&1 | head -5)",
+      "Bash(npm uninstall 2 --silent 2>&1 && npm run build 2>&1 | tail -30)",
+      "Bash(npx next build 2>&1 | tail -40)",
+      "Bash(ls -la .husky/ 2>&1 && cat .husky/pre-commit 2>/dev/null; cat .husky/commit-msg 2>/dev/null)",
+      "Bash(./node_modules/.bin/next build 2>&1 | tail -40)",
+      "Bash(head:*)",
+      "Bash(grep -A2 '\"2\"' package-lock.json 2>/dev/null | head -10)",
+      "Bash(npm config list 2>&1 | head -20; echo \"---\"; cat .npmrc 2>/dev/null; echo \"---\"; cat ~/.npmrc 2>/dev/null | head -20)",
+      "Bash(node ./node_modules/next/dist/bin/next build 2>&1 | tail -40)",
+      "Bash(echo \"Args test:\" && node -e \"console.log\\(process.argv\\)\" build)",
+      "Bash(node -e \"const { cli } = require\\('next/dist/cli/next-build'\\); console.log\\(typeof cli\\)\" 2>&1)",
+      "Bash(npx next build . 2>&1 | tail -40)",
+      "Bash(npx next dev . -p 3000 2>&1)",
+      "Bash(ls src/components/ui/ | sed 's/\\\\.[^.]*$//' | sort -u)",
+      "Bash(npm install --silent 2>&1 | tail -5 && npm run build 2>&1 | tail -25)",
+      "Bash(npx next build /home/sullivan/Projects/portfolio_sullivan 2>&1 | tail -25)",
+      "Bash(git:*)",
+      "Bash(git add .agents/ .husky/ .qoder/ .qwen/ QWEN.md SKILL.md skills-lock.json && git commit -m \"$\\(cat <<'EOF'\nchore: ajouter les configurations d'outils \\(agents, hooks, skills\\)\nEOF\n\\)\")"
+    ]
+  }
+}

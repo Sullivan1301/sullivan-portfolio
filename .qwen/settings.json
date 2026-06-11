@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/**)",
+      "Bash(find *)",
+      "Bash(yes)",
+      "Bash(cp *)"
+    ]
+  },
+  "$version": 4
+}

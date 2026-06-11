@@ -1,0 +1,5 @@
+#!/bin/sh
+# Husky pre-commit hook
+# Remind developer to run Web Design Guidelines check and Composition Patterns check
+echo "⚠️ Please run /web-design-guidelines src/components/**/*.tsx before committing."
+echo "⚠️ Please run /vercel-composition-patterns src/components/**/*.tsx before committing."
