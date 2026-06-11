@@ -5,7 +5,11 @@ import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Magnetic from "@/components/ui/Magnetic";
+import GlassCard from "@/components/GlassCard";
 
+/* ------------------------------------------------------------------ */
+/*  FloatingCube – decorative 3-D element with violet-gold palette    */
+/* ------------------------------------------------------------------ */
 function FloatingCube({ className, delay = 0 }: { className?: string; delay?: number }) {
     return (
         <motion.div
@@ -24,17 +28,20 @@ function FloatingCube({ className, delay = 0 }: { className?: string; delay?: nu
             style={{ transformStyle: "preserve-3d", perspective: 1000 }}
         >
             <div className="w-12 h-12 relative" style={{ transformStyle: "preserve-3d" }}>
-                <div className="absolute inset-0 bg-highlight/15 border border-highlight/20 backdrop-blur-sm" style={{ transform: "translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-highlight/10 border border-highlight/15 backdrop-blur-sm" style={{ transform: "translateZ(-24px)" }} />
-                <div className="absolute inset-0 bg-highlight/12 border border-highlight/18 backdrop-blur-sm" style={{ transform: "rotateY(90deg) translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-highlight/12 border border-highlight/18 backdrop-blur-sm" style={{ transform: "rotateY(-90deg) translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-highlight/08 border border-highlight/12 backdrop-blur-sm" style={{ transform: "rotateX(90deg) translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-highlight/08 border border-highlight/12 backdrop-blur-sm" style={{ transform: "rotateX(-90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-primary-violet/20 border border-primary-violet-light/30 backdrop-blur-sm" style={{ transform: "translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-primary-violet/10 border border-primary-violet-light/20 backdrop-blur-sm" style={{ transform: "translateZ(-24px)" }} />
+                <div className="absolute inset-0 bg-accent-gold/15 border border-accent-gold/25 backdrop-blur-sm" style={{ transform: "rotateY(90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-accent-gold/10 border border-accent-gold/20 backdrop-blur-sm" style={{ transform: "rotateY(-90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-primary-violet/10 border border-primary-violet-light/15 backdrop-blur-sm" style={{ transform: "rotateX(90deg) translateZ(24px)" }} />
+                <div className="absolute inset-0 bg-primary-violet/10 border border-primary-violet-light/15 backdrop-blur-sm" style={{ transform: "rotateX(-90deg) translateZ(24px)" }} />
             </div>
         </motion.div>
     );
 }
 
+/* ------------------------------------------------------------------ */
+/*  Tilt3DCard – perspective tilt following cursor                    */
+/* ------------------------------------------------------------------ */
 function Tilt3DCard({ children }: { children: React.ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
@@ -80,23 +87,37 @@ function Tilt3DCard({ children }: { children: React.ReactNode }) {
     );
 }
 
+/* ------------------------------------------------------------------ */
+/*  Hero                                                              */
+/* ------------------------------------------------------------------ */
 export default function Hero() {
     return (
-        <section className="relative isolate min-h-screen flex items-center justify-center overflow-hidden noise" style={{ zIndex: 10 }}>
-            {/* Background Layer - Purement décoratif, aucune interaction */}
+        <section
+            className="relative isolate min-h-screen flex items-center justify-center overflow-hidden noise"
+            style={{ zIndex: 10 }}
+        >
+            {/* -------- Background layer (purely decorative) -------- */}
             <div className="absolute inset-0 pointer-events-none select-none z-0">
-                <div className="absolute inset-0 gradient-bg" />
+                {/* Deep violet base gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark-surface to-primary-violet-dark/40" />
 
-                {/* Background blobs */}
+                {/* Animated violet glow blob */}
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-highlight/20 rounded-full blur-3xl"
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    className="absolute top-1/4 left-1/4 w-[28rem] h-[28rem] bg-primary-violet/25 rounded-full blur-[120px]"
+                    animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.55, 0.3] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 />
+                {/* Animated gold glow blob */}
                 <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-foreground/5 rounded-full blur-3xl"
+                    className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-gold/15 rounded-full blur-[100px]"
                     animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                />
+                {/* Tertiary violet haze */}
+                <motion.div
+                    className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary-violet-dark/30 rounded-full blur-[80px]"
+                    animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.35, 0.2] }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                 />
 
                 {/* Floating cubes */}
@@ -104,41 +125,48 @@ export default function Hero() {
                 <FloatingCube className="bottom-32 left-20 hidden lg:block" delay={2} />
                 <FloatingCube className="top-1/3 left-32 hidden xl:block" delay={4} />
 
-                {/* Sparkles dots */}
+                {/* Sparkle dots */}
                 <motion.div
-                    className="absolute top-20 right-40 w-2 h-2 bg-highlight rounded-full glow-red"
+                    className="absolute top-20 right-40 w-2 h-2 bg-accent-gold rounded-full glow-gold"
                     animate={{ y: [-10, 10, -10], rotateZ: [0, 180, 360] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 />
                 <motion.div
-                    className="absolute bottom-40 left-16 w-3 h-3 bg-highlight/80 rounded-full glow-red"
+                    className="absolute bottom-40 left-16 w-3 h-3 bg-primary-violet-light/80 rounded-full glow-violet"
                     animate={{ y: [-15, 15, -15], rotateZ: [0, -180, -360] }}
                     transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 />
+                <motion.div
+                    className="absolute top-1/3 right-20 w-2 h-2 bg-accent-gold-light rounded-full glow-gold"
+                    animate={{ y: [-8, 12, -8], opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+                />
             </div>
 
-            {/* Hero content - Zone d'interaction limitée au centre sous la Navbar */}
-            <motion.div 
+            {/* -------- Hero content -------- */}
+            <motion.div
                 className="container-custom relative z-50 pt-28 pb-12 md:pt-40"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
             >
                 <Tilt3DCard>
-                    <div className="bg-background/95 backdrop-blur-3xl rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] relative overflow-hidden group">
-                        {/* Glass Overlay (effet brillant sur les bords) */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none z-0" />
-                        
-                        {/* Background glow internal (effet de profondeur interne) */}
-                        <div className="absolute top-5 -right-16 w-40 h-40 bg-highlight/15 rounded-full blur-2xl group-hover:bg-highlight/25 transition-colors duration-700 pointer-events-none" />
-                        <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-accent/15 rounded-full blur-2xl group-hover:bg-accent/25 transition-colors duration-700 pointer-events-none" />
+                    <GlassCard className="group border border-primary-violet-light/20 shadow-[0_40px_100px_-20px_rgba(124,58,237,0.5)]">
+                        {/* Glass overlay – glossy edge */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary-violet-light/5 via-transparent to-accent-gold/5 pointer-events-none z-0" />
+
+                        {/* Internal glow – violet top-right */}
+                        <div className="absolute top-5 -right-16 w-48 h-48 bg-primary-violet/20 rounded-full blur-3xl group-hover:bg-primary-violet/35 transition-colors duration-700 pointer-events-none" />
+                        {/* Internal glow – gold bottom-left */}
+                        <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-accent-gold/15 rounded-full blur-3xl group-hover:bg-accent-gold/30 transition-colors duration-700 pointer-events-none" />
 
                         <div className="relative z-10">
-                            {/* Photo de profil */}
+                            {/* Profile photo */}
                             <div className="mb-8 flex justify-center">
-                                <div className="relative w-32 h-32 sm:w-32 sm:h-32">
-                                    <div className="absolute inset-0 rounded-full bg-highlight/20 animate-pulse blur-xl"></div>
-                                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-highlight/40 shadow-xl bg-muted">
+                                <div className="relative w-32 h-32 sm:w-36 sm:h-36">
+                                    {/* Pulsing ring */}
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-violet/40 to-accent-gold/40 animate-pulse blur-xl" />
+                                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_30px_rgba(124,58,237,0.4)] bg-muted">
                                         <Image
                                             src="/sullivan.jpeg"
                                             alt="Portrait professionnel de Sullivan Joro Rakotoniaina, développeur web Next.js et entrepreneur digital basé à Madagascar"
@@ -150,11 +178,18 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 bg-highlight/10 border border-highlight/20 rounded-full text-sm font-semibold text-highlight">
-                                <Sparkles size={16} />
+                            {/* Availability badge */}
+                            <motion.div
+                                className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 bg-primary-violet/15 border border-primary-violet-light/30 rounded-full text-sm font-semibold text-primary-violet-light"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.4, duration: 0.5 }}
+                            >
+                                <Sparkles size={16} className="text-accent-gold" />
                                 <span>Disponible pour de nouvelles opportunités</span>
-                            </div>
+                            </motion.div>
 
+                            {/* Name */}
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-8 text-foreground">
                                 <span className="block opacity-90">Joro Sullivan</span>
                                 <motion.span
@@ -167,38 +202,51 @@ export default function Hero() {
                                 </motion.span>
                             </h1>
 
-                            <p className="text-lg sm:text-xl text-muted-foreground mb-4 font-medium max-w-lg mx-auto leading-tight">
+                            {/* Tagline */}
+                            <p className="text-lg sm:text-xl text-primary-violet-light/80 mb-4 font-medium max-w-lg mx-auto leading-tight">
                                 Parcours axé sur la mise en œuvre digitale et la gestion de petites équipes techniques
                             </p>
-                            
-                            <p className="text-sm sm:text-base text-muted-foreground/70 max-w-xl mx-auto mb-8 leading-relaxed">
+
+                            {/* Description */}
+                            <p className="text-sm sm:text-base text-primary-violet-light/60 max-w-xl mx-auto mb-10 leading-relaxed">
                                 Avec une expérience pratique en JavaScript/TypeScript et Next.js, je propose d&apos;accélérer vos livraisons en assurant un développement front-end soigné, des déploiements fiables et une intégration continue adaptée à votre roadmap.
                             </p>
 
+                            {/* CTA buttons */}
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <Magnetic>
-                                    <motion.a 
-                                        href="#contact" 
-                                        className="px-10 py-5 bg-highlight text-highlight-foreground rounded-full font-bold text-lg transition-all shadow-[0_10px_30px_-10px_rgba(230,57,70,0.5)] hover:shadow-highlight/40 block"
-                                        whileHover={{ scale: 1.05, y: -2 }}
-                                        whileTap={{ scale: 0.98 }}
+                                    <motion.a
+                                        href="#contact"
+                                        className="group/btn relative px-10 py-5 rounded-full font-bold text-lg overflow-hidden block"
+                                        whileHover={{ scale: 1.07, y: -3 }}
+                                        whileTap={{ scale: 0.97 }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                     >
-                                        Contact Me
+                                        {/* Gradient background */}
+                                        <span className="absolute inset-0 bg-gradient-to-r from-primary-violet via-primary-violet-dark to-primary-violet transition-transform duration-300 group-hover/btn:scale-105" />
+                                        {/* Gold shimmer on hover */}
+                                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
+                                        {/* Shadow */}
+                                        <span className="absolute inset-0 shadow-[0_12px_40px_-10px_rgba(124,58,237,0.7)] group-hover/btn:shadow-[0_16px_50px_-10px_rgba(124,58,237,0.9)] transition-shadow duration-300" />
+                                        <span className="relative z-10 text-primary-violet-light font-semibold">Contact Me</span>
                                     </motion.a>
                                 </Magnetic>
                                 <Magnetic>
-                                    <motion.a 
-                                        href="#projects" 
-                                        className="px-10 py-5 bg-foreground/5 backdrop-blur-md rounded-full font-bold text-lg transition-all border border-foreground/10 block hover:bg-foreground/10"
-                                        whileHover={{ scale: 1.05, y: -2 }}
-                                        whileTap={{ scale: 0.98 }}
+                                    <motion.a
+                                        href="#projects"
+                                        className="group/btn relative px-10 py-5 rounded-full font-bold text-lg overflow-hidden block border border-primary-violet-light/30 backdrop-blur-md"
+                                        whileHover={{ scale: 1.07, y: -3 }}
+                                        whileTap={{ scale: 0.97 }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                     >
-                                        View Projects
+                                        <span className="absolute inset-0 bg-primary-violet/5 group-hover/btn:bg-primary-violet/15 transition-colors duration-300" />
+                                        <span className="absolute inset-0 border border-accent-gold/0 group-hover/btn:border-accent-gold/30 transition-colors duration-500 rounded-full" />
+                                        <span className="relative z-10 text-foreground font-semibold">View Projects</span>
                                     </motion.a>
                                 </Magnetic>
                             </div>
                         </div>
-                    </div>
+                    </GlassCard>
                 </Tilt3DCard>
             </motion.div>
         </section>
