@@ -63,6 +63,21 @@ const config: Config = {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        "primary-violet": {
+          DEFAULT: "#7c3aed",
+          light: "#a78bfa",
+          dark: "#5b21b6",
+        },
+        "accent-gold": {
+          DEFAULT: "#d4af37",
+          light: "#e6c040",
+          dark: "#b8960c",
+        },
+        "background-dark": {
+          DEFAULT: "#0d0a1a",
+          surface: "#1e143c",
+          elevated: "#2d1f5e",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -71,12 +86,12 @@ const config: Config = {
         xl: "calc(var(--radius) + 4px)",
       },
       fontFamily: {
-        sans: ["'Bitter'", "serif"],
-        mono: ["'Fira Code'", "monospace"],
+        sans: ["'Playfair Display'", "ui-serif", "Georgia", "serif"],
+        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
       },
     },
   },
   plugins: [],
-}
+};
 
 export default config;
