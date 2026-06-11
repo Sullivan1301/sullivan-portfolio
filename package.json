@@ -11,8 +11,6 @@
     "mobile-performance": "echo \"Please run /vercel-react-native-skills src/**/*.tsx manually in the Qwen Code UI.\""
   },
   "dependencies": {
-    "2": "^3.0.0",
-    "@studio-freight/react-lenis": "^0.0.47",
     "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.28.1",
     "lucide-react": "^0.562.0",
