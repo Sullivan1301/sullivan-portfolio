@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const developmentServices = [
   {
     name: "Site Vitrine",
-    price: "600 000 Ar / 120€",
+    price: "800 000 Ar / 160€",
     starting: "à partir de",
     description:
       "Site professionnel multi-pages pour présenter votre entreprise, vos services et votre équipe. Idéal pour les PME et professions libérales.",
@@ -91,7 +91,7 @@ const smmPacks = [
       "Présence sociale essentielle pour les entreprises qui démarrent sur les réseaux sociaux.",
     features: [
       "Gestion de 2 réseaux sociaux (Facebook, Instagram au choix)",
-      "8 publications par mois (2/semaine)",
+      "12 publications par mois (3/semaine)",
       "Calendrier éditorial mensuel",
       "Création de visuels (templates fournis)",
       "Rapport de performance mensuel",
@@ -122,7 +122,7 @@ const smmPacks = [
       "Solution complète pour les marques ambitieuses qui veulent dominer leur marché local.",
     features: [
       "Gestion de 5 réseaux sociaux",
-      "30 publications par mois (quotidien)",
+      "Publications fréquentes avec stories et reels",
       "Vidéos professionnelles et motion design",
       "Community management 7j/7",
       "Rapport hebdomadaire détaillé",
