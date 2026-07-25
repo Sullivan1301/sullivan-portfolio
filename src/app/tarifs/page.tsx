@@ -234,7 +234,7 @@ export default function TarifsPage() {
 
                 <div className="mt-6 pt-6 border-t border-border/30">
                   <a
-                    href={`https://wa.me/+261341060802?text=${encodeURIComponent(
+                    href={`https://wa.me/261341060802?text=${encodeURIComponent(
                       `Bonjour Sullivan, je suis intéressé(e) par votre offre "${service.name}". Pouvez-vous m'envoyer un devis détaillé ?`
                     )}`}
                     target="_blank"
@@ -305,7 +305,7 @@ export default function TarifsPage() {
                 </ul>
 
                 <a
-                  href={`https://wa.me/+261341060802?text=${encodeURIComponent(
+                  href={`https://wa.me/261341060802?text=${encodeURIComponent(
                     `Bonjour Sullivan, je suis intéressé(e) par le "${pack.name}" SMM. Pouvez-vous m'en dire plus ?`
                   )}`}
                   target="_blank"
@@ -410,7 +410,7 @@ export default function TarifsPage() {
             Réponse garantie sous 24h.
           </p>
           <a
-            href="https://wa.me/+261341060802?text=Bonjour Sullivan, j'ai un projet dont j'aimerais discuter avec vous."
+            href="https://wa.me/261341060802?text=Bonjour Sullivan, j'ai un projet dont j'aimerais discuter avec vous."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-highlight text-white font-bold text-lg hover:bg-highlight/90 shadow-[0_8px_30px_-8px_rgba(230,57,70,0.5)] hover:shadow-[0_12px_40px_-8px_rgba(230,57,70,0.7)] transition-all duration-300"

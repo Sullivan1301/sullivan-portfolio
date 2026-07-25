@@ -1,41 +1,41 @@
 "use client";
 
-import { Rocket, ShoppingBag, Smartphone, Monitor } from "lucide-react";
+import { Rocket, Smartphone, Monitor, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
 
 const experiences = [
     {
+        icon: Sparkles,
+        title: "Assistant Marketing et Community Manager",
+        company: "Passion Prestige Madagascar",
+        period: "depuis mai 2026",
+        description: "Gestion de la présence digitale de plusieurs marques dans les secteurs du luxe, de la beauté, du bien-être et de la parfumerie. Élaboration de stratégies éditoriales, création de contenus, rédaction des captions et suivi des performances.",
+        highlights: ["Marketing", "Community Management", "Création de contenu", "Storytelling"],
+    },
+    {
         icon: Rocket,
-        title: "Fondateur & Manager",
-        company: "Tech Bloom Agency",
-        period: "novembre 2025 - aujourd'hui",
-        description: "Création et gestion d'une agence digitale spécialisée en développement web, branding & identité visuelle, marketing digital et community management. Accompagnement des PME, TPE et entrepreneurs locaux et internationaux dans leur digitalisation.",
-        highlights: ["Leadership", "Stratégie digitale", "Gestion de projet"],
+        title: "Responsable Marketing Digital",
+        company: "RunRobe",
+        period: "depuis mai 2025",
+        description: "Élaboration et mise en œuvre de la stratégie digitale de la boutique pour promouvoir les produits, attirer et fidéliser la clientèle via les réseaux sociaux, la publicité en ligne et le contenu visuel.",
+        highlights: ["Marketing digital", "E-commerce", "Stratégie de contenu"],
     },
     {
         icon: Monitor,
         title: "Tech Lead Freelance",
         company: "Freelance",
         period: "février 2025 - août 2025",
-        description: "Gestion d'une équipe de développeurs freelance pour la réalisation de projets web et mobile. Collaboration avec les clients pour comprendre leurs besoins et proposer des solutions adaptées. Mise en place de bonnes pratiques de développement et de suivi de projet.",
+        description: "Gestion d'une équipe de développeurs freelance pour des projets web et mobile. Collaboration avec les clients, cadrage des besoins et mise en place de bonnes pratiques de développement et de suivi de projet.",
         highlights: ["Leadership technique", "Gestion d'équipe", "Développement web"],
-    },
-    {
-        icon: ShoppingBag,
-        title: "Responsable Marketing Digital",
-        company: "RunRobe",
-        period: "mai 2025 - aujourd'hui",
-        description: "Élaboration et mise en œuvre de la stratégie digitale de la boutique afin de promouvoir les produits (robes et chaussures), attirer et fidéliser la clientèle en utilisant les réseaux sociaux, la publicité en ligne, le contenu visuel et les outils numériques adaptés.",
-        highlights: ["Marketing digital", "E-commerce", "Stratégie de contenu"],
     },
     {
         icon: Smartphone,
         title: "Community Manager - Coordinateur d'activités Informatiques",
         company: "Girl's Touch Erica",
         period: "février 2025 - novembre 2026",
-        description: "Gestion de la communication digitale et coordination des activités digitales liées à la page. Conception et réalisation de supports visuels (photos, montages et vidéos) pour renforcer la visibilité et l'image de la marque. Collaboration avec l'équipe pour planifier, publier et optimiser les contenus en ligne.",
+        description: "Gestion de la communication digitale et coordination des activités liées à la page. Conception de supports visuels, planification des publications et optimisation des contenus en ligne.",
         highlights: ["Social Media", "Création de contenu", "Community Management"],
     },
     {
@@ -43,7 +43,7 @@ const experiences = [
         title: "IT Support",
         company: "Haute École d'Informatique",
         period: "février 2023 - août 2023",
-        description: "Assistance technique aux enseignants et aux étudiants sur l'utilisation des matériels. Surveillance des équipements pour garantir leur bon fonctionnement. Intervention dans l'installation et la configuration des systèmes et des matériels selon les besoins pédagogiques.",
+        description: "Assistance technique aux enseignants et aux étudiants, surveillance des équipements et intervention dans l'installation et la configuration des systèmes et matériels informatiques.",
         highlights: ["Support technique", "Maintenance IT", "Configuration système"],
     },
 ];

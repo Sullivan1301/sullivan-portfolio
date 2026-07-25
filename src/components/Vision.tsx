@@ -8,23 +8,23 @@ import Magnetic from "@/components/ui/Magnetic";
 const visionPoints = [
     {
         icon: Lightbulb,
-        title: "Innovation continue",
-        description: "Rester à la pointe des tendances technologiques et marketing pour offrir les meilleures solutions.",
+        title: "Création utile",
+        description: "Produire des contenus qui servent réellement la marque, son audience et ses objectifs.",
     },
     {
         icon: Rocket,
         title: "Impact mesurable",
-        description: "Chaque projet doit générer des résultats concrets et quantifiables pour les clients.",
+        description: "Mesurer la portée, l'engagement et la croissance pour ajuster les actions en continu.",
     },
     {
         icon: Users,
-        title: "Collaboration globale",
-        description: "Travailler avec des équipes internationales pour créer des solutions à portée mondiale.",
+        title: "Collaboration",
+        description: "Travailler avec des équipes, des marques et des entrepreneurs avec une communication claire.",
     },
     {
         icon: Award,
         title: "Excellence",
-        description: "Viser l'excellence dans chaque aspect du travail, du code à la communication.",
+        description: "Viser l'excellence dans la stratégie, l'exécution et la cohérence de marque.",
     },
 ];
 
@@ -46,10 +46,10 @@ export default function Vision() {
                             <h2>Mes objectifs</h2>
                         </TextReveal>
                         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                            Ma vision est de devenir un acteur clé dans la transformation digitale des entreprises, en combinant expertise technique, créativité stratégique et orientation résultats.
+                            Ma vision est de construire une présence digitale claire, cohérente et performante pour les marques que j&apos;accompagne.
                         </p>
                         <p className="text-muted-foreground leading-relaxed">
-                            À travers Tech Bloom Agency et mes collaborations, je m&apos;engage à accompagner les marques dans leur croissance en ligne avec des solutions innovantes et sur mesure.
+                            À travers mes collaborations, mes projets freelance et Tech Bloom Agency, je m&apos;engage à accompagner les marques dans leur croissance en ligne avec des solutions adaptées.
                         </p>
                     </motion.div>
 

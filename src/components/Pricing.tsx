@@ -273,7 +273,7 @@ export default function Pricing() {
                   {/* CTA */}
                   <Magnetic strength={0.15}>
                     <a
-                      href={`https://wa.me/+261341060802?text=${encodeURIComponent(
+                      href={`https://wa.me/261341060802?text=${encodeURIComponent(
                         `Bonjour Sullivan, je suis intéressé(e) par votre offre "${item.name}" à ${
                           currency === "Ar"
                             ? `${item.priceAr} Ar`
@@ -320,7 +320,7 @@ export default function Pricing() {
                 </p>
               </div>
               <a
-                href={`https://wa.me/+261341060802?text=${encodeURIComponent(
+                href={`https://wa.me/261341060802?text=${encodeURIComponent(
                   `Bonjour Sullivan, je souhaite un devis pour ${svc.title}.`
                 )}`}
                 target="_blank"

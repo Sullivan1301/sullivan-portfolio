@@ -9,7 +9,7 @@ const projects = [
     {
         icon: Folder,
         title: "Tech Bloom Agency",
-        description: "Site web et plateforme digitale pour l'agence Tech Bloom Agency, spécialisée en développement web et marketing digital.",
+        description: "Site vitrine et plateforme digitale de présentation pour une agence orientée accompagnement web, contenu et croissance digitale.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"]
     },
     {
@@ -71,10 +71,10 @@ export default function Projects() {
                         Projets
                     </span>
                     <TextReveal className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        <h2>Projets universitaires</h2>
+                        <h2>Projets & réalisations</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Divers projets académiques mettant en œuvre des compétences techniques et une approche orientée résultats.
+                        Une sélection de réalisations web et digitales qui montrent mon approche du développement, du contenu et de l'accompagnement des marques.
                     </p>
                 </motion.div>
 
@@ -110,7 +110,7 @@ export default function Projects() {
                                     >
                                         <motion.img
                                             src={project.image}
-                                            alt={`${project.title} - Portfolio professionnel de Sullivan Joro, développeur web à Madagascar`}
+                                            alt={`${project.title} - Portfolio professionnel de Sullivan Joro à Madagascar`}
                                             className="w-12 h-12 rounded-xl object-cover bg-highlight/10 border border-highlight/20"
                                             whileHover={{ scale: 1.1, rotate: 5 }}
                                             transition={{ type: "spring", stiffness: 400 }}

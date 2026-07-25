@@ -9,17 +9,17 @@ const cards = [
     {
         icon: User,
         title: "Profil",
-        description: "Entrepreneur digital et développeur web basé à Antananarivo, Madagascar. Fondateur de Tech Bloom Agency et étudiant en informatique, je me spécialise dans la création de solutions digitales, le marketing digital et la gestion de projets web.",
+        description: "Accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar. J'accompagne les marques avec une approche centrée sur le contenu, le web et la croissance organique.",
     },
     {
         icon: Target,
         title: "Approche",
-        description: "J'accompagne les entreprises, PME et entrepreneurs dans leur transformation numérique avec une approche orientée résultats concrets et mesurables.",
+        description: "Je combine storytelling, création de contenu et analyse des performances pour produire des actions digitales utiles et mesurables.",
     },
     {
         icon: Globe,
         title: "Disponibilité",
-        description: "Disponible en télétravail ou en hybride. Basé à Antananarivo, Madagascar.",
+        description: "Disponible en télétravail ou en présentiel. Basé à Antananarivo, Madagascar.",
     },
 ];
 
@@ -41,7 +41,10 @@ export default function About() {
                         <h2>Qui je suis</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Titulaire d&apos;une licence en informatique et fondateur de Tech Bloom Agency, je suis un professionnel du digital passionné par la création de valeur pour les marques et entreprises.
+                        Titulaire d&apos;une licence en informatique, je travaille en freelance sur le développement web, la communication digitale et la gestion de contenu pour des marques et organisations.
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+                        Tech Bloom Agency me sert aussi de cadre pour les collaborations B2B, avec une approche progressive et adaptée aux besoins de chaque partenaire.
                     </p>
                 </motion.div>
 

@@ -9,15 +9,16 @@ export function PersonJsonLd() {
     "givenName": "Sullivan",
     "familyName": "Rakotoniaina",
     "alternateName": ["Sullivan Joro", "Sullivan Rakotoniaina"],
-    "jobTitle": "Développeur Web & Entrepreneur Digital",
-    "description": "Développeur web Next.js, entrepreneur digital et community manager à Madagascar. Fondateur de Tech Bloom Agency, spécialisé en création de sites web, stratégie digitale et transformation numérique.",
+    "jobTitle": "Accompagnateur Digital et Freelance Malagasy",
+    "description": "Accompagnateur digital et freelance malagasy à Antananarivo, Madagascar. Spécialisé en développement web, community management, social media management, stratégie éditoriale, storytelling et création de contenu.",
     "url": "https://sullivan-portfolio.vercel.app",
     "image": "https://sullivan-portfolio.vercel.app/sullivan.jpeg",
-    "email": "sullivanjoro3@gmail.com",
+    "email": "jorosullivan13@gmail.com",
     "telephone": "+261341060802",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Antananarivo",
+      "streetAddress": "Lot II H 12Ter Ankadidramamy",
       "addressCountry": "MG"
     },
     "knowsLanguage": [
@@ -27,13 +28,18 @@ export function PersonJsonLd() {
       { "@type": "Language", "name": "Espagnol" }
     ],
     "knowsAbout": [
-      "Next.js",
       "TypeScript",
       "JavaScript",
-      "React",
-      "Tailwind CSS",
-      "Vercel",
-      "Développement Web",
+      "HTML/CSS",
+      "Git/GitHub",
+      "Meta Business Suite",
+      "Canva",
+      "CapCut",
+      "Trello",
+      "Notion",
+      "Intelligence Artificielle",
+      "Création de contenu",
+      "Storytelling",
       "Marketing Digital",
       "Community Management",
       "Stratégie Digitale"
@@ -47,13 +53,6 @@ export function PersonJsonLd() {
         "addressCountry": "MG"
       }
     },
-    "worksFor": [
-      {
-        "@type": "Organization",
-        "name": "Tech Bloom Agency",
-        "sameAs": "https://techbloom.agency"
-      }
-    ],
     "sameAs": [
       "https://github.com/Sullivan1301",
       "https://www.linkedin.com/in/sullivan-rakotoniaina/",
@@ -115,7 +114,7 @@ export function WebSiteJsonLd() {
     "name": "Portfolio Sullivan Joro",
     "alternateName": "Sullivan Rakotoniaina Portfolio",
     "url": "https://sullivan-portfolio.vercel.app",
-    "description": "Portfolio de Sullivan Joro - Développeur web Next.js, entrepreneur digital et community manager à Madagascar.",
+    "description": "Portfolio de Sullivan Joro - Accompagnateur digital et freelance malagasy à Madagascar.",
     "publisher": {
       "@type": "Person",
       "name": "Joro Sullivan Rakotoniaina",
@@ -136,11 +135,6 @@ export function WebSiteJsonLd() {
       "@id": "https://sullivan-portfolio.vercel.app"
     },
     "inLanguage": "fr-FR",
-    "isPartOf": {
-      "@type": "Organization",
-      "name": "Tech Bloom Agency",
-      "url": "https://techbloom.agency"
-    }
   };
 
   return (
@@ -207,23 +201,23 @@ export function FAQPageJsonLd() {
         "name": "Qui est Sullivan Joro ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sullivan Joro Rakotoniaina est un développeur web Next.js et entrepreneur digital basé à Antananarivo, Madagascar. Il est fondateur de Tech Bloom Agency et spécialisé dans la création de sites web modernes, la stratégie digitale et le community management."
+          "text": "Sullivan Joro Rakotoniaina est un accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar. Il est spécialisé dans le développement web, le community management, le social media management, la stratégie éditoriale et la création de contenu."
         }
       },
       {
         "@type": "Question",
-        "name": "Où est basé le développeur web à Madagascar ?",
+        "name": "Où est basé Sullivan Joro ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sullivan Joro est basé à Antananarivo, la capitale de Madagascar, mais travaille également avec des clients à Toamasina, Tamatave et dans toute l'île."
+          "text": "Sullivan Joro est basé à Antananarivo, au lot II H 12Ter Ankadidramamy, et travaille en télétravail ou en présentiel selon les besoins."
         }
       },
       {
         "@type": "Question",
-        "name": "Quelles technologies maîtrise Sullivan Joro ?",
+        "name": "Quelles compétences maîtrise Sullivan Joro ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sullivan Joro maîtrise Next.js, TypeScript, React, Tailwind CSS, Vercel, ainsi que les stratégies digitales, le marketing digital et le community management."
+          "text": "Sullivan Joro maîtrise le développement web, le community management, le social media management, la stratégie éditoriale, le storytelling, la création de contenu et l'analyse de performances ainsi que Meta Business Suite, Canva, CapCut, Trello et Notion."
         }
       }
     ]
@@ -242,15 +236,16 @@ export function LocalBusinessJsonLd() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://sullivan-portfolio.vercel.app/#business",
-    "name": "Sullivan Joro - Développeur Web",
-    "description": "Développeur web freelance et entrepreneur digital basé à Antananarivo, Madagascar. Services de création de sites web, stratégie digitale et accompagnement numérique.",
+    "name": "Sullivan Joro - Accompagnateur Digital",
+    "description": "Accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar.",
     "url": "https://sullivan-portfolio.vercel.app",
     "telephone": "+261341060802",
-    "email": "sullivanjoro3@gmail.com",
+    "email": "jorosullivan13@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Antananarivo",
       "addressRegion": "Analamanga",
+      "streetAddress": "Lot II H 12Ter Ankadidramamy",
       "addressCountry": "MG"
     },
     "geo": {

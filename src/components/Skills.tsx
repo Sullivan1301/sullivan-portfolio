@@ -10,12 +10,12 @@ const skillCategories = [
     {
         icon: Code,
         title: "Tech",
-        skills: ["JavaScript/TypeScript", "Next.js", "Vercel", "Git/GitHub", "Intelligence Artificielle"],
+        skills: ["JavaScript/TypeScript", "HTML/CSS", "Git/GitHub", "Intelligence Artificielle"],
     },
     {
         icon: TrendingUp,
         title: "Outils de Travail",
-        skills: ["Meta Business Suite", "TikTok Studio", "Figma", "Canva", "CapCut"],
+        skills: ["Meta Business Suite", "Canva", "CapCut", "Trello", "Notion"],
     },
     {
         icon: Brain,
@@ -25,7 +25,7 @@ const skillCategories = [
     {
         icon: Globe,
         title: "Langues",
-        skills: ["Français (courant)", "Anglais (intermédiaire)", "Malgache (maternelle)"],
+        skills: ["Français (courant)", "Anglais (niveau moyen)", "Malgache (maternelle)"],
     },
 ];
 

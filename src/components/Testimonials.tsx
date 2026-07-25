@@ -7,25 +7,25 @@ import TextReveal from "@/components/ui/TextReveal";
 const testimonials = [
 	{
 		name: "L'homme imparfait",
-		role: "Community Manager",
+		role: "Client",
 		content: "Le service est efficace et à l’écoute des attentes du client",
 	},
 	{
 		name: "Longin",
 		role: "Entrepreneur",
-		content: "C'était d'une facilité, et fluidité optimalement parfait",
+		content: "Le travail a été fluide, clair et adapté à nos besoins.",
 	},
 	{
 		name: "RunRobe",
 		role: "TPE/PME",
 		content:
-			"Notre entreprise est en plein essor et grâce à Tech Bloom Agency elle a eu beaucoup de succès",
+			"Notre présence en ligne a gagné en cohérence et en visibilité grâce à cet accompagnement.",
 	},
 	{
 		name: "Manitra",
 		role: "Étudiante",
 		content:
-			"L'efficacité du travail fourni par Tech Bloom Agency est satisfaisante, mais il y a toujours des points à améliorer.",
+			"L'efficacité du travail fourni est satisfaisante, avec une vraie attention aux détails et aux retours.",
 	},
 ];
 
@@ -50,8 +50,8 @@ export default function Testimonials() {
 						<h2>Ils me font confiance</h2>
 					</TextReveal>
 					<p className="text-lg text-muted-foreground leading-relaxed">
-						Des retours authentiques de clients satisfaits de notre
-						collaboration.
+						Des retours authentiques de clients et partenaires sur mes
+						accompagnements freelance.
 					</p>
 				</motion.div>
 

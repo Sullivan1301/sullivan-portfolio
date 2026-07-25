@@ -169,7 +169,7 @@ export default function Hero() {
                                     <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_30px_rgba(124,58,237,0.4)] bg-muted">
                                         <Image
                                             src="/sullivan.jpeg"
-                                            alt="Portrait professionnel de Sullivan Joro Rakotoniaina, développeur web Next.js et entrepreneur digital basé à Madagascar"
+                                            alt="Portrait professionnel de Sullivan Joro Rakotoniaina, Accompagnateur Digital et Freelance Malagasy basé à Madagascar"
                                             fill
                                             className="object-cover w-full h-full"
                                             priority
@@ -186,7 +186,7 @@ export default function Hero() {
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
                                 <Sparkles size={16} className="text-accent-gold" />
-                                <span>Disponible pour de nouvelles opportunités</span>
+                                <span>Accompagnateur digital et freelance malagasy disponible</span>
                             </motion.div>
 
                             {/* Name */}
@@ -204,12 +204,12 @@ export default function Hero() {
 
                             {/* Tagline */}
                             <p className="text-lg sm:text-xl text-primary-violet-light/80 mb-4 font-medium max-w-lg mx-auto leading-tight">
-                                Parcours axé sur la mise en œuvre digitale et la gestion de petites équipes techniques
+                                Accompagnateur Digital et Freelance Malagasy pour les marques, organisations et entrepreneurs
                             </p>
 
                             {/* Description */}
                             <p className="text-sm sm:text-base text-primary-violet-light/60 max-w-xl mx-auto mb-10 leading-relaxed">
-                                Avec une expérience pratique en JavaScript/TypeScript et Next.js, je propose d&apos;accélérer vos livraisons en assurant un développement front-end soigné, des déploiements fiables et une intégration continue adaptée à votre roadmap.
+                                J&apos;accompagne les marques avec le développement web, la stratégie éditoriale, le storytelling, la création de contenu et l&apos;analyse des performances.
                             </p>
 
                             {/* CTA buttons */}

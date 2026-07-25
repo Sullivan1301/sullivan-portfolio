@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, BookOpen } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
@@ -11,16 +11,8 @@ const educations = [
         degree: "Licence en Informatique",
         school: "Haute École d'Informatique",
         location: "Antananarivo",
-        period: "octobre 2022 - juillet 2026",
-        description: "Formation complète en informatique couvrant les fondamentaux de la programmation, les bases de données, les systèmes d'information, l'architecture logicielle et les technologies web modernes."
-    },
-    {
-        icon: BookOpen,
-        degree: "Baccalauréat Série D",
-        school: "FJKM Ziona",
-        location: "Toamasina",
-        period: "2021 - 2022",
-        description: "Formation scientifique axée sur les mathématiques, la physique-chimie et les sciences de la vie et de la terre."
+        period: "octobre 2022 - juin 2026",
+        description: "Formation en informatique couvrant la programmation, les bases de données, les systèmes d'information, l'architecture logicielle et les technologies web."
     }
 ];
 
@@ -42,7 +34,7 @@ export default function Education() {
                         <h2>Parcours académique</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Une formation solide en informatique complétée par une base scientifique solide.
+                        Une formation en informatique complétée par une expérience terrain en communication digitale et en gestion de projet.
                     </p>
                 </motion.div>
 
