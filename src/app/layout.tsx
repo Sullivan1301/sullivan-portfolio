@@ -40,28 +40,31 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sullivan-portfolio.vercel.app"),
   title: {
-    default: "Joro Sullivan Rakotoniaina | Développeur Web Next.js & Entrepreneur Digital à Madagascar",
+    default: "Joro Sullivan Rakotoniaina | Accompagnateur Digital et Freelance Malagasy",
     template: "%s | Sullivan Joro"
   },
-  description: "Portfolio de Sullivan Joro - Développeur web Next.js, TypeScript et entrepreneur digital basé à Antananarivo, Madagascar. Fondateur de Tech Bloom Agency. Spécialisé en création de sites web modernes, stratégie digitale, marketing digital et community management. Disponible pour vos projets web et missions freelance.",
+  description: "Portfolio de Sullivan Joro - Accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar. Spécialisé en développement web, community management, social media management, stratégie éditoriale et création de contenu, avec Tech Bloom Agency comme levier B2B.",
   keywords: [
-    "développeur web",
-    "développeur Next.js",
-    "développeur TypeScript",
-    "développeur React",
-    "entrepreneur digital",
+    "accompagnateur digital",
+    "freelance malagasy",
+    "développement web",
     "community manager",
+    "social media manager",
+    "freelance",
     "Madagascar",
     "Antananarivo",
     "Toamasina",
-    "création site web",
     "stratégie digitale",
+    "création de contenu",
+    "storytelling",
+    "analyse des performances",
     "marketing digital",
     "Tech Bloom Agency",
-    "portfolio développeur",
-    "freelance développeur",
-    "développeur web Madagascar",
-    "agence digitale Madagascar"
+    "Meta Business Suite",
+    "Canva",
+    "CapCut",
+    "Trello",
+    "Notion"
   ],
   authors: [{ name: "Joro Sullivan Rakotoniaina", url: "https://sullivan-portfolio.vercel.app" }],
   creator: "Sullivan Joro",
@@ -71,16 +74,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    alternateLocale: ["en_US", "mg_MG"],
     url: "https://sullivan-portfolio.vercel.app",
     siteName: "Portfolio Sullivan Joro",
-    title: "Joro Sullivan Rakotoniaina | Développeur Web & Entrepreneur Digital",
-    description: "Développeur web Next.js et entrepreneur digital à Madagascar. Création de sites web modernes, stratégie digitale et accompagnement numérique pour PME et entrepreneurs.",
+    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital et Freelance Malagasy",
+    description: "Accompagnateur digital et freelance malagasy à Madagascar. Développement web, community management, social media management et création de contenu.",
     images: [{
       url: "/og-image.png",
       width: 1200,
       height: 630,
-      alt: "Sullivan Joro - Développeur Web & Entrepreneur Digital à Madagascar",
+      alt: "Sullivan Joro - Accompagnateur Digital et Freelance Malagasy à Madagascar",
       type: "image/png",
     }],
   },
@@ -90,8 +92,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sullivan_joro",
     creator: "@sullivan_joro",
-    title: "Joro Sullivan Rakotoniaina | Développeur Web & Entrepreneur Digital",
-    description: "Développeur web Next.js et entrepreneur digital à Madagascar. Découvrez mes projets et compétences.",
+    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital et Freelance Malagasy",
+    description: "Accompagnateur digital et freelance malagasy à Madagascar. Découvrez mon parcours et mes compétences.",
     images: ["/og-image.png"],
   },
 
@@ -146,20 +148,9 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={`${bitter.variable} ${firaCode.variable}`}>
       <head>
-        <title>Joro Sullivan Rakotoniaina | Développeur Web Next.js & Entrepreneur Digital à Madagascar</title>
-        
         {/* DNS Prefetch for external resources */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-        {/* Preconnect for critical resources */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-
-        {/* Hreflang for international SEO */}
-        <link rel="alternate" hrefLang="fr" href="https://sullivan-portfolio.vercel.app" />
-        <link rel="alternate" hrefLang="en" href="https://sullivan-portfolio.vercel.app/en" />
-        <link rel="alternate" hrefLang="mg" href="https://sullivan-portfolio.vercel.app/mg" />
-        <link rel="alternate" hrefLang="x-default" href="https://sullivan-portfolio.vercel.app" />
 
         {/* GEO tags for search engines */}
         <meta name="geo.position" content="-18.8792;47.5079" />

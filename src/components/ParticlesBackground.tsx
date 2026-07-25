@@ -68,8 +68,8 @@ export default function ParticlesBackground() {
         };
 
         resizeCanvas();
-        window.addEventListener("click", resizeCanvas);
-        // window.addEventListener("click", handleClick);
+        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener("click", handleClick);
 
         const particleCount = 50;
         particlesRef.current = [];
@@ -279,14 +279,14 @@ export default function ParticlesBackground() {
             mouseRef.current.clicking = false;
         };
 
-        // window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mousemove", handleMouseMove);
         window.addEventListener("mousedown", handleMouseDown);
         window.addEventListener("mouseup", handleMouseUp);
         animate();
 
         return () => {
-           // window.removeEventListener("resize", resizeCanvas);
-            // window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("resize", resizeCanvas);
+            window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("mousedown", handleMouseDown);
             window.removeEventListener("mouseup", handleMouseUp);
             window.removeEventListener("click", handleClick);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle, MessageCircle, Github, Facebook } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
@@ -13,13 +13,27 @@ export default function Contact() {
         message: "",
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const resetTimerRef = useRef<number | null>(null);
+
+    useEffect(() => {
+        return () => {
+            if (resetTimerRef.current) {
+                window.clearTimeout(resetTimerRef.current);
+            }
+        };
+    }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const mailtoLink = `mailto:sullivanjoro3@gmail.com?subject=Contact de ${formData.name}&body=${encodeURIComponent(formData.message)}%0A%0AEmail: ${formData.email}`;
-        window.parent.postMessage({ type: "OPEN_EXTERNAL_URL", data: { url: mailtoLink } }, "*");
+        const subject = encodeURIComponent(`Contact de ${formData.name}`);
+        const body = encodeURIComponent(`${formData.message}\n\nEmail: ${formData.email}`);
+        const mailtoLink = `mailto:jorosullivan13@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
         setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 3000);
+        if (resetTimerRef.current) {
+            window.clearTimeout(resetTimerRef.current);
+        }
+        resetTimerRef.current = window.setTimeout(() => setIsSubmitted(false), 3000);
     };
 
     return (
@@ -68,8 +82,8 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Email</p>
-                                            <a href="mailto:sullivanjoro3@gmail.com" className="font-medium hover:text-highlight transition-colors" title="Envoyer un email à Sullivan">
-                                                sullivanjoro3@gmail.com
+                                            <a href="mailto:jorosullivan13@gmail.com" className="font-medium hover:text-highlight transition-colors" title="Envoyer un email à Sullivan">
+                                                jorosullivan13@gmail.com
                                             </a>
                                         </div>
                                     </motion.div>
@@ -86,7 +100,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Disponibilité</p>
-                                            <p className="font-medium">Télétravail ou Hybride</p>
+                                            <p className="font-medium">Télétravail ou présentiel</p>
                                         </div>
                                     </motion.div>
                                 </Magnetic>
@@ -170,7 +184,7 @@ export default function Contact() {
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
                                     <motion.a
-                                        href="https://wa.me/+261341060802"
+                                        href="https://wa.me/261341060802"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"

@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_12px_rgba(124,58,237,0.3)] group-hover:border-accent-gold/60 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.3)] transition-all duration-300">
             <Image
               src="/sullivan.jpeg"
-              alt="Photo de profil Sullivan Joro - Développeur Web"
+              alt="Photo de profil Sullivan Joro - Community Manager"
               width={40}
               height={40}
               className="object-cover w-full h-full"

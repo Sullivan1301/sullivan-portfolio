@@ -5,10 +5,10 @@ import Link from "next/link";
 /* Social icon config for DRY rendering */
 const socials = [
   {
-    href: "mailto:sullivanjoro3@gmail.com",
+    href: "mailto:jorosullivan13@gmail.com",
     icon: Mail,
-    label: "Contacter par email (sullivanjoro3@gmail.com)",
-    title: "Email: sullivanjoro3@gmail.com",
+    label: "Contacter par email (jorosullivan13@gmail.com)",
+    title: "Email: jorosullivan13@gmail.com",
   },
   {
     href: "https://github.com/Sullivan1301/",
@@ -39,7 +39,7 @@ const socials = [
     external: true,
   },
   {
-    href: "https://wa.me/+261341060802",
+    href: "https://wa.me/261341060802",
     icon: MessageCircle,
     label: "Contacter via WhatsApp",
     title: "WhatsApp",
@@ -76,7 +76,7 @@ export default function Footer() {
                                 <span className="font-bold text-foreground group-hover:text-accent-gold transition-colors duration-300">
                                     Sullivan
                                 </span>
-                                <span className="sr-only">Joro Rakotoniaina - Développeur Web</span>
+                                <span className="sr-only">Joro Rakotoniaina - Accompagnateur Digital et Freelance Malagasy</span>
                             </div>
                         </Link>
                         <p className="text-sm text-primary-violet-light/60 mt-2 font-medium">

@@ -45,7 +45,7 @@ export default function ErrorReporter({ error, resetAction }: ReporterProps) {
                             const errorData = JSON.stringify(queuedErrors[0].error, null, 2);
                             const subject = encodeURIComponent(`Erreur Portfolio Sullivan Joro - ${new Date().toISOString()}`);
                             const body = encodeURIComponent(`Erreur détaillée :\n\n${errorData}\n\nURL: ${window.location.href}\nUser Agent: ${navigator.userAgent}`);
-                            window.location.href = `mailto:sullivanjoro3@gmail.com?subject=${subject}&body=${body}`;
+                            window.location.href = `mailto:jorosullivan13@gmail.com?subject=${subject}&body=${body}`;
                         }
                     }
                 }, 5000);
