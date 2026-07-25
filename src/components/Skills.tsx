@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, TrendingUp, Brain, Globe } from "lucide-react";
+import { Brain, Code, PenTool, TrendingUp } from "lucide-react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import TextReveal from "@/components/ui/TextReveal";
@@ -9,23 +9,23 @@ import Magnetic from "@/components/ui/Magnetic";
 const skillCategories = [
     {
         icon: Code,
-        title: "Tech",
-        skills: ["JavaScript/TypeScript", "HTML/CSS", "Git/GitHub", "Intelligence Artificielle"],
+        title: "Web qui convertit",
+        skills: ["Sites vitrines", "Landing pages", "SEO technique", "Analytics"],
     },
     {
         icon: TrendingUp,
-        title: "Outils de Travail",
-        skills: ["Meta Business Suite", "Canva", "CapCut", "Trello", "Notion"],
+        title: "Social Media",
+        skills: ["Stratégie éditoriale", "Community management", "Génération de prospects", "Suivi des performances"],
+    },
+    {
+        icon: PenTool,
+        title: "Contenu stratégique",
+        skills: ["Copywriting", "Storytelling", "Création visuelle", "Formats courts"],
     },
     {
         icon: Brain,
-        title: "Atouts",
-        skills: ["Motivé", "À l'écoute", "Responsable", "Adaptabilité", "Polyvalent"],
-    },
-    {
-        icon: Globe,
-        title: "Langues",
-        skills: ["Français (courant)", "Anglais (niveau moyen)", "Malgache (maternelle)"],
+        title: "IA et optimisation",
+        skills: ["Automatisation", "Recherche et idéation", "Production assistée", "Amélioration continue"],
     },
 ];
 
@@ -88,13 +88,13 @@ export default function Skills() {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 >
             <span className="text-sm font-medium text-highlight uppercase tracking-wider">
-              Compétences
+              Leviers de croissance
             </span>
                     <TextReveal className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        <h2>Ce que je fais</h2>
+                        <h2>Les bons outils au service de votre activité</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Un ensemble de compétences techniques et stratégiques pour accompagner vos projets digitaux de A à Z.
+                        Je combine développement web, marketing, contenu et IA selon votre objectif — pas pour multiplier les prestations, mais pour obtenir un résultat cohérent.
                     </p>
                 </motion.div>
 

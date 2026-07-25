@@ -6,7 +6,7 @@ import TextReveal from "@/components/ui/TextReveal";
 
 const testimonials = [
 	{
-		name: "L'homme imparfait",
+			name: "L’homme imparfait",
 		role: "Client",
 		content: "Le service est efficace et à l’écoute des attentes du client",
 	},
@@ -25,7 +25,7 @@ const testimonials = [
 		name: "Manitra",
 		role: "Étudiante",
 		content:
-			"L'efficacité du travail fourni est satisfaisante, avec une vraie attention aux détails et aux retours.",
+				"L’efficacité du travail fourni est satisfaisante, avec une vraie attention aux détails et aux retours.",
 	},
 ];
 
@@ -50,8 +50,8 @@ export default function Testimonials() {
 						<h2>Ils me font confiance</h2>
 					</TextReveal>
 					<p className="text-lg text-muted-foreground leading-relaxed">
-						Des retours authentiques de clients et partenaires sur mes
-						accompagnements freelance.
+						Des retours authentiques de clients et partenaires sur les
+						projets que j’ai accompagnés.
 					</p>
 				</motion.div>
 
@@ -71,9 +71,9 @@ export default function Testimonials() {
 							whileHover={{ scale: 1.01, y: -3 }}
 						>
 							<Quote className="w-8 h-8 text-highlight mb-6" />
-							<p className="text-muted-foreground leading-relaxed mb-6 italic">
-								"{t.content}"
-							</p>
+								<blockquote className="mb-6 leading-relaxed text-muted-foreground">
+									{t.content}
+								</blockquote>
 							<div className="flex items-center gap-4">
 								<div className="w-12 h-12 rounded-full bg-highlight/10 flex items-center justify-center border-2 border-highlight/20">
 									<span className="text-highlight font-bold text-sm">

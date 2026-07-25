@@ -76,11 +76,11 @@ export default function Footer() {
                                 <span className="font-bold text-foreground group-hover:text-accent-gold transition-colors duration-300">
                                     Sullivan
                                 </span>
-                                <span className="sr-only">Joro Rakotoniaina - Accompagnateur Digital et Freelance Malagasy</span>
+                                <span className="sr-only">Joro Rakotoniaina — Digital Growth Partner à Madagascar</span>
                             </div>
                         </Link>
                         <p className="text-sm text-primary-violet-light/60 mt-2 font-medium">
-                            Stratégie Digitale & Développement Web
+                            Digital Growth Partner · Projets exécutés avec Tech Bloom Agency
                         </p>
                     </div>
 

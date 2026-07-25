@@ -40,17 +40,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://sullivan-portfolio.vercel.app"),
   title: {
-    default: "Joro Sullivan Rakotoniaina | Accompagnateur Digital et Freelance Malagasy",
+    default: "Sullivan Joro | Digital Growth Partner pour PME",
     template: "%s | Sullivan Joro"
   },
-  description: "Portfolio de Sullivan Joro - Accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar. Spécialisé en développement web, community management, social media management, stratégie éditoriale et création de contenu, avec Tech Bloom Agency comme levier B2B.",
+  description: "J’aide les PME à transformer leur présence digitale en clients grâce au web, aux réseaux sociaux, au contenu stratégique et à l’IA. Projets exécutés avec Tech Bloom Agency.",
   keywords: [
-    "accompagnateur digital",
-    "freelance malagasy",
+    "digital growth partner",
+    "croissance digitale PME",
+    "accompagnement digital Madagascar",
     "développement web",
     "community manager",
     "social media manager",
-    "freelance",
+    "génération de prospects",
     "Madagascar",
     "Antananarivo",
     "Toamasina",
@@ -76,13 +77,13 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://sullivan-portfolio.vercel.app",
     siteName: "Portfolio Sullivan Joro",
-    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital et Freelance Malagasy",
-    description: "Accompagnateur digital et freelance malagasy à Madagascar. Développement web, community management, social media management et création de contenu.",
+    title: "Sullivan Joro | Digital Growth Partner pour PME",
+    description: "Développement web, réseaux sociaux, contenu stratégique et IA au service de la croissance de votre entreprise.",
     images: [{
       url: "/og-image.png",
       width: 1200,
       height: 630,
-      alt: "Sullivan Joro - Accompagnateur Digital et Freelance Malagasy à Madagascar",
+      alt: "Sullivan Joro — Digital Growth Partner pour PME à Madagascar",
       type: "image/png",
     }],
   },
@@ -92,8 +93,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sullivan_joro",
     creator: "@sullivan_joro",
-    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital et Freelance Malagasy",
-    description: "Accompagnateur digital et freelance malagasy à Madagascar. Découvrez mon parcours et mes compétences.",
+    title: "Sullivan Joro | Digital Growth Partner pour PME",
+    description: "Transformez votre présence digitale en levier de croissance avec une stratégie orientée résultats.",
     images: ["/og-image.png"],
   },
 
@@ -148,10 +149,6 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={`${bitter.variable} ${firaCode.variable}`}>
       <head>
-        {/* DNS Prefetch for external resources */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
         {/* GEO tags for search engines */}
         <meta name="geo.position" content="-18.8792;47.5079" />
         <meta name="geo.placename" content="Antananarivo, Madagascar" />

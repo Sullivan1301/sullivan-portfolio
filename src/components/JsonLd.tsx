@@ -9,8 +9,8 @@ export function PersonJsonLd() {
     "givenName": "Sullivan",
     "familyName": "Rakotoniaina",
     "alternateName": ["Sullivan Joro", "Sullivan Rakotoniaina"],
-    "jobTitle": "Accompagnateur Digital et Freelance Malagasy",
-    "description": "Accompagnateur digital et freelance malagasy à Antananarivo, Madagascar. Spécialisé en développement web, community management, social media management, stratégie éditoriale, storytelling et création de contenu.",
+    "jobTitle": "Digital Growth Partner",
+    "description": "Partenaire de croissance digitale basé à Antananarivo. Sullivan Joro aide les PME à attirer, convertir et fidéliser leurs clients grâce au développement web, aux réseaux sociaux, au contenu stratégique et à l’intelligence artificielle.",
     "url": "https://sullivan-portfolio.vercel.app",
     "image": "https://sullivan-portfolio.vercel.app/sullivan.jpeg",
     "email": "jorosullivan13@gmail.com",
@@ -77,7 +77,7 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     "name": "Tech Bloom Agency",
     "alternateName": "Tech Bloom",
-    "description": "Agence digitale spécialisée en développement web, branding & identité visuelle, marketing digital et community management. Accompagnement des PME, TPE et entrepreneurs.",
+    "description": "Structure d’exécution fondée par Sullivan Joro pour produire et livrer les projets de développement web, marketing digital, contenu et community management destinés aux PME.",
     "url": "https://techbloom.agency",
     "logo": "https://sullivan-portfolio.vercel.app/sullivan.jpeg",
     "foundingDate": "2025-11",
@@ -114,7 +114,7 @@ export function WebSiteJsonLd() {
     "name": "Portfolio Sullivan Joro",
     "alternateName": "Sullivan Rakotoniaina Portfolio",
     "url": "https://sullivan-portfolio.vercel.app",
-    "description": "Portfolio de Sullivan Joro - Accompagnateur digital et freelance malagasy à Madagascar.",
+    "description": "La marque personnelle de Sullivan Joro, Digital Growth Partner pour les PME à Madagascar et à distance.",
     "publisher": {
       "@type": "Person",
       "name": "Joro Sullivan Rakotoniaina",
@@ -198,10 +198,10 @@ export function FAQPageJsonLd() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Qui est Sullivan Joro ?",
+        "name": "Comment Sullivan Joro aide-t-il les PME ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sullivan Joro Rakotoniaina est un accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar. Il est spécialisé dans le développement web, le community management, le social media management, la stratégie éditoriale et la création de contenu."
+          "text": "Sullivan Joro accompagne les PME dans leur croissance en combinant développement web, réseaux sociaux, contenu stratégique, copywriting et intelligence artificielle selon leurs objectifs business."
         }
       },
       {
@@ -214,10 +214,10 @@ export function FAQPageJsonLd() {
       },
       {
         "@type": "Question",
-        "name": "Quelles compétences maîtrise Sullivan Joro ?",
+        "name": "Quel est le rôle de Tech Bloom Agency ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sullivan Joro maîtrise le développement web, le community management, le social media management, la stratégie éditoriale, le storytelling, la création de contenu et l'analyse de performances ainsi que Meta Business Suite, Canva, CapCut, Trello et Notion."
+          "text": "La marque personnelle de Sullivan Joro attire l’audience, crée la confiance et cadre la stratégie. Tech Bloom Agency est la structure qui exécute les prestations et assure la livraison des projets."
         }
       }
     ]
@@ -236,8 +236,8 @@ export function LocalBusinessJsonLd() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://sullivan-portfolio.vercel.app/#business",
-    "name": "Sullivan Joro - Accompagnateur Digital",
-    "description": "Accompagnateur digital et freelance malagasy basé à Antananarivo, Madagascar.",
+    "name": "Sullivan Joro — Digital Growth Partner",
+    "description": "Accompagnement de croissance digitale pour PME depuis Antananarivo, avec exécution des projets par Tech Bloom Agency.",
     "url": "https://sullivan-portfolio.vercel.app",
     "telephone": "+261341060802",
     "email": "jorosullivan13@gmail.com",

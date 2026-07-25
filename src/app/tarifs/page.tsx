@@ -150,8 +150,8 @@ export default function TarifsPage() {
             Tarifs & Services
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Freelance indépendant basé à Madagascar. Vous travaillez directement avec moi —
-            pas de frais d&apos;agence, pas d&apos;intermédiaire, des prix transparents.
+            Vous travaillez directement avec moi pour la stratégie et le suivi —
+            Tech Bloom Agency porte l&apos;exécution, avec un périmètre et des prix transparents.
           </p>
         </div>
 

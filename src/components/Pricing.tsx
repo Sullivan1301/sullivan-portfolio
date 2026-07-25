@@ -157,8 +157,8 @@ export default function Pricing() {
             <h2>Des prix clairs, sans surprise</h2>
           </TextReveal>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Freelance indépendant, pas d&apos;agence. Vous travaillez directement avec moi —
-            pas de frais de structure, pas d&apos;intermédiaire.
+            Vous gardez un interlocuteur unique pour la stratégie et le suivi. Tech Bloom Agency
+            assure l&apos;exécution et la livraison avec une tarification transparente.
           </p>
 
           {/* Currency toggle */}

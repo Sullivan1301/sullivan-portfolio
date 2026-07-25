@@ -12,7 +12,7 @@ export default function NotFound() {
           Page non trouvée
         </h2>
         <p className="text-muted-foreground mb-8">
-          Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+          Désolé, la page que vous recherchez n’existe pas ou a été déplacée.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -20,7 +20,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-highlight text-white rounded-full font-medium hover:bg-highlight/90 transition-colors"
           >
             <Home size={18} />
-            Retour à l'accueil
+            Retour à l’accueil
           </Link>
           <button
             onClick={() => window.history.back()}

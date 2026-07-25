@@ -1,253 +1,114 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
-import Magnetic from "@/components/ui/Magnetic";
+import { Check, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 import GlassCard from "@/components/GlassCard";
+import Magnetic from "@/components/ui/Magnetic";
 
-/* ------------------------------------------------------------------ */
-/*  FloatingCube – decorative 3-D element with violet-gold palette    */
-/* ------------------------------------------------------------------ */
+const growthOutcomes = [
+    "Des sites web pensés pour convertir",
+    "Des réseaux sociaux qui génèrent des prospects",
+    "Des stratégies digitales pilotées par les résultats",
+];
+
 function FloatingCube({ className, delay = 0 }: { className?: string; delay?: number }) {
     return (
         <motion.div
+            aria-hidden="true"
             className={`absolute pointer-events-none ${className}`}
-            initial={{ rotateX: 0, rotateY: 0 }}
-            animate={{
-                rotateX: [0, 180],
-                rotateY: [0, 180],
-                y: [-10, 10, -10],
-            }}
-            transition={{
-                rotateX: { duration: 12, repeat: Infinity, ease: "linear", delay },
-                rotateY: { duration: 8, repeat: Infinity, ease: "linear", delay },
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay },
-            }}
-            style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+            animate={{ rotate: [0, 180, 360], y: [-10, 10, -10] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear", delay }}
         >
-            <div className="w-12 h-12 relative" style={{ transformStyle: "preserve-3d" }}>
-                <div className="absolute inset-0 bg-primary-violet/20 border border-primary-violet-light/30 backdrop-blur-sm" style={{ transform: "translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-primary-violet/10 border border-primary-violet-light/20 backdrop-blur-sm" style={{ transform: "translateZ(-24px)" }} />
-                <div className="absolute inset-0 bg-accent-gold/15 border border-accent-gold/25 backdrop-blur-sm" style={{ transform: "rotateY(90deg) translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-accent-gold/10 border border-accent-gold/20 backdrop-blur-sm" style={{ transform: "rotateY(-90deg) translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-primary-violet/10 border border-primary-violet-light/15 backdrop-blur-sm" style={{ transform: "rotateX(90deg) translateZ(24px)" }} />
-                <div className="absolute inset-0 bg-primary-violet/10 border border-primary-violet-light/15 backdrop-blur-sm" style={{ transform: "rotateX(-90deg) translateZ(24px)" }} />
-            </div>
+            <div className="h-12 w-12 rotate-12 border border-primary-violet-light/25 bg-primary-violet/10 backdrop-blur-sm" />
         </motion.div>
     );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Tilt3DCard – perspective tilt following cursor                    */
-/* ------------------------------------------------------------------ */
-function Tilt3DCard({ children }: { children: React.ReactNode }) {
-    const ref = useRef<HTMLDivElement>(null);
-    const [mounted, setMounted] = useState(false);
-    const throttleRef = useRef<number>();
-
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [15, -15]), { stiffness: 300, damping: 30 });
-    const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-15, 15]), { stiffness: 300, damping: 30 });
-
-    useEffect(() => setMounted(true), []);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (throttleRef.current) return;
-
-        throttleRef.current = requestAnimationFrame(() => {
-            if (!ref.current) return;
-            const rect = ref.current.getBoundingClientRect();
-            x.set((e.clientX - (rect.left + rect.width / 2)) / rect.width);
-            y.set((e.clientY - (rect.top + rect.height / 2)) / rect.height);
-            throttleRef.current = undefined;
-        });
-    };
-
-    const handleMouseLeave = () => {
-        x.set(0);
-        y.set(0);
-    };
-
-    if (!mounted) return <div className="max-w-4xl mx-auto text-center">{children}</div>;
-
-    return (
-        <motion.div
-            ref={ref}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1200 }}
-            className="w-full max-w-4xl mx-auto text-center relative z-50 pointer-events-auto will-change-transform"
-        >
-            {children}
-        </motion.div>
-    );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Hero                                                              */
-/* ------------------------------------------------------------------ */
 export default function Hero() {
-    return (
-        <section
-            className="relative isolate min-h-screen flex items-center justify-center overflow-hidden noise"
-            style={{ zIndex: 10 }}
-        >
-            {/* -------- Background layer (purely decorative) -------- */}
-            <div className="absolute inset-0 pointer-events-none select-none z-0">
-                {/* Deep violet base gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark-surface to-primary-violet-dark/40" />
+    const bookingMessage = encodeURIComponent(
+        "Bonjour Sullivan, j’aimerais réserver un appel pour discuter de la croissance digitale de mon entreprise."
+    );
 
-                {/* Animated violet glow blob */}
+    return (
+        <section className="noise relative isolate flex min-h-screen items-center overflow-hidden pt-24">
+            <div className="pointer-events-none absolute inset-0 -z-10 select-none" aria-hidden="true">
+                <div className="absolute inset-0 bg-gradient-to-br from-background-dark via-background-dark-surface to-primary-violet-dark/40" />
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-[28rem] h-[28rem] bg-primary-violet/25 rounded-full blur-[120px]"
+                    className="absolute left-1/4 top-1/4 h-[28rem] w-[28rem] rounded-full bg-primary-violet/25 blur-[120px]"
                     animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.55, 0.3] }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 />
-                {/* Animated gold glow blob */}
                 <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-gold/15 rounded-full blur-[100px]"
+                    className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-accent-gold/15 blur-[100px]"
                     animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                 />
-                {/* Tertiary violet haze */}
-                <motion.div
-                    className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary-violet-dark/30 rounded-full blur-[80px]"
-                    animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.35, 0.2] }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                />
-
-                {/* Floating cubes */}
-                <FloatingCube className="top-24 right-24 hidden lg:block" delay={0} />
-                <FloatingCube className="bottom-32 left-20 hidden lg:block" delay={2} />
-                <FloatingCube className="top-1/3 left-32 hidden xl:block" delay={4} />
-
-                {/* Sparkle dots */}
-                <motion.div
-                    className="absolute top-20 right-40 w-2 h-2 bg-accent-gold rounded-full glow-gold"
-                    animate={{ y: [-10, 10, -10], rotateZ: [0, 180, 360] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                    className="absolute bottom-40 left-16 w-3 h-3 bg-primary-violet-light/80 rounded-full glow-violet"
-                    animate={{ y: [-15, 15, -15], rotateZ: [0, -180, -360] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                />
-                <motion.div
-                    className="absolute top-1/3 right-20 w-2 h-2 bg-accent-gold-light rounded-full glow-gold"
-                    animate={{ y: [-8, 12, -8], opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-                />
+                <FloatingCube className="right-24 top-28 hidden lg:block" />
+                <FloatingCube className="bottom-28 left-20 hidden lg:block" delay={2} />
             </div>
 
-            {/* -------- Hero content -------- */}
             <motion.div
-                className="container-custom relative z-50 pt-28 pb-12 md:pt-40"
-                initial={{ opacity: 0, y: 30 }}
+                className="container-custom relative z-10 py-16 md:py-24"
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <Tilt3DCard>
-                    <GlassCard className="group border border-primary-violet-light/20 shadow-[0_40px_100px_-20px_rgba(124,58,237,0.5)]">
-                        {/* Glass overlay – glossy edge */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary-violet-light/5 via-transparent to-accent-gold/5 pointer-events-none z-0" />
+                <GlassCard className="mx-auto max-w-5xl border-primary-violet-light/20">
+                    <div className="pointer-events-none absolute -right-16 top-5 h-48 w-48 rounded-full bg-primary-violet/20 blur-3xl" />
+                    <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-accent-gold/15 blur-3xl" />
 
-                        {/* Internal glow – violet top-right */}
-                        <div className="absolute top-5 -right-16 w-48 h-48 bg-primary-violet/20 rounded-full blur-3xl group-hover:bg-primary-violet/35 transition-colors duration-700 pointer-events-none" />
-                        {/* Internal glow – gold bottom-left */}
-                        <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-accent-gold/15 rounded-full blur-3xl group-hover:bg-accent-gold/30 transition-colors duration-700 pointer-events-none" />
+                    <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
+                        <motion.div
+                            className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-violet-light/30 bg-primary-violet/15 px-4 py-2 text-sm font-semibold text-primary-violet-light"
+                            initial={{ opacity: 0, scale: 0.94 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.25, duration: 0.4 }}
+                        >
+                            <Sparkles size={16} className="text-accent-gold" aria-hidden="true" />
+                            <span>Digital Growth Partner pour PME · Madagascar</span>
+                        </motion.div>
 
-                        <div className="relative z-10">
-                            {/* Profile photo */}
-                            <div className="mb-8 flex justify-center">
-                                <div className="relative w-32 h-32 sm:w-36 sm:h-36">
-                                    {/* Pulsing ring */}
-                                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-violet/40 to-accent-gold/40 animate-pulse blur-xl" />
-                                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_30px_rgba(124,58,237,0.4)] bg-muted">
-                                        <Image
-                                            src="/sullivan.jpeg"
-                                            alt="Portrait professionnel de Sullivan Joro Rakotoniaina, Accompagnateur Digital et Freelance Malagasy basé à Madagascar"
-                                            fill
-                                            className="object-cover w-full h-full"
-                                            priority
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                        <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#f8f9fa] sm:text-5xl md:text-6xl lg:text-7xl">
+                            J’aide les PME à transformer leur présence digitale en clients.
+                        </h1>
 
-                            {/* Availability badge */}
-                            <motion.div
-                                className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 bg-primary-violet/15 border border-primary-violet-light/30 rounded-full text-sm font-semibold text-primary-violet-light"
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.4, duration: 0.5 }}
-                            >
-                                <Sparkles size={16} className="text-accent-gold" />
-                                <span>Accompagnateur digital et freelance malagasy disponible</span>
-                            </motion.div>
+                        <p className="mt-7 max-w-3xl text-base font-medium leading-relaxed text-primary-violet-light/80 sm:text-lg md:text-xl">
+                            Développement web <span aria-hidden="true">·</span> Social Media <span aria-hidden="true">·</span> IA <span aria-hidden="true">·</span> Contenu stratégique
+                        </p>
 
-                            {/* Name */}
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter mb-8 text-foreground">
-                                <span className="block opacity-90">Joro Sullivan</span>
-                                <motion.span
-                                    className="block gradient-text"
-                                    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                                    style={{ backgroundSize: "200% 200%" }}
+                        <ul className="mt-9 grid w-full max-w-3xl gap-4 text-left sm:grid-cols-3">
+                            {growthOutcomes.map((outcome) => (
+                                <li
+                                    key={outcome}
+                                    className="flex items-start gap-3 rounded-2xl border border-primary-violet-light/15 bg-background-dark/30 p-4 text-sm font-medium leading-snug text-[#f8f9fa] sm:text-base"
                                 >
-                                    Rakotoniaina
-                                </motion.span>
-                            </h1>
+                                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/15 text-highlight">
+                                        <Check size={15} strokeWidth={3} aria-hidden="true" />
+                                    </span>
+                                    <span>{outcome}</span>
+                                </li>
+                            ))}
+                        </ul>
 
-                            {/* Tagline */}
-                            <p className="text-lg sm:text-xl text-primary-violet-light/80 mb-4 font-medium max-w-lg mx-auto leading-tight">
-                                Accompagnateur Digital et Freelance Malagasy pour les marques, organisations et entrepreneurs
-                            </p>
-
-                            {/* Description */}
-                            <p className="text-sm sm:text-base text-primary-violet-light/60 max-w-xl mx-auto mb-10 leading-relaxed">
-                                J&apos;accompagne les marques avec le développement web, la stratégie éditoriale, le storytelling, la création de contenu et l&apos;analyse des performances.
-                            </p>
-
-                            {/* CTA buttons */}
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                                <Magnetic>
-                                    <motion.a
-                                        href="#contact"
-                                        className="group/btn relative px-10 py-5 rounded-full font-bold text-lg overflow-hidden block"
-                                        whileHover={{ scale: 1.07, y: -3 }}
-                                        whileTap={{ scale: 0.97 }}
-                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                    >
-                                        {/* Gradient background */}
-                                        <span className="absolute inset-0 bg-gradient-to-r from-primary-violet via-primary-violet-dark to-primary-violet transition-transform duration-300 group-hover/btn:scale-105" />
-                                        {/* Gold shimmer on hover */}
-                                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
-                                        {/* Shadow */}
-                                        <span className="absolute inset-0 shadow-[0_12px_40px_-10px_rgba(124,58,237,0.7)] group-hover/btn:shadow-[0_16px_50px_-10px_rgba(124,58,237,0.9)] transition-shadow duration-300" />
-                                        <span className="relative z-10 text-primary-violet-light font-semibold">Contact Me</span>
-                                    </motion.a>
-                                </Magnetic>
-                                <Magnetic>
-                                    <motion.a
-                                        href="#projects"
-                                        className="group/btn relative px-10 py-5 rounded-full font-bold text-lg overflow-hidden block border border-primary-violet-light/30 backdrop-blur-md"
-                                        whileHover={{ scale: 1.07, y: -3 }}
-                                        whileTap={{ scale: 0.97 }}
-                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                    >
-                                        <span className="absolute inset-0 bg-primary-violet/5 group-hover/btn:bg-primary-violet/15 transition-colors duration-300" />
-                                        <span className="absolute inset-0 border border-accent-gold/0 group-hover/btn:border-accent-gold/30 transition-colors duration-500 rounded-full" />
-                                        <span className="relative z-10 text-foreground font-semibold">View Projects</span>
-                                    </motion.a>
-                                </Magnetic>
-                            </div>
+                        <div className="mt-10">
+                            <Magnetic>
+                                <motion.a
+                                    href={`https://wa.me/261341060802?text=${bookingMessage}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative block min-h-11 overflow-hidden rounded-full px-9 py-4 text-base font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background-dark sm:text-lg"
+                                    aria-label="Réserver un appel avec Sullivan sur WhatsApp"
+                                    whileHover={{ scale: 1.04, y: -2 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                                >
+                                    <span className="absolute inset-0 bg-gradient-to-r from-highlight via-red-500 to-highlight" />
+                                    <span className="relative z-10">Réserver un appel</span>
+                                </motion.a>
+                            </Magnetic>
                         </div>
-                    </GlassCard>
-                </Tilt3DCard>
+                    </div>
+                </GlassCard>
             </motion.div>
         </section>
     );

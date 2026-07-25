@@ -11,7 +11,7 @@ type ReporterProps = {
 export default function ErrorReporter({ error, resetAction }: ReporterProps) {
     /* ─ instrumentation shared by every route ─ */
     const lastOverlayMsg = useRef("");
-    const pollRef = useRef<NodeJS.Timeout>();
+    const pollRef = useRef<ReturnType<typeof setInterval>>();
 
     useEffect(() => {
         const inIframe = window.parent !== window;
@@ -20,7 +20,7 @@ export default function ErrorReporter({ error, resetAction }: ReporterProps) {
         const send = (payload: unknown) => {
             try {
                 window.parent.postMessage(payload, "*");
-            } catch (err) {
+            } catch {
                 // Fallback to localStorage if postMessage fails
                 const errors = JSON.parse(localStorage.getItem("error-reporter-queue") || "[]");
                 errors.push({
@@ -40,7 +40,7 @@ export default function ErrorReporter({ error, resetAction }: ReporterProps) {
                             // Remove sent error from queue
                             queuedErrors.shift();
                             localStorage.setItem("error-reporter-queue", JSON.stringify(queuedErrors));
-                        } catch (e) {
+                        } catch {
                             // If still failing, offer email fallback
                             const errorData = JSON.stringify(queuedErrors[0].error, null, 2);
                             const subject = encodeURIComponent(`Erreur Portfolio Sullivan Joro - ${new Date().toISOString()}`);
@@ -101,7 +101,9 @@ export default function ErrorReporter({ error, resetAction }: ReporterProps) {
         return () => {
             window.removeEventListener("error", onError);
             window.removeEventListener("unhandledrejection", onReject);
-            pollRef.current && clearInterval(pollRef.current);
+            if (pollRef.current) {
+                clearInterval(pollRef.current);
+            }
         };
     }, []);
 

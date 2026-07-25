@@ -27,11 +27,27 @@ export default function Home() {
                 <Hero />
 
                 <SectionReveal>
-                    <About />
+                    <Vision />
                 </SectionReveal>
 
                 <SectionReveal>
                     <Skills />
+                </SectionReveal>
+
+                <SectionReveal>
+                    <Projects />
+                </SectionReveal>
+
+                <SectionReveal>
+                    <Testimonials />
+                </SectionReveal>
+
+                <SectionReveal>
+                    <Pricing />
+                </SectionReveal>
+
+                <SectionReveal>
+                    <About />
                 </SectionReveal>
 
                 <SectionReveal>
@@ -43,27 +59,11 @@ export default function Home() {
                 </SectionReveal>
 
                 <SectionReveal>
-                    <Projects />
-                </SectionReveal>
-
-                <SectionReveal>
                     <Activities />
                 </SectionReveal>
 
                 <SectionReveal>
-                    <Vision />
-                </SectionReveal>
-
-                <SectionReveal>
                     <Passion />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Testimonials />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Pricing />
                 </SectionReveal>
 
                 <SectionReveal>

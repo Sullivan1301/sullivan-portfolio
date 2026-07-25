@@ -7,6 +7,15 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/components/ThemeProvider";
 
+const navItems = [
+  { href: "/", label: "Accueil" },
+  { href: "/#vision", label: "Vision" },
+  { href: "/#skills", label: "Solutions" },
+  { href: "/#projects", label: "Réalisations" },
+  { href: "/tarifs", label: "Tarifs" },
+  { href: "/#contact", label: "Parlons-en" },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,27 +58,20 @@ export default function Navbar() {
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_12px_rgba(124,58,237,0.3)] group-hover:border-accent-gold/60 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.3)] transition-all duration-300">
             <Image
               src="/sullivan.jpeg"
-              alt="Photo de profil Sullivan Joro - Community Manager"
+              alt="Portrait de Sullivan Joro, Digital Growth Partner"
               width={40}
               height={40}
               className="object-cover w-full h-full"
             />
           </div>
-          <span className="font-bold text-foreground group-hover:text-accent-gold transition-colors duration-300">
+          <span className="font-bold text-[#f8f9fa] group-hover:text-accent-gold transition-colors duration-300">
             Sullivan
           </span>
         </Link>
 
         {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-8 font-medium text-foreground">
-          {[
-            { href: "/", label: "Accueil" },
-            { href: "/#about", label: "À propos" },
-            { href: "/#skills", label: "Compétences" },
-            { href: "/#projects", label: "Projets" },
-            { href: "/tarifs", label: "Tarifs" },
-            { href: "/#contact", label: "Contact" },
-          ].map(({ href, label }) => (
+        <div className="hidden md:flex items-center gap-8 font-medium text-[#f8f9fa]">
+          {navItems.map(({ href, label }) => (
             <Link
               key={label}
               href={href}
@@ -104,7 +106,7 @@ export default function Navbar() {
           </motion.button>
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-foreground hover:text-accent-gold focus:outline-none transition-colors duration-300"
+            className="text-[#f8f9fa] hover:text-accent-gold focus:outline-none transition-colors duration-300"
             aria-label="Toggle menu"
             whileTap={{ scale: 0.9 }}
           >
@@ -124,14 +126,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <div className="flex flex-col px-6 py-6 gap-5 font-medium text-foreground">
-              {[
-                { href: "/", label: "Accueil" },
-                { href: "/#about", label: "À propos" },
-                { href: "/#skills", label: "Compétences" },
-                { href: "/#projects", label: "Projets" },
-                { href: "/tarifs", label: "Tarifs" },
-                { href: "/#contact", label: "Contact" },
-              ].map(({ href, label }) => (
+              {navItems.map(({ href, label }) => (
                 <Link
                   key={label}
                   href={href}

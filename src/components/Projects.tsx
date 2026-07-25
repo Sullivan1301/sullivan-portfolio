@@ -71,10 +71,10 @@ export default function Projects() {
                         Projets
                     </span>
                     <TextReveal className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        <h2>Projets & réalisations</h2>
+                        <h2>Des réalisations au service d’objectifs concrets</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Une sélection de réalisations web et digitales qui montrent mon approche du développement, du contenu et de l'accompagnement des marques.
+                        Une sélection de projets web et social media conçus pour renforcer la visibilité, la crédibilité et la croissance des marques accompagnées.
                     </p>
                 </motion.div>
 

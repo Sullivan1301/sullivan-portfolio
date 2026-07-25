@@ -25,7 +25,7 @@ export default function Contact() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const subject = encodeURIComponent(`Contact de ${formData.name}`);
+        const subject = encodeURIComponent(`Demande d’appel de ${formData.name}`);
         const body = encodeURIComponent(`${formData.message}\n\nEmail: ${formData.email}`);
         const mailtoLink = `mailto:jorosullivan13@gmail.com?subject=${subject}&body=${body}`;
         window.location.href = mailtoLink;
@@ -47,13 +47,13 @@ export default function Contact() {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 >
           <span className="text-sm font-medium text-highlight uppercase tracking-wider">
-            Contact
+            Prochaine étape
           </span>
                     <TextReveal className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        <h2>Travaillons ensemble</h2>
+                        <h2>Parlons de votre prochain objectif de croissance</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Intéressé par une collaboration ou un recrutement ? N&apos;hésitez pas à me contacter.
+                        Expliquez-moi où vous en êtes et ce que vous voulez développer. Nous identifierons ensemble le levier digital le plus pertinent.
                     </p>
                 </motion.div>
 
