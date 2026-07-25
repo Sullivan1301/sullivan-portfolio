@@ -5,6 +5,7 @@ import { Mail, MapPin, Send, Linkedin, Instagram, CheckCircle, MessageCircle, Gi
 import { motion, AnimatePresence } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
+import { trackGoogleEvent } from "@/lib/analytics";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -28,6 +29,10 @@ export default function Contact() {
         const subject = encodeURIComponent(`Demande d’appel de ${formData.name}`);
         const body = encodeURIComponent(`${formData.message}\n\nEmail: ${formData.email}`);
         const mailtoLink = `mailto:jorosullivan13@gmail.com?subject=${subject}&body=${body}`;
+        trackGoogleEvent("generate_lead", {
+            location: "contact_form",
+            method: "email",
+        });
         window.location.href = mailtoLink;
         setIsSubmitted(true);
         if (resetTimerRef.current) {
@@ -139,11 +144,12 @@ export default function Contact() {
                                         href="https://github.com/Sullivan1301/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        aria-label="Voir le profil GitHub de Sullivan Joro"
+                                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-highlight/20 bg-highlight/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
                                         whileHover={{ scale: 1.15, rotate: 5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <Github className="text-highlight" size={20} />
+                                        <Github className="text-highlight" size={20} aria-hidden="true" />
                                     </motion.a>
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
@@ -151,11 +157,12 @@ export default function Contact() {
                                         href="https://www.linkedin.com/in/sullivan-rakotoniaina/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        aria-label="Voir le profil LinkedIn de Sullivan Joro"
+                                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-highlight/20 bg-highlight/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
                                         whileHover={{ scale: 1.15, rotate: -5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <Linkedin className="text-highlight" size={20} />
+                                        <Linkedin className="text-highlight" size={20} aria-hidden="true" />
                                     </motion.a>
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
@@ -163,11 +170,12 @@ export default function Contact() {
                                         href="https://www.instagram.com/la_vie_de_sullivan/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        aria-label="Suivre Sullivan Joro sur Instagram"
+                                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-highlight/20 bg-highlight/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
                                         whileHover={{ scale: 1.15, rotate: 5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <Instagram className="text-highlight" size={20} />
+                                        <Instagram className="text-highlight" size={20} aria-hidden="true" />
                                     </motion.a>
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
@@ -175,11 +183,12 @@ export default function Contact() {
                                         href="https://web.facebook.com/sullivan.jororakotoniaina"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        aria-label="Voir le profil Facebook de Sullivan Joro"
+                                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-highlight/20 bg-highlight/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
                                         whileHover={{ scale: 1.15, rotate: -5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <Facebook className="text-highlight" size={20} />
+                                        <Facebook className="text-highlight" size={20} aria-hidden="true" />
                                     </motion.a>
                                 </Magnetic>
                                 <Magnetic strength={0.2}>
@@ -187,11 +196,12 @@ export default function Contact() {
                                         href="https://wa.me/261341060802"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-xl bg-highlight/10 flex items-center justify-center border border-highlight/20"
+                                        aria-label="Contacter Sullivan Joro sur WhatsApp"
+                                        className="flex h-12 w-12 items-center justify-center rounded-xl border border-highlight/20 bg-highlight/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
                                         whileHover={{ scale: 1.15, rotate: 5 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <MessageCircle className="text-highlight" size={20} />
+                                        <MessageCircle className="text-highlight" size={20} aria-hidden="true" />
                                     </motion.a>
                                 </Magnetic>
                             </div>
@@ -212,6 +222,7 @@ export default function Contact() {
                                 <motion.div
                                     key="success"
                                     className="flex flex-col items-center justify-center py-12 text-center"
+                                    aria-live="polite"
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.8 }}
@@ -221,10 +232,10 @@ export default function Contact() {
                                         animate={{ scale: 1 }}
                                         transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
                                     >
-                                        <CheckCircle className="text-green-500 mb-4" size={48} />
+                                        <CheckCircle className="text-green-500 mb-4" size={48} aria-hidden="true" />
                                     </motion.div>
-                                    <p className="text-lg font-medium">Message envoyé !</p>
-                                    <p className="text-muted-foreground">Merci pour votre message.</p>
+                                    <p className="text-lg font-medium">Votre application email est ouverte</p>
+                                    <p className="text-muted-foreground">Il ne vous reste plus qu’à envoyer le message.</p>
                                 </motion.div>
                             ) : (
                                 <motion.form
@@ -242,11 +253,13 @@ export default function Contact() {
                                         <motion.input
                                             type="text"
                                             id="name"
+                                            name="name"
+                                            autoComplete="name"
                                             required
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:border-highlight focus:ring-1 focus:ring-highlight outline-none transition-all"
-                                            placeholder="Votre nom"
+                                            className="w-full rounded-xl border border-border bg-background/50 px-4 py-3 transition-[border-color,box-shadow,transform] focus:border-highlight focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
+                                            placeholder="Ex. Sullivan Joro"
                                             whileFocus={{ scale: 1.01 }}
                                         />
                                     </div>
@@ -258,11 +271,14 @@ export default function Contact() {
                                         <motion.input
                                             type="email"
                                             id="email"
+                                            name="email"
+                                            autoComplete="email"
+                                            spellCheck={false}
                                             required
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:border-highlight focus:ring-1 focus:ring-highlight outline-none transition-all"
-                                            placeholder="votre@email.com"
+                                            className="w-full rounded-xl border border-border bg-background/50 px-4 py-3 transition-[border-color,box-shadow,transform] focus:border-highlight focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
+                                            placeholder="Ex. vous@entreprise.com"
                                             whileFocus={{ scale: 1.01 }}
                                         />
                                     </div>
@@ -273,12 +289,14 @@ export default function Contact() {
                                         </label>
                                         <motion.textarea
                                             id="message"
+                                            name="message"
+                                            autoComplete="off"
                                             required
                                             rows={4}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            className="w-full px-4 py-3 rounded-xl bg-background/50 border border-border focus:border-highlight focus:ring-1 focus:ring-highlight outline-none transition-all resize-none"
-                                            placeholder="Votre message..."
+                                            className="w-full resize-none rounded-xl border border-border bg-background/50 px-4 py-3 transition-[border-color,box-shadow,transform] focus:border-highlight focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight"
+                                            placeholder="Ex. Je souhaite générer plus de prospects…"
                                             whileFocus={{ scale: 1.01 }}
                                         />
                                     </div>
@@ -286,11 +304,11 @@ export default function Contact() {
                                     <Magnetic strength={0.1}>
                                         <motion.button
                                             type="submit"
-                                            className="w-full px-6 py-4 bg-highlight text-highlight-foreground rounded-xl font-medium transition-all glow-red flex items-center justify-center gap-2"
+                                            className="glow-red flex w-full items-center justify-center gap-2 rounded-xl bg-highlight px-6 py-4 font-medium text-highlight-foreground transition-[transform,box-shadow,background-color] focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2"
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
                                         >
-                                            <Send size={18} />
+                                            <Send size={18} aria-hidden="true" />
                                             Envoyer
                                         </motion.button>
                                     </Magnetic>

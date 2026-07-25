@@ -3,11 +3,14 @@ import Link from "next/link";
 import { ArrowLeft, Check, MessageCircle, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Tarifs & Services",
+  title: "Tarifs et services digitaux pour PME",
   description:
-    "Tarifs transparents pour développement web, social media management et community management à Madagascar. Freelance indépendant, sans intermédiaire.",
+    "Tarifs de développement web, Social Media et contenu pour PME à Madagascar. Stratégie suivie par Sullivan Joro, exécution par Tech Bloom Agency.",
+  alternates: {
+    canonical: "/tarifs",
+  },
   openGraph: {
-    title: "Tarifs & Services | Sullivan Joro",
+    title: "Tarifs et services digitaux | Sullivan Joro",
     description:
       "Développement web dès 350 000 Ar, Social Media Management dès 500 000 Ar/mois. Prix TTC, devis sous 24h.",
   },

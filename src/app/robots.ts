@@ -1,16 +1,14 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: [
-        '/api/',
-        '/_next/',
-        '/admin/',
-      ],
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/", "/admin/"],
     },
-    sitemap: 'https://sullivan-portfolio.vercel.app/sitemap.xml',
-  }
+    host: siteUrl,
+    sitemap: `${siteUrl}/sitemap.xml`,
+  };
 }

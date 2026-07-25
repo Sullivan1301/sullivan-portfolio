@@ -1,7 +1,7 @@
 {
-  "name": "Portfolio Sullivan Joro",
+  "name": "Sullivan Joro — Digital Growth Partner",
   "short_name": "Sullivan",
-  "description": "Développeur Web Next.js & Entrepreneur Digital à Madagascar",
+  "description": "Accompagnement de croissance digitale pour les PME à Madagascar et à distance.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",
@@ -31,7 +31,8 @@
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "categories": ["portfolio", "technology", "business"],

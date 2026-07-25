@@ -1,6 +1,7 @@
 import { Linkedin, Instagram, Mail, MessageCircle, Heart, Github, Facebook } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import AnalyticsPreferencesButton from "@/components/AnalyticsPreferencesButton";
 
 /* Social icon config for DRY rendering */
 const socials = [
@@ -49,10 +50,13 @@ const socials = [
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+    const googleAnalyticsEnabled = Boolean(
+        process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+    );
 
     return (
         <footer
-            className="relative bg-background-dark/95 backdrop-blur-3xl border-t border-primary-violet-light/10 p-12 rounded-xl shadow-[0_-10px_60px_-15px_rgba(124,58,237,0.2)] transition-all duration-500 hover:shadow-[0_-10px_80px_-15px_rgba(124,58,237,0.3)]"
+            className="relative rounded-xl border-t border-primary-violet-light/10 bg-background-dark/95 p-12 shadow-[0_-10px_60px_-15px_rgba(124,58,237,0.2)] backdrop-blur-3xl transition-shadow duration-500 hover:shadow-[0_-10px_80px_-15px_rgba(124,58,237,0.3)]"
             style={{ position: "relative", zIndex: 5 }}
         >
             {/* Top gradient accent line */}
@@ -63,9 +67,9 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="text-center md:text-left">
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-primary-violet-light/40 shadow-[0_0_12px_rgba(124,58,237,0.25)] group-hover:border-accent-gold/60 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.3)] transition-all duration-300">
+                            <div className="h-11 w-11 overflow-hidden rounded-full border-2 border-primary-violet-light/40 shadow-[0_0_12px_rgba(124,58,237,0.25)] transition-[border-color,box-shadow] duration-300 group-hover:border-accent-gold/60 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.3)]">
                                 <Image
-                                    src="/sullivan.jpeg"
+                                    src="/sullivan-icon.png"
                                     alt="Photo de profil Sullivan Joro"
                                     width={44}
                                     height={44}
@@ -92,18 +96,42 @@ export default function Footer() {
                                 href={href}
                                 target={external ? "_blank" : undefined}
                                 rel={external ? "noopener noreferrer" : undefined}
-                                className="group/icon w-11 h-11 rounded-xl bg-primary-violet/10 border border-primary-violet-light/15 flex items-center justify-center text-primary-violet-light hover:bg-accent-gold/15 hover:text-accent-gold hover:border-accent-gold/40 hover:shadow-[0_0_20px_rgba(212,175,55,0.25)] transition-all duration-300"
+                                className="group/icon flex h-11 w-11 items-center justify-center rounded-xl border border-primary-violet-light/15 bg-primary-violet/10 text-primary-violet-light transition-[color,background-color,border-color,box-shadow] duration-300 hover:border-accent-gold/40 hover:bg-accent-gold/15 hover:text-accent-gold hover:shadow-[0_0_20px_rgba(212,175,55,0.25)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
                                 aria-label={label}
                                 title={title}
                             >
-                                <Icon size={18} className="group-hover/icon:scale-110 transition-transform duration-200" />
+                                <Icon
+                                    size={18}
+                                    className="transition-transform duration-200 group-hover/icon:scale-110"
+                                    aria-hidden="true"
+                                />
                             </a>
                         ))}
                     </nav>
                 </div>
 
                 {/* Divider */}
-                <div className="mt-10 pt-8 border-t border-primary-violet-light/10 text-center">
+                <div className="mt-10 border-t border-primary-violet-light/10 pt-8 text-center">
+                    <nav
+                        className="mb-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-1"
+                        aria-label="Informations complémentaires"
+                    >
+                        <Link
+                            href="/faq"
+                            className="inline-flex min-h-11 items-center rounded-md px-1 text-sm text-primary-violet-light/60 transition-colors hover:text-accent-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
+                        >
+                            Questions fréquentes
+                        </Link>
+                        <Link
+                            href="/confidentialite"
+                            className="inline-flex min-h-11 items-center rounded-md px-1 text-sm text-primary-violet-light/60 transition-colors hover:text-accent-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
+                        >
+                            Confidentialité
+                        </Link>
+                        {googleAnalyticsEnabled ? (
+                            <AnalyticsPreferencesButton />
+                        ) : null}
+                    </nav>
                     <p className="text-sm text-primary-violet-light/50 flex items-center justify-center gap-1.5">
                         © {currentYear} Joro Sullivan Rakotoniaina. Fait avec
                         <Heart size={13} className="text-accent-gold fill-accent-gold" aria-hidden="true" />

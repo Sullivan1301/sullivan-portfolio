@@ -5,13 +5,14 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import {
-  PersonJsonLd,
-  OrganizationJsonLd,
-  WebSiteJsonLd,
-  BreadcrumbListJsonLd,
   LocalBusinessJsonLd,
+  OrganizationJsonLd,
+  PersonJsonLd,
+  WebSiteJsonLd,
 } from "@/components/JsonLd";
+import GoogleAnalyticsConsent from "@/components/GoogleAnalyticsConsent";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import { siteUrl } from "@/lib/site";
 
 // Optimized font loading with next/font - zero CLS
 const bitter = Bitter({
@@ -27,6 +28,10 @@ const firaCode = Fira_Code({
   variable: "--font-mono",
 });
 
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
+const bingSiteVerification = process.env.BING_SITE_VERIFICATION;
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f8f9fa" },
@@ -38,12 +43,14 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sullivan-portfolio.vercel.app"),
+  metadataBase: new URL(siteUrl),
+  applicationName: "Sullivan Joro",
   title: {
     default: "Sullivan Joro | Digital Growth Partner pour PME",
-    template: "%s | Sullivan Joro"
+    template: "%s | Sullivan Joro",
   },
-  description: "J’aide les PME à transformer leur présence digitale en clients grâce au web, aux réseaux sociaux, au contenu stratégique et à l’IA. Projets exécutés avec Tech Bloom Agency.",
+  description:
+    "Sullivan Joro aide les PME à développer leur activité grâce au web, aux réseaux sociaux, au contenu stratégique et à l’IA, avec Tech Bloom Agency.",
   keywords: [
     "digital growth partner",
     "croissance digitale PME",
@@ -61,44 +68,27 @@ export const metadata: Metadata = {
     "analyse des performances",
     "marketing digital",
     "Tech Bloom Agency",
-    "Meta Business Suite",
-    "Canva",
-    "CapCut",
-    "Trello",
-    "Notion"
   ],
-  authors: [{ name: "Joro Sullivan Rakotoniaina", url: "https://sullivan-portfolio.vercel.app" }],
+  authors: [{ name: "Joro Sullivan Rakotoniaina", url: siteUrl }],
   creator: "Sullivan Joro",
   publisher: "Sullivan Joro",
-
-  // Open Graph
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://sullivan-portfolio.vercel.app",
-    siteName: "Portfolio Sullivan Joro",
+    url: siteUrl,
+    siteName: "Sullivan Joro",
     title: "Sullivan Joro | Digital Growth Partner pour PME",
-    description: "Développement web, réseaux sociaux, contenu stratégique et IA au service de la croissance de votre entreprise.",
-    images: [{
-      url: "/og-image.png",
-      width: 1200,
-      height: 630,
-      alt: "Sullivan Joro — Digital Growth Partner pour PME à Madagascar",
-      type: "image/png",
-    }],
+    description:
+      "Développement web, réseaux sociaux, contenu stratégique et IA au service de la croissance de votre entreprise.",
   },
-
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
     site: "@sullivan_joro",
     creator: "@sullivan_joro",
     title: "Sullivan Joro | Digital Growth Partner pour PME",
-    description: "Transformez votre présence digitale en levier de croissance avec une stratégie orientée résultats.",
-    images: ["/og-image.png"],
+    description:
+      "Transformez votre présence digitale en levier de croissance avec une stratégie orientée résultats.",
   },
-
-  // Robots
   robots: {
     index: true,
     follow: true,
@@ -110,34 +100,35 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
-  // Verification (à configurer avec les outils)
   verification: {
-    google: "google-site-verification-code", // À remplacer après inscription Google Search Console
+    ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
+    ...(bingSiteVerification
+      ? { other: { "msvalidate.01": bingSiteVerification } }
+      : {}),
   },
-
-  // Alternates
   alternates: {
-    canonical: "https://sullivan-portfolio.vercel.app",
+    canonical: siteUrl,
   },
-
-  // Category
-  category: "technology",
-
-  // Icons
+  category: "business",
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#e63946" },
+    apple: [
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
-
-  // Manifest
   manifest: "/site.webmanifest",
 };
 
@@ -154,22 +145,15 @@ export default function RootLayout({
         <meta name="geo.placename" content="Antananarivo, Madagascar" />
         <meta name="geo.region" content="MG" />
 
-        {/* Bing Webmaster Tools verification */}
-        <meta name="msvalidate.01" content="bing-verification-code" />
-
-        {/* DuckDuckGo optimization */}
-        <meta name="duckduckgo-site-verification" content="duckduckgo-verification-code" />
-
         {/* Schema.org for AI assistants */}
         <meta name="generator" content="Next.js 15" />
-        <meta name="application-name" content="Portfolio Sullivan Joro" />
+        <meta name="application-name" content="Sullivan Joro" />
         <meta name="apple-mobile-web-app-title" content="Sullivan Joro" />
 
         {/* JSON-LD Structured Data */}
         <PersonJsonLd />
         <OrganizationJsonLd />
         <WebSiteJsonLd />
-        <BreadcrumbListJsonLd />
         <LocalBusinessJsonLd />
       </head>
       <body className={`${bitter.className} antialiased`}>
@@ -192,6 +176,9 @@ export default function RootLayout({
             <Analytics />
           </SmoothScroll>
         </ThemeProvider>
+        {googleAnalyticsId ? (
+          <GoogleAnalyticsConsent gaId={googleAnalyticsId} />
+        ) : null}
       </body>
     </html>
   );

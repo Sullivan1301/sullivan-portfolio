@@ -82,8 +82,8 @@ Ce portfolio me sert à :
 - **Code**: [Fira Code](https://fonts.google.com/specimen/Fira+Code) (Google Fonts optimisé via next/font)
 
 ### SEO & Analytics
-- **SEO**: Meta tags dynamiques, JSON-LD, sitemap/robots.txt automatisés
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+- **SEO**: métadonnées, JSON-LD, FAQ, sitemap et robots.txt automatisés
+- **Analytics**: [Vercel Analytics](https://vercel.com/analytics) et Google Analytics 4 avec consentement
 - **Monitoring**: Orchids Browser Logs
 
 ### Déploiement
@@ -107,7 +107,15 @@ Pour lancer le projet localement :
     npm install
     ```
 
-3.  **Lancer le serveur de développement** :
+3.  **Configurer l’environnement** :
+    ```bash
+    cp .env.example .env.local
+    ```
+    Renseignez `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`, `GOOGLE_SITE_VERIFICATION`
+    et `BING_SITE_VERIFICATION` avec les valeurs fournies par les services
+    correspondants.
+
+4.  **Lancer le serveur de développement** :
     ```bash
     npm run dev
     ```

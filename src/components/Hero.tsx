@@ -4,6 +4,7 @@ import { Check, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import GlassCard from "@/components/GlassCard";
 import Magnetic from "@/components/ui/Magnetic";
+import { trackGoogleEvent } from "@/lib/analytics";
 
 const growthOutcomes = [
     "Des sites web pensés pour convertir",
@@ -98,6 +99,12 @@ export default function Hero() {
                                     rel="noopener noreferrer"
                                     className="relative block min-h-11 overflow-hidden rounded-full px-9 py-4 text-base font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background-dark sm:text-lg"
                                     aria-label="Réserver un appel avec Sullivan sur WhatsApp"
+                                    onClick={() =>
+                                        trackGoogleEvent("generate_lead", {
+                                            location: "hero",
+                                            method: "whatsapp",
+                                        })
+                                    }
                                     whileHover={{ scale: 1.04, y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 22 }}
