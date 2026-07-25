@@ -54,3 +54,6 @@ next-env.d.ts
 
 #IA
 .claude
+.agents
+skills-lock.json
+public/xdm-setup-7.2.11.tar.xz
