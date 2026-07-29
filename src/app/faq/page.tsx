@@ -52,7 +52,7 @@ export default function FaqPage() {
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               Dernière mise à jour :{" "}
-              <time dateTime={seoLastModified}>25 juillet 2026</time>
+              <time dateTime={seoLastModified}>29 juillet 2026</time>
             </p>
           </header>
 

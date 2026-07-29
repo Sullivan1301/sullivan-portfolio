@@ -1,34 +1,38 @@
 "use client";
 
-import { Folder, Database, Car, DollarSign, ExternalLink } from "lucide-react";
+import { Building2, CalendarDays, ExternalLink, FolderKanban, KanbanSquare } from "lucide-react";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
 
 const projects = [
     {
-        icon: Folder,
+        icon: FolderKanban,
+        title: "Portail Sullivan",
+        description: "Plateforme de diagnostic, d’onboarding et de pilotage social media qui centralise le suivi des clients, les fichiers et les automatisations métier.",
+        technologies: ["Next.js", "TypeScript", "Supabase", "n8n"],
+        link: "https://github.com/Sullivan1301/portail-sullivan",
+    },
+    {
+        icon: KanbanSquare,
+        title: "TBA Studio CM",
+        description: "Plateforme éditoriale multi-clients pour piloter les marques, les contenus et leur validation dans un Kanban enrichi par l’IA.",
+        technologies: ["Next.js", "Supabase", "Kanban", "IA générative"],
+        link: "https://github.com/Sullivan1301/tba-studio-cm",
+    },
+    {
+        icon: CalendarDays,
+        title: "Family Calendar",
+        description: "Application collaborative de gestion du calendrier familial : événements, disponibilités, notifications et rôles des membres.",
+        technologies: ["Next.js", "TypeScript", "better-auth", "Tailwind CSS"],
+        link: "https://github.com/Sullivan1301/family-calendar-ui",
+    },
+    {
+        icon: Building2,
         title: "Tech Bloom Agency",
-        description: "Site vitrine et plateforme digitale de présentation pour une agence orientée accompagnement web, contenu et croissance digitale.",
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"]
-    },
-    {
-        icon: Database,
-        title: "Calendrier Familial UI et API",
-        description: "Interface utilisateur et API pour un calendrier familial permettant la gestion des événements et des tâches partagées.",
-        technologies: ["React", "Node.js", "API REST", "Base de données"]
-    },
-    {
-        icon: DollarSign,
-        title: "Gestion d'un Patrimoine",
-        description: "Application de gestion des biens immobiliers et mobiliers avec suivi des acquisitions, des locations et des revenus générés.",
-        technologies: ["Java", "SQL", "Interface Utilisateur"]
-    },
-    {
-        icon: Car,
-        title: "Gestion d'Opérations Bancaires & Wallet",
-        description: "Système bancaire avec gestion des comptes, transactions, virements et portefeuille électronique.",
-        technologies: ["Java", "SQL", "Sécurité des données"]
+        description: "Site officiel d’une agence digitale présentant ses services, son portfolio, son blog et ses informations de contact.",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+        link: "https://github.com/Sullivan1301/tech-bloom-agency",
     },
     {
         icon: null,
