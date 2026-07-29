@@ -92,14 +92,6 @@ export const faqItems: FaqItem[] = [
     dateModified: seoLastModified,
   },
   {
-    id: "tarifs-personnalises",
-    question: "Comment sont calculés les tarifs des prestations ?",
-    answer:
-      "Les tarifs dépendent du périmètre, des livrables, du volume de production et du niveau d’accompagnement. Les offres standards donnent un repère, puis un devis précise les responsabilités, les échéances et le coût avant tout engagement.",
-    datePublished,
-    dateModified: seoLastModified,
-  },
-  {
     id: "delai-projet",
     question: "Combien de temps dure un projet digital ?",
     answer:

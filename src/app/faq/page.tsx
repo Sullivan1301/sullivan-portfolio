@@ -10,14 +10,14 @@ import { seoLastModified, siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Questions fréquentes sur la croissance digitale des PME",
   description:
-    "Réponses aux questions des PME sur les sites web, les réseaux sociaux, l’IA, les tarifs et l’accompagnement proposé par Sullivan Joro.",
+    "Réponses aux questions des PME sur les sites web, les réseaux sociaux, l’IA et l’accompagnement proposé par Sullivan Joro.",
   alternates: {
     canonical: `${siteUrl}/faq`,
   },
   openGraph: {
     title: "FAQ — Croissance digitale des PME | Sullivan Joro",
     description:
-      "Tout comprendre sur l’accompagnement digital, Tech Bloom Agency, les méthodes, les tarifs et le suivi des résultats.",
+      "Tout comprendre sur l’accompagnement digital, Tech Bloom Agency, les méthodes et le suivi des résultats.",
     url: `${siteUrl}/faq`,
   },
 };

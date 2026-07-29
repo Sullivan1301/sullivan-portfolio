@@ -14,7 +14,6 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing";
 
 export default function Home() {
     return (
@@ -40,10 +39,6 @@ export default function Home() {
 
                 <SectionReveal>
                     <Testimonials />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Pricing />
                 </SectionReveal>
 
                 <SectionReveal>

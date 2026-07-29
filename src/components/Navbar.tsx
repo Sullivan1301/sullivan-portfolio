@@ -12,7 +12,6 @@ const navItems = [
   { href: "/#vision", label: "Vision" },
   { href: "/#skills", label: "Solutions" },
   { href: "/#projects", label: "Réalisations" },
-  { href: "/tarifs", label: "Tarifs" },
   { href: "/#contact", label: "Parlons-en" },
 ];
 
