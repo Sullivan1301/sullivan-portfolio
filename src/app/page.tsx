@@ -14,6 +14,7 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import Testimonials from "@/components/Testimonials";
+import SocialMediaProof from "@/components/SocialMediaProof";
 
 export default function Home() {
     return (
@@ -21,51 +22,20 @@ export default function Home() {
             <ScrollProgress />
             <ParticlesBackground />
             <Navbar />
-
             <main className="relative" id="main-content" tabIndex={-1}>
                 <Hero />
-
-                <SectionReveal>
-                    <Vision />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Skills />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Projects />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Testimonials />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <About />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Experience />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Education />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Activities />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Passion />
-                </SectionReveal>
-
-                <SectionReveal>
-                    <Contact />
-                </SectionReveal>
+                <SectionReveal><Projects /></SectionReveal>
+                <SocialMediaProof />
+                <SectionReveal><Skills /></SectionReveal>
+                <SectionReveal><Vision /></SectionReveal>
+                <SectionReveal><Testimonials /></SectionReveal>
+                <SectionReveal><About /></SectionReveal>
+                <SectionReveal><Experience /></SectionReveal>
+                <SectionReveal><Education /></SectionReveal>
+                <SectionReveal><Activities /></SectionReveal>
+                <SectionReveal><Passion /></SectionReveal>
+                <SectionReveal><Contact /></SectionReveal>
             </main>
-
             <Footer />
         </>
     );

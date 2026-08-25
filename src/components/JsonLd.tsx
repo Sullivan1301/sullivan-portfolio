@@ -36,7 +36,7 @@ export function PersonJsonLd() {
         givenName: "Sullivan",
         familyName: "Rakotoniaina",
         alternateName: ["Sullivan Joro", "Sullivan Rakotoniaina"],
-        jobTitle: "Digital Growth Partner",
+        jobTitle: "Community Manager & Content Creator",
         description:
           "Sullivan Joro aide les PME à attirer, convertir et fidéliser leurs clients grâce au web, aux réseaux sociaux, au contenu stratégique et à l’intelligence artificielle.",
         url: siteUrl,
@@ -127,7 +127,7 @@ export function WebSiteJsonLd() {
         "@type": "WebSite",
         "@id": websiteId,
         name: "Sullivan Joro",
-        alternateName: "Sullivan Joro — Digital Growth Partner",
+        alternateName: "Sullivan Joro — Community Manager & Content Creator",
         url: siteUrl,
         description:
           "Accompagnement de croissance digitale pour les PME à Madagascar et à distance.",
@@ -181,7 +181,7 @@ export function LocalBusinessJsonLd() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "@id": `${siteUrl}/#business`,
-        name: "Sullivan Joro — Digital Growth Partner",
+        name: "Sullivan Joro — Community Manager & Content Creator",
         description:
           "Accompagnement de croissance digitale pour PME depuis Antananarivo, avec exécution des projets par Tech Bloom Agency.",
         url: siteUrl,

@@ -46,11 +46,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Sullivan Joro",
   title: {
-    default: "Sullivan Joro | Digital Growth Partner pour PME",
+    default: "Joro Sullivan Rakotoniaina | Community Manager & Content Creator Madagascar",
     template: "%s | Sullivan Joro",
   },
   description:
-    "Sullivan Joro aide les PME à développer leur activité grâce au web, aux réseaux sociaux, au contenu stratégique et à l’IA, avec Tech Bloom Agency.",
+    "Community Manager à Madagascar spécialisé en stratégie social media, création de contenu, Reels, storytelling, Canva, CapCut et Meta Business Suite. Disponible en freelance et en télétravail.",
   keywords: [
     "digital growth partner",
     "croissance digitale PME",
@@ -77,17 +77,17 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: siteUrl,
     siteName: "Sullivan Joro",
-    title: "Sullivan Joro | Digital Growth Partner pour PME",
+    title: "Joro Sullivan Rakotoniaina | Community Manager & Content Creator Madagascar",
     description:
-      "Développement web, réseaux sociaux, contenu stratégique et IA au service de la croissance de votre entreprise.",
+      "Stratégie social media, création de contenu, Reels et storytelling à Madagascar et à distance.",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sullivan_joro",
     creator: "@sullivan_joro",
-    title: "Sullivan Joro | Digital Growth Partner pour PME",
+    title: "Joro Sullivan Rakotoniaina | Community Manager & Content Creator Madagascar",
     description:
-      "Transformez votre présence digitale en levier de croissance avec une stratégie orientée résultats.",
+      "Community Manager spécialisé en stratégie éditoriale, contenus engageants et suivi des performances.",
   },
   robots: {
     index: true,

@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export const alt =
-  "Sullivan Joro — Digital Growth Partner pour PME à Madagascar";
+  "Joro Sullivan Rakotoniaina — Community Manager & Content Creator";
 export const size = {
   width: 1200,
   height: 630,

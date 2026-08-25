@@ -12,6 +12,7 @@ const navItems = [
   { href: "/#vision", label: "Vision" },
   { href: "/#skills", label: "Solutions" },
   { href: "/#projects", label: "Réalisations" },
+  { href: "/recrutement", label: "Recrutement" },
   { href: "/#contact", label: "Parlons-en" },
 ];
 
@@ -57,7 +58,7 @@ export default function Navbar() {
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_12px_rgba(124,58,237,0.3)] group-hover:border-accent-gold/60 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.3)] transition-all duration-300">
             <Image
               src="/sullivan.jpeg"
-              alt="Portrait de Sullivan Joro, Digital Growth Partner"
+              alt="Portrait de Sullivan Joro, Community Manager et Content Creator"
               width={40}
               height={40}
               className="object-cover w-full h-full"

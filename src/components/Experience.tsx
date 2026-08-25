@@ -34,7 +34,7 @@ const experiences = [
         icon: Smartphone,
         title: "Community Manager - Coordinateur d'activités Informatiques",
         company: "Girl's Touch Erica",
-        period: "février 2025 - novembre 2026",
+        period: "février 2025 - novembre 2025",
         description: "Gestion de la communication digitale et coordination des activités de la page. Conception de photos, montages et vidéos, puis planification, publication et optimisation des contenus avec l’équipe pour renforcer la visibilité de la marque.",
         highlights: ["Social Media", "Création visuelle", "Vidéos", "Community Management"],
     },
