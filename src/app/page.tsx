@@ -24,10 +24,10 @@ export default function Home() {
             <Navbar />
             <main className="relative" id="main-content" tabIndex={-1}>
                 <Hero />
+                <SectionReveal><Vision /></SectionReveal>
                 <SectionReveal><Projects /></SectionReveal>
                 <SocialMediaProof />
                 <SectionReveal><Skills /></SectionReveal>
-                <SectionReveal><Vision /></SectionReveal>
                 <SectionReveal><Testimonials /></SectionReveal>
                 <SectionReveal><About /></SectionReveal>
                 <SectionReveal><Experience /></SectionReveal>

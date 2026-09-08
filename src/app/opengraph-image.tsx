@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export const alt =
-  "Joro Sullivan Rakotoniaina — Community Manager & Content Creator";
+  "Joro Sullivan Rakotoniaina — Accompagnateur Digital";
 export const size = {
   width: 1200,
   height: 630,
@@ -42,7 +42,7 @@ export default async function OpenGraphImage() {
               letterSpacing: "0.04em",
             }}
           >
-            DIGITAL GROWTH PARTNER · MADAGASCAR
+            ACCOMPAGNATEUR DIGITAL · MADAGASCAR
           </div>
           <div
             style={{

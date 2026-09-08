@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ArrowDown, Download } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -40,23 +40,23 @@ export default function Hero() {
                     <div className="pointer-events-none absolute -right-16 top-5 h-48 w-48 rounded-full bg-primary-violet/20 blur-3xl" />
                     <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center">
                         <p className="mb-6 inline-flex rounded-full border border-primary-violet-light/30 bg-primary-violet/15 px-4 py-2 text-sm font-semibold text-[#f8f9fa]">
-                            Basé à Antananarivo · Disponible en CDI, freelance ou à distance
+                            Accompagnateur Digital · Antananarivo
                         </p>
                         <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-[#f8f9fa] sm:text-5xl md:text-6xl lg:text-7xl">
-                            Community Manager <span className="text-accent-gold">&amp;</span> Content Creator
+                            Comprendre, eclairer, guider, construire.
                         </h1>
                         <p className="mt-7 max-w-3xl text-base font-medium leading-relaxed text-primary-violet-light/80 sm:text-lg md:text-xl">
-                            J’aide les marques à développer leur visibilité grâce à des contenus engageants, une stratégie éditoriale claire et un suivi régulier des performances.
+                            J’aide les personnes et les petites structures à avancer dans le digital avec les moyens, les connaissances et le réseau qu’elles ont déjà.
                         </p>
                         <p className="mt-5 text-sm font-semibold tracking-wide text-primary-violet-light sm:text-base">
-                            Social Media · Reels · Storytelling · Canva · CapCut · Meta Business Suite
+                            Strategie digitale - Social media - IA - Projets web - Apprentissage continu
                         </p>
                         <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
                             <a href="#projects" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-highlight px-7 py-3.5 text-base font-semibold text-white shadow-[0_12px_32px_rgba(230,57,70,0.28)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background-dark">
-                                Voir mes réalisations Social Media <ArrowDown size={18} aria-hidden="true" />
+                                Voir ce que je construis <ArrowDown size={18} aria-hidden="true" />
                             </a>
                             <a href="/CV_Joro%20Sullivan_RAKOTONIAINA.pdf" download className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#f8f9fa]/40 bg-[#f8f9fa]/10 px-7 py-3.5 text-base font-semibold text-[#f8f9fa] transition-colors hover:border-accent-gold hover:bg-[#f8f9fa]/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background-dark">
-                                <Download size={18} aria-hidden="true" /> Télécharger mon CV
+                                <Download size={18} aria-hidden="true" /> Telecharger mon CV
                             </a>
                         </div>
                     </div>

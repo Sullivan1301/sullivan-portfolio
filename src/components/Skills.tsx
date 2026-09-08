@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Brain, Code, PenTool, TrendingUp } from "lucide-react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
@@ -8,24 +8,24 @@ import Magnetic from "@/components/ui/Magnetic";
 
 const skillCategories = [
     {
-        icon: Code,
-        title: "Web qui convertit",
-        skills: ["Sites vitrines", "Landing pages", "SEO technique", "Analytics"],
-    },
-    {
         icon: TrendingUp,
-        title: "Social Media",
-        skills: ["Stratégie éditoriale", "Community management", "Génération de prospects", "Suivi des performances"],
+        title: "Faire exister une idee",
+        skills: ["Positionnement", "Reseaux sociaux", "Calendrier editorial", "Analyse simple"],
     },
     {
         icon: PenTool,
-        title: "Contenu stratégique",
-        skills: ["Copywriting", "Storytelling", "Création visuelle", "Formats courts"],
+        title: "Rendre le message clair",
+        skills: ["Storytelling", "Copywriting", "Creation visuelle", "Formats courts"],
+    },
+    {
+        icon: Code,
+        title: "Construire un support utile",
+        skills: ["Sites vitrines", "Landing pages", "Parcours utilisateur", "Suivi des resultats"],
     },
     {
         icon: Brain,
-        title: "IA et optimisation",
-        skills: ["Automatisation", "Recherche et idéation", "Production assistée", "Amélioration continue"],
+        title: "Explorer avec l'IA",
+        skills: ["Recherche", "Ideation", "Automatisation", "Prototypage"],
     },
 ];
 
@@ -56,20 +56,12 @@ function Tilt3DSkillCard({ children, index }: { children: React.ReactNode; index
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{
-                rotateX,
-                rotateY,
-                transformStyle: "preserve-3d",
-            }}
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
             className="glass-card rounded-2xl p-8 group cursor-pointer"
             initial={{ opacity: 0, y: 40, rotateX: -15 }}
             whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
             {children}
         </motion.div>
@@ -87,20 +79,20 @@ export default function Skills() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 >
-            <span className="text-sm font-medium text-highlight uppercase tracking-wider">
-              Leviers de croissance
-            </span>
+                    <span className="text-sm font-medium text-highlight uppercase tracking-wider">
+                        Leviers
+                    </span>
                     <TextReveal className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6">
-                        <h2>Les bons outils au service de votre activité</h2>
+                        <h2>Des outils différents, une même question : qu’est-ce qui aide vraiment à avancer ?</h2>
                     </TextReveal>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Je combine développement web, marketing, contenu et IA selon votre objectif — pas pour multiplier les prestations, mais pour obtenir un résultat cohérent.
+                        Je peux travailler le contenu, le web, l’IA ou la stratégie. Mais le point de départ reste toujours le même : comprendre ce qui est utile maintenant, avec les moyens disponibles.
                     </p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {skillCategories.map((category, index) => (
-                        <Magnetic key={index} strength={0.05}>
+                        <Magnetic key={category.title} strength={0.05}>
                             <Tilt3DSkillCard index={index}>
                                 <motion.div
                                     className="w-14 h-14 rounded-xl bg-highlight/10 flex items-center justify-center mb-6 border border-highlight/20"
@@ -110,16 +102,13 @@ export default function Skills() {
                                 >
                                     <category.icon className="text-highlight" size={28} />
                                 </motion.div>
-                                <h3
-                                    className="text-xl font-semibold mb-6 group-hover:text-highlight transition-colors"
-                                    style={{ transform: "translateZ(30px)" }}
-                                >
+                                <h3 className="text-xl font-semibold mb-6 group-hover:text-highlight transition-colors" style={{ transform: "translateZ(30px)" }}>
                                     {category.title}
                                 </h3>
                                 <div className="flex flex-wrap gap-2" style={{ transform: "translateZ(20px)" }}>
                                     {category.skills.map((skill, skillIndex) => (
                                         <motion.span
-                                            key={skillIndex}
+                                            key={skill}
                                             className="px-3 py-1.5 text-sm font-medium bg-background/50 rounded-full border border-border/50 hover:border-highlight hover:text-highlight transition-colors cursor-default"
                                             initial={{ opacity: 0, scale: 0.8, rotateX: -90 }}
                                             whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
@@ -136,7 +125,6 @@ export default function Skills() {
                     ))}
                 </div>
             </div>
-
         </section>
     );
 }

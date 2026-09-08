@@ -46,17 +46,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Sullivan Joro",
   title: {
-    default: "Joro Sullivan Rakotoniaina | Community Manager & Content Creator Madagascar",
+    default: "Joro Sullivan Rakotoniaina | Accompagnateur Digital",
     template: "%s | Sullivan Joro",
   },
   description:
-    "Community Manager à Madagascar spécialisé en stratégie social media, création de contenu, Reels, storytelling, Canva, CapCut et Meta Business Suite. Disponible en freelance et en télétravail.",
+    "Portfolio de Sullivan Joro Rakotoniaina : strategie digitale, social media, IA et projets web pour comprendre, eclairer, guider et construire avec les moyens disponibles.",
   keywords: [
-    "digital growth partner",
+    "accompagnateur digital",
     "croissance digitale PME",
     "accompagnement digital Madagascar",
     "développement web",
-    "community manager",
+    "accompagnement digital",
     "social media manager",
     "génération de prospects",
     "Madagascar",
@@ -77,17 +77,17 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: siteUrl,
     siteName: "Sullivan Joro",
-    title: "Joro Sullivan Rakotoniaina | Community Manager & Content Creator Madagascar",
+    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital",
     description:
-      "Stratégie social media, création de contenu, Reels et storytelling à Madagascar et à distance.",
+      "Comprendre une realite, clarifier une direction et construire des projets digitaux utiles a Madagascar et a distance.",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sullivan_joro",
     creator: "@sullivan_joro",
-    title: "Joro Sullivan Rakotoniaina | Community Manager & Content Creator Madagascar",
+    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital",
     description:
-      "Community Manager spécialisé en stratégie éditoriale, contenus engageants et suivi des performances.",
+      "Strategie digitale, contenu, IA et projets web pour avancer avec les moyens deja disponibles.",
   },
   robots: {
     index: true,
@@ -170,6 +170,26 @@ export default function RootLayout({
             data-orchids-project-id="044d08b0-bb2e-4cce-8df0-9942a10a7310"
           />
         )}
+        <Script
+          id="metricool-tracker"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function loadScript(a) {
+                var b = document.getElementsByTagName("head")[0],
+                  c = document.createElement("script");
+                c.type = "text/javascript";
+                c.src = "https://tracker.metricool.com/resources/be.js";
+                c.onreadystatechange = a;
+                c.onload = a;
+                b.appendChild(c);
+              }
+              loadScript(function() {
+                beTracker.t({ hash: "1c36744ecfd8954a4d61abe58f2cafad" });
+              });
+            `,
+          }}
+        />
         <ThemeProvider>
           <SmoothScroll>
             {children}

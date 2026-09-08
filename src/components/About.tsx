@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Handshake, Layers3, Target } from "lucide-react";
 import { motion } from "framer-motion";
@@ -8,18 +8,18 @@ import Magnetic from "@/components/ui/Magnetic";
 const cards = [
     {
         icon: Target,
-        title: "Une vision business",
-        description: "Nous partons de votre objectif de croissance avant de choisir les canaux, les contenus ou les technologies.",
+        title: "Clarifier avant de produire",
+        description: "Avant un site, une campagne ou un contenu, je cherche a comprendre ce qui bloque, ce qui existe deja et ce qui compte vraiment.",
     },
     {
         icon: Layers3,
-        title: "Une exécution structurée",
-        description: "Tech Bloom Agency porte la production et la livraison des projets avec les compétences adaptées à chaque mission.",
+        title: "Construire par etapes",
+        description: "Je prefere une premiere version utile, testable et ameliorable a une grande promesse difficile a tenir.",
     },
     {
         icon: Handshake,
-        title: "Un partenaire impliqué",
-        description: "Vous échangez directement avec moi pour garder une stratégie claire, des décisions rapides et un suivi transparent.",
+        title: "Avancer avec les autres",
+        description: "Je peux piloter, chercher, connecter des competences et collaborer avec une equipe selon les besoins du projet.",
     },
 ];
 
@@ -35,15 +35,15 @@ export default function About() {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <span className="text-sm font-medium uppercase tracking-wider text-highlight">
-                        Le modèle
+                        Ma posture
                     </span>
                     <TextReveal className="mt-4">
                         <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-                            Un partenaire pour la stratégie. Une structure pour l’exécution.
+                            Je ne viens pas avec toutes les reponses. Je viens pour chercher, comprendre et construire avec toi.
                         </h2>
                     </TextReveal>
                     <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                        Je reste votre interlocuteur pour comprendre vos enjeux, définir la stratégie et piloter les résultats. Tech Bloom Agency mobilise ensuite la structure nécessaire pour produire et livrer le projet.
+                        Mon avantage n’est pas de jouer à l’expert qui sait tout. Il est dans ma capacité à observer, poser les bonnes questions, tester des pistes et transformer le flou en prochaines actions claires.
                     </p>
                 </motion.div>
 

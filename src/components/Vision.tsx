@@ -1,30 +1,40 @@
-"use client";
+﻿"use client";
 
-import { Award, Lightbulb, Rocket, Users } from "lucide-react";
+import { Compass, Hammer, Lightbulb, RefreshCw, Sprout, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import TextReveal from "@/components/ui/TextReveal";
 import Magnetic from "@/components/ui/Magnetic";
 
 const visionPoints = [
     {
-        icon: Lightbulb,
-        title: "Innovation utile",
-        description: "Choisir les idées et les outils qui créent une vraie valeur pour votre activité.",
+        icon: Sprout,
+        title: "Construire avec ce qu'on a",
+        description: "On part des moyens disponibles, du contexte et des priorites reelles avant de parler d'outils.",
     },
     {
-        icon: Rocket,
-        title: "Résultats mesurables",
-        description: "Définir des objectifs clairs, suivre les bons indicateurs et améliorer chaque action.",
+        icon: Compass,
+        title: "Trouver une direction",
+        description: "Quand tout semble flou, l'objectif est de remettre de l'ordre pour voir la prochaine etape.",
+    },
+    {
+        icon: Lightbulb,
+        title: "Comprendre avant d'agir",
+        description: "Je cherche d'abord le vrai probleme, pas la solution la plus brillante a presenter.",
+    },
+    {
+        icon: RefreshCw,
+        title: "Tester, apprendre, recommencer",
+        description: "Un projet avance mieux avec des essais concrets, des retours honnetes et des ajustements rapides.",
+    },
+    {
+        icon: Hammer,
+        title: "Adapter a la realite",
+        description: "Une bonne solution doit tenir compte du budget, du temps, des competences et du terrain.",
     },
     {
         icon: Users,
-        title: "Collaboration directe",
-        description: "Avancer avec transparence, écoute et décisions partagées à chaque étape.",
-    },
-    {
-        icon: Award,
-        title: "Excellence d’exécution",
-        description: "Soigner la stratégie, les contenus et l’expérience jusque dans les détails.",
+        title: "Construire avec les autres",
+        description: "Je ne pretends pas tout savoir. Je sais chercher, connecter les idees et avancer avec les bonnes personnes.",
     },
 ];
 
@@ -40,19 +50,19 @@ export default function Vision() {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <span className="text-sm font-medium uppercase tracking-wider text-highlight">
-                        Ma philosophie
+                        Le noyau
                     </span>
                     <TextReveal className="mt-4">
                         <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
-                            Je crois qu’une entreprise ne devrait pas investir dans le digital pour être présente en ligne. Elle devrait y investir pour faire grandir son activité.
+                            Tu n’as pas besoin d’avoir beaucoup pour commencer à construire beaucoup.
                         </h2>
                     </TextReveal>
                     <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-                        Chaque site, contenu ou campagne doit répondre à un objectif business précis : attirer, convaincre, convertir ou fidéliser.
+                        Mon approche est simple : comprendre ta realite, utiliser ce que tu as deja, explorer ce que tu ne connais pas encore, puis construire une premiere version utile.
                     </p>
                 </motion.div>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {visionPoints.map((point, index) => (
                         <Magnetic key={point.title} strength={0.08}>
                             <motion.article
@@ -60,7 +70,7 @@ export default function Vision() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                transition={{ duration: 0.5, delay: index * 0.08 }}
                                 whileHover={{ y: -5 }}
                             >
                                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-highlight/20 bg-highlight/10 text-highlight transition-colors group-hover:bg-highlight/20">

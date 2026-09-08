@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -9,9 +9,10 @@ import { useTheme } from "@/components/ThemeProvider";
 
 const navItems = [
   { href: "/", label: "Accueil" },
-  { href: "/#vision", label: "Vision" },
-  { href: "/#skills", label: "Solutions" },
-  { href: "/#projects", label: "Réalisations" },
+  { href: "/#vision", label: "Noyau" },
+  { href: "/#projects", label: "Projets" },
+  { href: "/#case-studies", label: "Preuves" },
+  { href: "/#skills", label: "Leviers" },
   { href: "/recrutement", label: "Recrutement" },
   { href: "/#contact", label: "Parlons-en" },
 ];
@@ -49,16 +50,14 @@ export default function Navbar() {
           : "bg-transparent py-5"
       }`}
     >
-      {/* Subtle top gradient bar – violet to gold accent */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-primary-violet via-accent-gold to-primary-violet opacity-80" />
 
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo / Avatar */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-violet-light/50 shadow-[0_0_12px_rgba(124,58,237,0.3)] group-hover:border-accent-gold/60 group-hover:shadow-[0_0_16px_rgba(212,175,55,0.3)] transition-all duration-300">
             <Image
               src="/sullivan.jpeg"
-              alt="Portrait de Sullivan Joro, Community Manager et Content Creator"
+              alt="Portrait de Sullivan Joro"
               width={40}
               height={40}
               className="object-cover w-full h-full"
@@ -69,7 +68,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8 font-medium text-[#f8f9fa]">
           {navItems.map(({ href, label }) => (
             <Link
@@ -82,32 +80,30 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Theme toggle */}
           <motion.button
             onClick={toggleTheme}
             className="p-2 rounded-full border border-primary-violet-light/20 text-primary-violet-light hover:text-accent-gold hover:border-accent-gold/40 hover:shadow-[0_0_12px_rgba(212,175,55,0.25)] focus:outline-none focus:ring-2 focus:ring-accent-gold/40 transition-all duration-300"
-            aria-label="Toggle theme"
+            aria-label="Changer le theme"
             whileHover={{ scale: 1.1, rotate: 15 }}
             whileTap={{ scale: 0.9 }}
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </motion.button>
         </div>
 
-        {/* Mobile buttons */}
         <div className="md:hidden flex items-center gap-4">
           <motion.button
             onClick={toggleTheme}
             className="text-primary-violet-light hover:text-accent-gold focus:outline-none transition-colors duration-300"
-            aria-label="Toggle theme"
+            aria-label="Changer le theme"
             whileTap={{ scale: 0.9 }}
           >
-            {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
+            {theme === "dark" ? <Sun size={22} /> : <Moon size={22} />}
           </motion.button>
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-[#f8f9fa] hover:text-accent-gold focus:outline-none transition-colors duration-300"
-            aria-label="Toggle menu"
+            aria-label="Ouvrir le menu"
             whileTap={{ scale: 0.9 }}
           >
             {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
@@ -115,7 +111,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
