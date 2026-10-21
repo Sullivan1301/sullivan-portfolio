@@ -63,18 +63,22 @@ export default function Navbar() {
               className="object-cover w-full h-full"
             />
           </div>
-          <span className="font-bold text-[#f8f9fa] group-hover:text-accent-gold transition-colors duration-300">
+          <span className={`font-bold transition-colors duration-300 ${isScrolled ? "text-[#f8f9fa] group-hover:text-accent-gold" : "text-foreground group-hover:text-highlight"}`}>
             Sullivan
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 font-medium text-[#f8f9fa]">
+        <div className="hidden md:flex items-center gap-8 font-medium">
           {navItems.map(({ href, label }) => (
             <Link
               key={label}
               href={href}
               onClick={(e) => scrollToSection(e, href)}
-              className="relative py-1 text-primary-violet-light/80 hover:text-accent-gold focus:text-accent-gold focus:outline-none transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary-violet after:to-accent-gold after:transition-all after:duration-300 hover:after:w-full focus:after:w-full"
+              className={`relative py-1 focus:outline-none transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:transition-all after:duration-300 hover:after:w-full focus:after:w-full ${
+                isScrolled
+                  ? "text-primary-violet-light/80 hover:text-accent-gold focus:text-accent-gold after:from-primary-violet after:to-accent-gold"
+                  : "text-muted-foreground hover:text-highlight focus:text-highlight after:from-primary-violet after:to-highlight"
+              }`}
             >
               {label}
             </Link>
@@ -82,7 +86,11 @@ export default function Navbar() {
 
           <motion.button
             onClick={toggleTheme}
-            className="p-2 rounded-full border border-primary-violet-light/20 text-primary-violet-light hover:text-accent-gold hover:border-accent-gold/40 hover:shadow-[0_0_12px_rgba(212,175,55,0.25)] focus:outline-none focus:ring-2 focus:ring-accent-gold/40 transition-all duration-300"
+            className={`p-2 rounded-full border focus:outline-none focus:ring-2 transition-all duration-300 ${
+              isScrolled
+                ? "border-primary-violet-light/20 text-primary-violet-light hover:text-accent-gold hover:border-accent-gold/40 hover:shadow-[0_0_12px_rgba(212,175,55,0.25)] focus:ring-accent-gold/40"
+                : "border-foreground/15 text-muted-foreground hover:text-highlight hover:border-highlight/40 focus:ring-highlight/40"
+            }`}
             aria-label="Changer le theme"
             whileHover={{ scale: 1.1, rotate: 15 }}
             whileTap={{ scale: 0.9 }}
@@ -94,7 +102,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-4">
           <motion.button
             onClick={toggleTheme}
-            className="text-primary-violet-light hover:text-accent-gold focus:outline-none transition-colors duration-300"
+            className={`focus:outline-none transition-colors duration-300 ${isScrolled ? "text-primary-violet-light hover:text-accent-gold" : "text-muted-foreground hover:text-highlight"}`}
             aria-label="Changer le theme"
             whileTap={{ scale: 0.9 }}
           >
@@ -102,7 +110,7 @@ export default function Navbar() {
           </motion.button>
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-[#f8f9fa] hover:text-accent-gold focus:outline-none transition-colors duration-300"
+            className={`focus:outline-none transition-colors duration-300 ${isScrolled ? "text-[#f8f9fa] hover:text-accent-gold" : "text-foreground hover:text-highlight"}`}
             aria-label="Ouvrir le menu"
             whileTap={{ scale: 0.9 }}
           >
