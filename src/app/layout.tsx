@@ -46,11 +46,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Sullivan Joro",
   title: {
-    default: "Joro Sullivan Rakotoniaina | Accompagnateur Digital",
+    default: "Sullivan Joro Rakotoniaina — Accompagnateur Digital à Antananarivo",
     template: "%s | Sullivan Joro",
   },
   description:
-    "Portfolio de Sullivan Joro Rakotoniaina : strategie digitale, social media, IA et projets web pour comprendre, eclairer, guider et construire avec les moyens disponibles.",
+    "Stratégie digitale, social media, contenu et IA pour les PME. Basé à Antananarivo, missions à distance.",
   keywords: [
     "accompagnateur digital",
     "croissance digitale PME",
@@ -77,17 +77,17 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: siteUrl,
     siteName: "Sullivan Joro",
-    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital",
+    title: "Sullivan Joro Rakotoniaina — Accompagnateur Digital à Antananarivo",
     description:
-      "Comprendre une realite, clarifier une direction et construire des projets digitaux utiles a Madagascar et a distance.",
+      "Stratégie digitale, social media, contenu et IA pour les PME, depuis Antananarivo et à distance.",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sullivan_joro",
     creator: "@sullivan_joro",
-    title: "Joro Sullivan Rakotoniaina | Accompagnateur Digital",
+    title: "Sullivan Joro Rakotoniaina — Accompagnateur Digital à Antananarivo",
     description:
-      "Strategie digitale, contenu, IA et projets web pour avancer avec les moyens deja disponibles.",
+      "Stratégie digitale, social media, contenu et IA pour les PME. Antananarivo et à distance.",
   },
   robots: {
     index: true,

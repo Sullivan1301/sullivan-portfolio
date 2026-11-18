@@ -1,5 +1,5 @@
 const configuredSiteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sullivan-portfolio.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sullivan.techbloom.dev";
 
 export const siteUrl = configuredSiteUrl.replace(/\/+$/, "");
-export const seoLastModified = "2026-07-29";
+export const seoLastModified = "2026-11-18";

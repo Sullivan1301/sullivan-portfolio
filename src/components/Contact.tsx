@@ -99,7 +99,7 @@ export default function Contact() {
                                 {[
                                     { href: "https://github.com/Sullivan1301/", label: "Voir le profil GitHub de Sullivan Joro", icon: Github },
                                     { href: "https://www.linkedin.com/in/sullivan-rakotoniaina/", label: "Voir le profil LinkedIn de Sullivan Joro", icon: Linkedin },
-                                    { href: "https://www.instagram.com/la_vie_de_sullivan/", label: "Suivre Sullivan Joro sur Instagram", icon: Instagram },
+                                    { href: "https://www.instagram.com/sullivan.accompagne.digital/", label: "Suivre Sullivan Joro sur Instagram", icon: Instagram },
                                     { href: "https://web.facebook.com/sullivan.jororakotoniaina", label: "Voir le profil Facebook de Sullivan Joro", icon: Facebook },
                                     { href: "https://wa.me/261341060802", label: "Contacter Sullivan Joro sur WhatsApp", icon: MessageCircle },
                                 ].map(({ href, label, icon: Icon }) => (

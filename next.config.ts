@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
         },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // Transfère l'autorité de l'ancienne adresse Vercel vers le domaine actuel.
+        // Le host est matché à l'identique : les URLs de preview ne sont pas touchées.
+        source: "/:path*",
+        has: [{ type: "host", value: "sullivan-portfolio.vercel.app" }],
+        destination: "https://sullivan.techbloom.dev/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

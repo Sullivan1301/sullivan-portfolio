@@ -26,7 +26,7 @@ const socials = [
     external: true,
   },
   {
-    href: "https://www.instagram.com/la_vie_de_sullivan/",
+    href: "https://www.instagram.com/sullivan.accompagne.digital/",
     icon: Instagram,
     label: "Suivre sur Instagram",
     title: "Instagram",

@@ -19,10 +19,8 @@ const websiteId = `${siteUrl}/#website`;
 const socialProfiles = [
   "https://github.com/Sullivan1301",
   "https://www.linkedin.com/in/sullivan-rakotoniaina/",
-  "https://www.instagram.com/la_vie_de_sullivan/",
+  "https://www.instagram.com/sullivan.accompagne.digital/",
   "https://web.facebook.com/sullivan.jororakotoniaina",
-  "https://youtube.com/@sullivanjoro",
-  "https://tiktok.com/@sullivanjoro",
 ];
 
 export function PersonJsonLd() {
@@ -35,12 +33,21 @@ export function PersonJsonLd() {
         name: "Joro Sullivan Rakotoniaina",
         givenName: "Sullivan",
         familyName: "Rakotoniaina",
-        alternateName: ["Sullivan Joro", "Sullivan Rakotoniaina"],
+        alternateName: [
+          "Sullivan Joro",
+          "Sullivan Joro Rakotoniaina",
+          "Sullivan Rakotoniaina",
+        ],
         jobTitle: "Accompagnateur Digital",
         description:
           "Sullivan Joro aide les PME à attirer, convertir et fidéliser leurs clients grâce au web, aux réseaux sociaux, au contenu stratégique et à l’intelligence artificielle.",
         url: siteUrl,
-        image: `${siteUrl}/sullivan-icon.png`,
+        image: {
+          "@type": "ImageObject",
+          url: `${siteUrl}/sullivan.jpeg`,
+          width: 896,
+          height: 1193,
+        },
         email: "mailto:jorosullivan13@gmail.com",
         telephone: "+261341060802",
         address: {
@@ -70,8 +77,10 @@ export function PersonJsonLd() {
           "Analyse des performances",
         ],
         alumniOf: {
-          "@type": "EducationalOrganization",
+          "@type": "CollegeOrUniversity",
           name: "Haute École d’Informatique",
+          alternateName: "HEI",
+          url: "https://hei.school",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Antananarivo",

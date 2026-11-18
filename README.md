@@ -3,7 +3,7 @@
 Bienvenue dans le dépôt officiel de mon portfolio personnel.
 Ce site présente mon parcours en tant que **développeur web Next.js** et **entrepreneur digital** basé à Antananarivo, Madagascar.
 
-🌐 **Voir le portfolio** : [https://sullivan-portfolio.vercel.app](https://sullivan-portfolio.vercel.app)
+🌐 **Voir le portfolio** : [https://sullivan.techbloom.dev](https://sullivan.techbloom.dev)
 
 ---
 
@@ -168,7 +168,7 @@ Services proposés :
 - Mode clair/sombre avec persistance
 - 100% responsive et accessible
 
-**URL** : [https://sullivan-portfolio.vercel.app](https://sullivan-portfolio.vercel.app)
+**URL** : [https://sullivan.techbloom.dev](https://sullivan.techbloom.dev)
 
 ---
 
