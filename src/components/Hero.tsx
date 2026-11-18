@@ -46,20 +46,20 @@ export default function Hero() {
                                 Accompagnateur Digital · Antananarivo
                             </p>
                             <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-[3rem] lg:text-[3.5rem]">
-                                Comprendre, eclairer, guider, construire.
+                                Comprendre, éclairer, guider, construire.
                             </h1>
                             <p className="mt-7 text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
                                 J’aide les personnes et les petites structures à avancer dans le digital avec les moyens, les connaissances et le réseau qu’elles ont déjà.
                             </p>
                             <p className="mt-5 text-sm font-semibold tracking-wide text-highlight sm:text-base">
-                                Strategie digitale - Social media - IA - Projets web - Apprentissage continu
+                                Stratégie digitale - Social media - IA - Projets web - Apprentissage continu
                             </p>
                             <div className="mt-10 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
                                 <a href="#projects" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-highlight px-7 py-3.5 text-base font-semibold text-white shadow-[0_12px_32px_rgba(230,57,70,0.28)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-background">
                                     Voir ce que je construis <ArrowDown size={18} aria-hidden="true" />
                                 </a>
                                 <a href="/CV_Joro%20Sullivan_RAKOTONIAINA.pdf" download className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-foreground/20 bg-foreground/[0.03] px-7 py-3.5 text-base font-semibold text-foreground transition-colors hover:border-highlight hover:bg-highlight/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-background">
-                                    <Download size={18} aria-hidden="true" /> Telecharger mon CV
+                                    <Download size={18} aria-hidden="true" /> Télécharger mon CV
                                 </a>
                             </div>
                         </div>

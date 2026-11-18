@@ -9,17 +9,17 @@ const cards = [
     {
         icon: Target,
         title: "Clarifier avant de produire",
-        description: "Avant un site, une campagne ou un contenu, je cherche a comprendre ce qui bloque, ce qui existe deja et ce qui compte vraiment.",
+        description: "Avant un site, une campagne ou un contenu, je cherche à comprendre ce qui bloque, ce qui existe déjà et ce qui compte vraiment.",
     },
     {
         icon: Layers3,
-        title: "Construire par etapes",
-        description: "Je prefere une premiere version utile, testable et ameliorable a une grande promesse difficile a tenir.",
+        title: "Construire par étapes",
+        description: "Je préfère une première version utile, testable et améliorable à une grande promesse difficile à tenir.",
     },
     {
         icon: Handshake,
         title: "Avancer avec les autres",
-        description: "Je peux piloter, chercher, connecter des competences et collaborer avec une equipe selon les besoins du projet.",
+        description: "Je peux piloter, chercher, connecter des compétences et collaborer avec une équipe selon les besoins du projet.",
     },
 ];
 

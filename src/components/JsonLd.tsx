@@ -13,7 +13,7 @@ function JsonLd({ schema }: { schema: Record<string, unknown> }) {
 }
 
 const personId = `${siteUrl}/#person`;
-const organizationId = "https://techbloom.agency/#organization";
+const organizationId = "https://techbloom.dev/#organization";
 const websiteId = `${siteUrl}/#website`;
 
 const socialProfiles = [
@@ -52,7 +52,6 @@ export function PersonJsonLd() {
         telephone: "+261341060802",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Lot II H 12Ter Ankadidramamy",
           addressLocality: "Antananarivo",
           addressRegion: "Analamanga",
           addressCountry: "MG",
@@ -104,7 +103,7 @@ export function OrganizationJsonLd() {
         alternateName: "Tech Bloom",
         description:
           "Tech Bloom Agency produit et livre les projets de développement web, marketing digital, contenu et community management pilotés par Sullivan Joro.",
-        url: "https://techbloom.agency",
+        url: "https://techbloom.dev",
         foundingDate: "2025-11",
         founder: {
           "@id": personId,
@@ -202,7 +201,6 @@ export function LocalBusinessJsonLd() {
         },
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Lot II H 12Ter Ankadidramamy",
           addressLocality: "Antananarivo",
           addressRegion: "Analamanga",
           addressCountry: "MG",

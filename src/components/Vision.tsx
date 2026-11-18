@@ -9,32 +9,32 @@ const visionPoints = [
     {
         icon: Sprout,
         title: "Construire avec ce qu'on a",
-        description: "On part des moyens disponibles, du contexte et des priorites reelles avant de parler d'outils.",
+        description: "On part des moyens disponibles, du contexte et des priorités réelles avant de parler d'outils.",
     },
     {
         icon: Compass,
         title: "Trouver une direction",
-        description: "Quand tout semble flou, l'objectif est de remettre de l'ordre pour voir la prochaine etape.",
+        description: "Quand tout semble flou, l'objectif est de remettre de l'ordre pour voir la prochaine étape.",
     },
     {
         icon: Lightbulb,
         title: "Comprendre avant d'agir",
-        description: "Je cherche d'abord le vrai probleme, pas la solution la plus brillante a presenter.",
+        description: "Je cherche d'abord le vrai problème, pas la solution la plus brillante à présenter.",
     },
     {
         icon: RefreshCw,
         title: "Tester, apprendre, recommencer",
-        description: "Un projet avance mieux avec des essais concrets, des retours honnetes et des ajustements rapides.",
+        description: "Un projet avance mieux avec des essais concrets, des retours honnêtes et des ajustements rapides.",
     },
     {
         icon: Hammer,
-        title: "Adapter a la realite",
-        description: "Une bonne solution doit tenir compte du budget, du temps, des competences et du terrain.",
+        title: "Adapter à la réalité",
+        description: "Une bonne solution doit tenir compte du budget, du temps, des compétences et du terrain.",
     },
     {
         icon: Users,
         title: "Construire avec les autres",
-        description: "Je ne pretends pas tout savoir. Je sais chercher, connecter les idees et avancer avec les bonnes personnes.",
+        description: "Je ne prétends pas tout savoir. Je sais chercher, connecter les idées et avancer avec les bonnes personnes.",
     },
 ];
 
@@ -58,7 +58,7 @@ export default function Vision() {
                         </h2>
                     </TextReveal>
                     <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-                        Mon approche est simple : comprendre ta realite, utiliser ce que tu as deja, explorer ce que tu ne connais pas encore, puis construire une premiere version utile.
+                        Mon approche est simple : comprendre ta réalité, utiliser ce que tu as déjà, explorer ce que tu ne connais pas encore, puis construire une première version utile.
                     </p>
                 </motion.div>
 

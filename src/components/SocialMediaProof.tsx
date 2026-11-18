@@ -1,11 +1,11 @@
 ﻿import { BarChart3, CalendarDays, MessageCircle, PenTool, Search, Share2 } from "lucide-react";
 
 const process = [
-    { icon: Search, title: "Comprendre", text: "Contexte, moyens, audience et vraie priorite." },
+    { icon: Search, title: "Comprendre", text: "Contexte, moyens, audience et vraie priorité." },
     { icon: PenTool, title: "Clarifier", text: "Angle, message, ton de voix et prochaine action." },
     { icon: CalendarDays, title: "Structurer", text: "Rythme, calendrier, formats et validations." },
-    { icon: Share2, title: "Construire", text: "Creation, publication, coordination et suivi." },
-    { icon: BarChart3, title: "Apprendre", text: "Indicateurs, contenus utiles et pistes d'amelioration." },
+    { icon: Share2, title: "Construire", text: "Création, publication, coordination et suivi." },
+    { icon: BarChart3, title: "Apprendre", text: "Indicateurs, contenus utiles et pistes d'amélioration." },
     { icon: MessageCircle, title: "Recommencer", text: "Retours simples pour ajuster sans perdre la direction." },
 ];
 
@@ -15,14 +15,14 @@ export default function SocialMediaProof() {
             <div className="container-custom"><div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                 <div><span className="text-sm font-medium uppercase tracking-wider text-highlight">Preuve concrète</span><h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl">Groupe Passion Prestige - adapter le contenu à plusieurs réalités de marque</h2><p className="mt-5 text-lg leading-relaxed text-muted-foreground">Depuis mai 2026, j’accompagne un groupe multi-enseignes dans la stratégie éditoriale, la création, la programmation et l’analyse de contenus pour la beauté, le bien-être, la coiffure et l’univers premium.</p></div>
                 <dl className="grid gap-4 sm:grid-cols-2">
-                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Enseignes</dt><dd className="mt-2 text-muted-foreground">Amazones, Majorel, Imperial Beauty &amp; Spa, Tchip Coiffure Madagascar et Passion Beaute Madagascar.</dd></div>
+                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Enseignes</dt><dd className="mt-2 text-muted-foreground">Amazones, Majorel, Imperial Beauty &amp; Spa, Tchip Coiffure Madagascar et Passion Beauté Madagascar.</dd></div>
                     <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Role</dt><dd className="mt-2 text-muted-foreground">Assistant Marketing et Community Manager.</dd></div>
-                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Comprendre</dt><dd className="mt-2 text-muted-foreground">Identifier les differences entre les marques, leurs publics, leurs offres et leurs contraintes.</dd></div>
-                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Adapter</dt><dd className="mt-2 text-muted-foreground">Transformer une direction commune en contenus coherents pour chaque univers.</dd></div>
-                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Construire</dt><dd className="mt-2 text-muted-foreground">Visuels, publications, carrousels, videos courtes, Reels, captions et programmation.</dd></div>
+                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Comprendre</dt><dd className="mt-2 text-muted-foreground">Identifier les différences entre les marques, leurs publics, leurs offres et leurs contraintes.</dd></div>
+                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Adapter</dt><dd className="mt-2 text-muted-foreground">Transformer une direction commune en contenus cohérents pour chaque univers.</dd></div>
+                    <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Construire</dt><dd className="mt-2 text-muted-foreground">Visuels, publications, carrousels, vidéos courtes, Reels, captions et programmation.</dd></div>
                     <div className="glass-card rounded-2xl p-5"><dt className="text-sm font-semibold text-highlight">Apprendre</dt><dd className="mt-2 text-muted-foreground">Suivi des indicateurs, identification des contenus performants et recommandations.</dd></div>
                 </dl>
-            </div><div className="mt-12"><div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"><div><span className="text-sm font-semibold uppercase tracking-wider text-highlight">Resultats observes</span><h3 className="mt-2 text-2xl font-bold">Performances consolidees sur 28 jours</h3></div><p className="max-w-md text-sm text-muted-foreground">Donnees issues de plusieurs comptes geres au sein du groupe.</p></div><dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            </div><div className="mt-12"><div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between"><div><span className="text-sm font-semibold uppercase tracking-wider text-highlight">Résultats observés</span><h3 className="mt-2 text-2xl font-bold">Performances consolidées sur 28 jours</h3></div><p className="max-w-md text-sm text-muted-foreground">Donnees issues de plusieurs comptes geres au sein du groupe.</p></div><dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="glass-card rounded-2xl border-highlight/30 p-5"><dt className="text-3xl font-bold text-highlight">101,9 K</dt><dd className="mt-2 text-sm text-muted-foreground">vues sur Facebook</dd></div>
                 <div className="glass-card rounded-2xl border-highlight/30 p-5"><dt className="text-3xl font-bold text-highlight">+74,7 %</dt><dd className="mt-2 text-sm text-muted-foreground">de croissance des vues</dd></div>
                 <div className="glass-card rounded-2xl border-highlight/30 p-5"><dt className="text-3xl font-bold text-highlight">3,3 K</dt><dd className="mt-2 text-sm text-muted-foreground">interactions</dd></div>

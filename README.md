@@ -157,7 +157,7 @@ Services proposés :
 
 **Vision** : Faire fleurir les projets digitaux en utilisant l'IA intelligemment pour maximiser l'impact business.
 
-**Site web** : [https://techbloom.agency](https://techbloom.agency)
+**Site web** : [https://techbloom.dev](https://techbloom.dev)
 
 ### Portfolio Personnel
 **Site vitrine démontrant l'expertise technique**

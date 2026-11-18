@@ -9,18 +9,18 @@ import Magnetic from "@/components/ui/Magnetic";
 const skillCategories = [
     {
         icon: TrendingUp,
-        title: "Faire exister une idee",
-        skills: ["Positionnement", "Reseaux sociaux", "Calendrier editorial", "Analyse simple"],
+        title: "Faire exister une idée",
+        skills: ["Positionnement", "Réseaux sociaux", "Calendrier éditorial", "Analyse simple"],
     },
     {
         icon: PenTool,
         title: "Rendre le message clair",
-        skills: ["Storytelling", "Copywriting", "Creation visuelle", "Formats courts"],
+        skills: ["Storytelling", "Copywriting", "Création visuelle", "Formats courts"],
     },
     {
         icon: Code,
         title: "Construire un support utile",
-        skills: ["Sites vitrines", "Landing pages", "Parcours utilisateur", "Suivi des resultats"],
+        skills: ["Sites vitrines", "Landing pages", "Parcours utilisateur", "Suivi des résultats"],
     },
     {
         icon: Brain,

@@ -63,7 +63,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Email</p>
-                                            <a href="mailto:jorosullivan13@gmail.com" className="font-medium hover:text-highlight transition-colors" title="Envoyer un email a Sullivan">
+                                            <a href="mailto:jorosullivan13@gmail.com" className="font-medium hover:text-highlight transition-colors" title="Envoyer un email à Sullivan">
                                                 jorosullivan13@gmail.com
                                             </a>
                                         </div>
@@ -77,7 +77,7 @@ export default function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Base</p>
-                                            <p className="font-medium">Madagascar, avec projets a distance</p>
+                                            <p className="font-medium">Madagascar, avec projets à distance</p>
                                         </div>
                                     </motion.div>
                                 </Magnetic>
